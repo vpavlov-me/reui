@@ -1,6 +1,15 @@
 # Design System
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-18-blue)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-blue)](https://tailwindcss.com/)
+
 Multi-portal design system based on Shadcn UI for Family, Advisor, and Admin portals.
+
+> 🚀 **[START HERE](./START_HERE.md)** - Complete getting started guide
+> 📖 **[Documentation](./INDEX.md)** - Full documentation index
+> 🎬 **[Live Demo](#)** - Coming soon on GitHub Pages
 
 ## 🎨 Portals
 
