@@ -4,7 +4,7 @@ Complete list of all components displayed in the showcase application.
 
 ## 🎨 Live Demo
 
-Visit the showcase at: [GitHub Pages URL - coming soon]
+Visit the showcase at: **[https://vpavlov-me.github.io/reui/](https://vpavlov-me.github.io/reui/)**
 
 ## 📦 Components Included
 

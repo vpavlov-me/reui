@@ -9,7 +9,7 @@ Multi-portal design system based on Shadcn UI for Family, Advisor, and Admin por
 
 > 🚀 **[START HERE](./START_HERE.md)** - Complete getting started guide
 > 📖 **[Documentation](./INDEX.md)** - Full documentation index
-> 🎬 **[Live Demo](#)** - Coming soon on GitHub Pages
+> 🎬 **[Live Demo](https://vpavlov-me.github.io/reui/)** - Interactive component showcase
 
 ## 🎨 Portals
 
