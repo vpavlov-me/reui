@@ -58,51 +58,47 @@
     --chart-5: 340 75% 55%;
   }
 
-  /* Family Portal Theme - Orange #FB6428 (default) */
-  .theme-family {
-    --primary: 14 97% 57%;
-    --primary-foreground: 0 0% 100%;
-    --ring: 14 97% 57%;
-  }
-
-  .theme-family.dark {
-    --primary: 14 97% 57%;
-    --primary-foreground: 0 0% 100%;
-    --ring: 14 97% 57%;
-  }
-
-  /* Advisor Portal Theme - Blue #005CCD */
-  .theme-advisor {
-    --primary: 213 100% 40%;
-    --primary-foreground: 0 0% 100%;
-    --ring: 213 100% 40%;
-  }
-
-  .theme-advisor.dark {
-    --primary: 213 100% 50%;
-    --primary-foreground: 0 0% 100%;
-    --ring: 213 100% 50%;
-  }
-
-  /* Admin Portal Theme - Lime #8FCD00 */
-  .theme-admin {
-    --primary: 78 100% 40%;
-    --primary-foreground: 0 0% 0%;
-    --ring: 78 100% 40%;
-  }
-
-  .theme-admin.dark {
-    --primary: 78 100% 50%;
-    --primary-foreground: 0 0% 0%;
-    --ring: 78 100% 50%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Portal Themes - Outside @layer for higher specificity */
+
+/* Family Portal Theme - Orange #FB6428 (default) */
+.theme-family,
+.theme-family.dark {
+  --primary: 14 97% 57%;
+  --primary-foreground: 0 0% 100%;
+  --ring: 14 97% 57%;
+}
+
+/* Advisor Portal Theme - Blue #005CCD */
+.theme-advisor {
+  --primary: 213 100% 40%;
+  --primary-foreground: 0 0% 100%;
+  --ring: 213 100% 40%;
+}
+
+.theme-advisor.dark {
+  --primary: 213 100% 50%;
+  --primary-foreground: 0 0% 100%;
+  --ring: 213 100% 50%;
+}
+
+/* Admin Portal Theme - Lime #8FCD00 */
+.theme-admin {
+  --primary: 78 100% 40%;
+  --primary-foreground: 0 0% 0%;
+  --ring: 78 100% 40%;
+}
+
+.theme-admin.dark {
+  --primary: 78 100% 50%;
+  --primary-foreground: 0 0% 0%;
+  --ring: 78 100% 50%;
 }
