@@ -11,7 +11,7 @@ export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <div className={darkMode ? 'dark' : ''}>
+    <div className={`${darkMode ? 'dark' : ''} theme-${theme}`}>
       <main className="min-h-screen bg-background text-foreground">
         {/* Header */}
         <header className="border-b">

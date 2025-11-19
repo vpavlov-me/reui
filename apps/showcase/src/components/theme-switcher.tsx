@@ -16,18 +16,6 @@ export default function ThemeSwitcher({ currentTheme, onThemeChange }: ThemeSwit
 
   const handleThemeChange = (themeId: 'family' | 'advisor' | 'admin') => {
     onThemeChange(themeId);
-
-    // Dynamically update CSS import
-    const existingLink = document.querySelector('link[data-theme]');
-    if (existingLink) {
-      existingLink.remove();
-    }
-
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = `/@your-org/themes/${themeId}.css`;
-    link.setAttribute('data-theme', themeId);
-    document.head.appendChild(link);
   };
 
   return (
