@@ -23,11 +23,19 @@ New to the project? Start with these:
    - Troubleshooting tips
    - Common commands
 
+## 🎬 Showcase
+
+4. **[SHOWCASE.md](./SHOWCASE.md)** 🎨
+   - Complete component list
+   - All variants covered
+   - Interactive features
+   - Coverage statistics
+
 ## 📦 For Developers
 
 Building and contributing:
 
-4. **[CONTRIBUTING.md](./CONTRIBUTING.md)** 🤝
+5. **[CONTRIBUTING.md](./CONTRIBUTING.md)** 🤝
    - Contribution guidelines
    - Development workflow
    - Code standards
