@@ -1,0 +1,59 @@
+{
+  "name": "@your-org/ui",
+  "version": "0.1.0",
+  "description": "Shared UI components based on Shadcn UI",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles": "./dist/styles/globals.css",
+    "./fonts": "./fonts"
+  },
+  "files": [
+    "dist",
+    "fonts",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react --external react-dom && cp -r src/styles dist/",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react --external react-dom",
+    "lint": "eslint src/",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "tailwindcss": "^3.4.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.1.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.400.0",
+    "tailwind-merge": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "components",
+    "shadcn",
+    "design-system",
+    "tailwind"
+  ],
+  "license": "MIT"
+}

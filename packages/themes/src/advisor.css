@@ -1,0 +1,11 @@
+/* Advisor Portal Theme - Blue Accent (#005CCD) */
+
+:root {
+  --primary: 213 100% 40%;
+  --primary-foreground: 0 0% 100%;
+}
+
+.dark {
+  --primary: 213 100% 50%;
+  --primary-foreground: 0 0% 100%;
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@your-org/themes",
+  "version": "0.1.0",
+  "description": "Portal themes for the design system",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./family": "./dist/family.css",
+    "./advisor": "./dist/advisor.css",
+    "./admin": "./dist/admin.css"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "mkdir -p dist && cp -r src/* dist/",
+    "clean": "rm -rf dist"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "themes",
+    "css",
+    "design-system",
+    "portals"
+  ],
+  "license": "MIT"
+}

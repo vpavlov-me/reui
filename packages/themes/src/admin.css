@@ -1,0 +1,11 @@
+/* Admin Portal Theme - Lime Accent (#8FCD00) */
+
+:root {
+  --primary: 78 100% 40%;
+  --primary-foreground: 0 0% 100%;
+}
+
+.dark {
+  --primary: 78 100% 50%;
+  --primary-foreground: 0 0% 100%;
+}

@@ -1,0 +1,11 @@
+/* Family Portal Theme - Orange Accent (#FB6428) */
+
+:root {
+  --primary: 17 96% 57%;
+  --primary-foreground: 0 0% 100%;
+}
+
+.dark {
+  --primary: 17 100% 60%;
+  --primary-foreground: 0 0% 100%;
+}
