@@ -1,27 +1,9 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 
-const ppObjectSans = localFont({
-  src: [
-    {
-      path: "../../fonts/PPObjectSans-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../fonts/PPObjectSans-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../../fonts/PPObjectSans-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-  variable: "--font-pp-object-sans",
-});
+// PP Object Sans font configuration
+// Add font files to src/fonts/ directory to enable custom fonts
+// For now, falling back to system fonts
 
 export const metadata: Metadata = {
   title: "Design System Showcase",
@@ -35,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${ppObjectSans.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         {children}
       </body>
     </html>
