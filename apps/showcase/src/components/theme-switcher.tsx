@@ -1,39 +1,61 @@
-'use client';
+"use client";
 
-import { Button } from '@your-org/ui';
+import * as React from "react";
+import { cn } from "@/lib/utils";
+
+type PortalTheme = "family" | "advisor" | "admin";
 
 interface ThemeSwitcherProps {
-  currentTheme: 'family' | 'advisor' | 'admin';
-  onThemeChange: (theme: 'family' | 'advisor' | 'admin') => void;
+  className?: string;
 }
 
-export default function ThemeSwitcher({ currentTheme, onThemeChange }: ThemeSwitcherProps) {
-  const themes = [
-    { id: 'family' as const, name: 'Family Portal', color: '#FB6428' },
-    { id: 'advisor' as const, name: 'Advisor Portal', color: '#005CCD' },
-    { id: 'admin' as const, name: 'Admin Portal', color: '#8FCD00' },
-  ];
+export function ThemeSwitcher({ className }: ThemeSwitcherProps) {
+  const [portalTheme, setPortalTheme] = React.useState<PortalTheme>("family");
 
-  const handleThemeChange = (themeId: 'family' | 'advisor' | 'admin') => {
-    onThemeChange(themeId);
-  };
+  React.useEffect(() => {
+    const root = document.documentElement;
+    root.classList.remove("theme-family", "theme-advisor", "theme-admin");
+    root.classList.add(`theme-${portalTheme}`);
+  }, [portalTheme]);
 
   return (
-    <div className="flex flex-wrap gap-4">
-      {themes.map((theme) => (
-        <Button
-          key={theme.id}
-          variant={currentTheme === theme.id ? 'default' : 'outline'}
-          onClick={() => handleThemeChange(theme.id)}
-          className="flex items-center gap-2"
+    <div className={cn("flex items-center gap-2", className)}>
+      <span className="text-sm font-medium text-muted-foreground">Portal:</span>
+      <div className="flex rounded-md border bg-muted p-1">
+        <button
+          onClick={() => setPortalTheme("family")}
+          className={cn(
+            "rounded px-3 py-1.5 text-sm font-medium transition-colors",
+            portalTheme === "family"
+              ? "bg-background text-foreground shadow-sm"
+              : "text-muted-foreground hover:text-foreground"
+          )}
         >
-          <div
-            className="w-4 h-4 rounded-full"
-            style={{ backgroundColor: theme.color }}
-          />
-          {theme.name}
-        </Button>
-      ))}
+          Family
+        </button>
+        <button
+          onClick={() => setPortalTheme("advisor")}
+          className={cn(
+            "rounded px-3 py-1.5 text-sm font-medium transition-colors",
+            portalTheme === "advisor"
+              ? "bg-background text-foreground shadow-sm"
+              : "text-muted-foreground hover:text-foreground"
+          )}
+        >
+          Advisor
+        </button>
+        <button
+          onClick={() => setPortalTheme("admin")}
+          className={cn(
+            "rounded px-3 py-1.5 text-sm font-medium transition-colors",
+            portalTheme === "admin"
+              ? "bg-background text-foreground shadow-sm"
+              : "text-muted-foreground hover:text-foreground"
+          )}
+        >
+          Admin
+        </button>
+      </div>
     </div>
   );
 }

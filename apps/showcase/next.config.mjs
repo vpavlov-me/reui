@@ -5,7 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  transpilePackages: ['@your-org/ui', '@your-org/themes', '@your-org/icons'],
+  transpilePackages: ['@your-org/ui', '@your-org/icons', '@your-org/themes'],
 };
 
 export default nextConfig;

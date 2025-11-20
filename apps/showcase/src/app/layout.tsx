@@ -1,31 +1,14 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { SiteHeader } from "@/components/site-header";
 
-const ppObjectSans = localFont({
-  src: [
-    {
-      path: "../fonts/PPObjectSans-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../fonts/PPObjectSans-Medium.ttf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../fonts/PPObjectSans-Bold.ttf",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-  variable: "--font-pp-object-sans",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Design System Showcase",
-  description: "Multi-portal design system based on Shadcn UI",
+  title: "reui - Design System",
+  description: "A modern React UI component library",
 };
 
 export default function RootLayout({
@@ -35,8 +18,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${ppObjectSans.variable} font-sans antialiased`}>
-        {children}
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="relative flex min-h-screen flex-col">
+            <SiteHeader />
+            <main className="flex-1">{children}</main>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

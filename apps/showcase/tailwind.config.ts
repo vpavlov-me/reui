@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
-import tailwindcssAnimate from "tailwindcss-animate";
 
-const config: Config = {
+const config = {
   darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,11 +8,16 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "../../packages/ui/src/**/*.{js,ts,jsx,tsx}",
   ],
+  prefix: "",
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ['var(--font-pp-object-sans)', 'system-ui', 'sans-serif'],
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
       },
+    },
+    extend: {
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -70,7 +74,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
-};
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;
 
 export default config;
