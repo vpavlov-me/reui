@@ -31,7 +31,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@your-org/ui";
+} from "@reluna-ui/ui";
 import {
   Home,
   ChevronRight,
@@ -58,9 +58,9 @@ export default function ProfileTemplate() {
     <div className="min-h-screen bg-muted/30">
       {/* Top Navigation */}
       <div className="border-b bg-background">
-        <div className="container flex h-14 items-center justify-between">
+        <div className="container max-w-[1048px] flex h-14 items-center justify-between">
           <div className="flex items-center gap-6">
-            <Link href="/templates/dashboard" className="font-bold text-xl flex items-center gap-1">
+            <Link href="/templates/dashboard" className="font-medium text-xl flex items-center gap-1">
               <span className="text-primary">(RE:</span>
               <span>Family</span>
             </Link>
@@ -96,7 +96,7 @@ export default function ProfileTemplate() {
 
       {/* Breadcrumb */}
       <div className="border-b bg-background">
-        <div className="container flex h-12 items-center">
+        <div className="container max-w-[1048px] flex h-12 items-center">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Home className="h-4 w-4" />
             <ChevronRight className="h-3 w-3" />
@@ -106,12 +106,12 @@ export default function ProfileTemplate() {
         </div>
       </div>
 
-      <div className="container py-6">
-        <h1 className="text-2xl font-bold mb-6">Profile</h1>
+      <div className="container max-w-[1048px] py-4">
+        <h1 className="text-2xl font-medium mb-4">Profile</h1>
 
-        <div className="grid lg:grid-cols-3 gap-6">
+        <div className="grid lg:grid-cols-3 gap-4">
           {/* Main Content */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-4">
             {/* Tabs */}
             <Tabs defaultValue="personal" className="w-full">
               <TabsList className="grid w-full grid-cols-4">
@@ -121,7 +121,7 @@ export default function ProfileTemplate() {
                 <TabsTrigger value="activity">Activity</TabsTrigger>
               </TabsList>
 
-              <TabsContent value="personal" className="space-y-6 mt-6">
+              <TabsContent value="personal" className="space-y-4 mt-4">
                 {/* About Me */}
                 <Card>
                   <CardHeader className="pb-3">
@@ -255,7 +255,7 @@ export default function ProfileTemplate() {
                 </Card>
               </TabsContent>
 
-              <TabsContent value="security" className="mt-6">
+              <TabsContent value="security" className="mt-4">
                 <Card>
                   <CardContent className="py-10 text-center text-muted-foreground">
                     Security settings content...
@@ -263,7 +263,7 @@ export default function ProfileTemplate() {
                 </Card>
               </TabsContent>
 
-              <TabsContent value="preferences" className="mt-6">
+              <TabsContent value="preferences" className="mt-4">
                 <Card>
                   <CardContent className="py-10 text-center text-muted-foreground">
                     Preferences content...
@@ -271,7 +271,7 @@ export default function ProfileTemplate() {
                 </Card>
               </TabsContent>
 
-              <TabsContent value="activity" className="mt-6">
+              <TabsContent value="activity" className="mt-4">
                 <Card>
                   <CardContent className="py-10 text-center text-muted-foreground">
                     Activity history content...
@@ -465,7 +465,7 @@ export default function ProfileTemplate() {
         </div>
 
         {/* Stay Updated */}
-        <Card className="mt-6">
+        <Card className="mt-4">
           <CardContent className="py-6">
             <div className="grid md:grid-cols-2 gap-6 items-center">
               <div className="space-y-3">
@@ -493,10 +493,10 @@ export default function ProfileTemplate() {
         </Card>
 
         {/* Footer */}
-        <footer className="pt-6 mt-6 border-t">
+        <footer className="pt-4 mt-4 border-t">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="font-bold text-lg mb-4 flex items-center gap-1">
+              <div className="font-medium text-lg mb-4 flex items-center gap-1">
                 <span className="text-primary">(RE:</span>
                 <span>Family</span>
               </div>

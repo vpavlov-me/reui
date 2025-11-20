@@ -1,15 +1,15 @@
-# @your-org/themes
+# @reluna-ui/themes
 
 Portal-specific theme configurations for the design system.
 
 ## Installation
 
 ```bash
-npm install @your-org/themes
+npm install @reluna-ui/themes
 # or
-pnpm add @your-org/themes
+pnpm add @reluna-ui/themes
 # or
-yarn add @your-org/themes
+yarn add @reluna-ui/themes
 ```
 
 ## Available Themes
@@ -17,7 +17,7 @@ yarn add @your-org/themes
 ### Family Portal (Orange)
 
 ```tsx
-import '@your-org/themes/family';
+import '@reluna-ui/themes/family';
 ```
 
 Primary color: `#FB6428` (Orange)
@@ -25,7 +25,7 @@ Primary color: `#FB6428` (Orange)
 ### Advisor Portal (Blue)
 
 ```tsx
-import '@your-org/themes/advisor';
+import '@reluna-ui/themes/advisor';
 ```
 
 Primary color: `#005CCD` (Blue)
@@ -33,7 +33,7 @@ Primary color: `#005CCD` (Blue)
 ### Admin Portal (Lime)
 
 ```tsx
-import '@your-org/themes/admin';
+import '@reluna-ui/themes/admin';
 ```
 
 Primary color: `#8FCD00` (Lime)
@@ -44,8 +44,8 @@ Primary color: `#8FCD00` (Lime)
 
 ```tsx
 // app/layout.tsx
-import '@your-org/ui/styles';
-import '@your-org/themes/family'; // or advisor, admin
+import '@reluna-ui/ui/styles';
+import '@reluna-ui/themes/family'; // or advisor, admin
 
 export default function RootLayout({ children }) {
   return (
@@ -74,7 +74,7 @@ export function ThemeSwitcher({ theme }: { theme: 'family' | 'advisor' | 'admin'
     // Add new theme
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = `/@your-org/themes/${theme}.css`;
+    link.href = `/@reluna-ui/themes/${theme}.css`;
     link.setAttribute('data-theme', theme);
     document.head.appendChild(link);
   }, [theme]);
@@ -100,7 +100,7 @@ Each theme defines the following CSS variables:
 - `--primary` - Primary brand color
 - `--primary-foreground` - Text color on primary background
 
-These variables are used by the `@your-org/ui` components.
+These variables are used by the `@reluna-ui/ui` components.
 
 ## License
 

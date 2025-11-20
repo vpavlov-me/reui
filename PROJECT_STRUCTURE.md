@@ -92,7 +92,7 @@ design-system/
 
 ## Package Descriptions
 
-### @your-org/ui
+### @reluna-ui/ui
 
 Core component library with:
 - Button component with multiple variants
@@ -106,7 +106,7 @@ Core component library with:
 - Styles: `dist/styles/globals.css`
 - Types: `dist/index.d.ts`
 
-### @your-org/themes
+### @reluna-ui/themes
 
 Theme CSS files for three portals:
 - Family Portal (orange #FB6428)
@@ -116,11 +116,11 @@ Theme CSS files for three portals:
 Each theme includes light and dark mode variants.
 
 **Entry points:**
-- `@your-org/themes/family`
-- `@your-org/themes/advisor`
-- `@your-org/themes/admin`
+- `@reluna-ui/themes/family`
+- `@reluna-ui/themes/advisor`
+- `@reluna-ui/themes/admin`
 
-### @your-org/icons
+### @reluna-ui/icons
 
 Icon components wrapping Lucide Icons:
 - Re-exports all Lucide icons
@@ -130,7 +130,7 @@ Icon components wrapping Lucide Icons:
 **Entry point:**
 - Main: `dist/index.js` and `dist/index.mjs`
 
-### @your-org/showcase
+### @reluna-ui/showcase
 
 Next.js application showcasing all components:
 - Interactive theme switcher
@@ -293,7 +293,7 @@ Packages are published to npm registry:
 
 Showcase deployed to:
 - Branch: gh-pages
-- URL: https://your-org.github.io/design-system/
+- URL: https://reluna-ui.github.io/design-system/
 - Updated on every main branch push
 
 ## Development Workflow

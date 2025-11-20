@@ -64,11 +64,11 @@ Or see [fonts README](./packages/ui/fonts/PPObjectSans/README.md) to use system 
 
 ### How do I change the package names?
 
-Replace `@your-org` everywhere:
+Replace `@reluna-ui` everywhere:
 
 ```bash
 # macOS/Linux
-find . -type f -name "*.json" -exec sed -i '' 's/@your-org/@mycompany/g' {} +
+find . -type f -name "*.json" -exec sed -i '' 's/@reluna-ui/@mycompany/g' {} +
 
 # Or manually update each package.json
 ```
@@ -133,7 +133,7 @@ Check:
    pnpm link --global
 
    cd /path/to/test-app
-   pnpm link --global @your-org/ui
+   pnpm link --global @reluna-ui/ui
    ```
 
 ### The build is slow, how can I speed it up?
@@ -185,7 +185,7 @@ No, changesets can version packages independently. Only changed packages are pub
 ### How do I unpublish a package?
 
 ```bash
-npm unpublish @your-org/ui@1.0.0 --force
+npm unpublish @reluna-ui/ui@1.0.0 --force
 ```
 
 Warning: Only unpublish within 72 hours. After that, you can only deprecate.
@@ -205,16 +205,16 @@ Yes, update `publishConfig` in package.json:
 ### How do I use this in my Next.js app?
 
 ```bash
-npm install @your-org/ui @your-org/themes
+npm install @reluna-ui/ui @reluna-ui/themes
 ```
 
 ```tsx
 // app/layout.tsx
-import '@your-org/ui/styles';
-import '@your-org/themes/family';
+import '@reluna-ui/ui/styles';
+import '@reluna-ui/themes/family';
 
 // app/page.tsx
-import { Button } from '@your-org/ui';
+import { Button } from '@reluna-ui/ui';
 
 export default function Page() {
   return <Button>Hello</Button>;
@@ -227,8 +227,8 @@ Yes! Same installation, similar setup:
 
 ```tsx
 // main.tsx
-import '@your-org/ui/styles';
-import '@your-org/themes/advisor';
+import '@reluna-ui/ui/styles';
+import '@reluna-ui/themes/advisor';
 ```
 
 ### What about Remix?
@@ -236,7 +236,7 @@ import '@your-org/themes/advisor';
 Yes, import styles in `app/root.tsx`:
 
 ```tsx
-import styles from '@your-org/ui/styles';
+import styles from '@reluna-ui/ui/styles';
 export const links = () => [{ rel: 'stylesheet', href: styles }];
 ```
 
@@ -245,7 +245,7 @@ export const links = () => [{ rel: 'stylesheet', href: styles }];
 Yes, tree-shaking works automatically:
 
 ```tsx
-import { Button } from '@your-org/ui'; // Only Button is bundled
+import { Button } from '@reluna-ui/ui'; // Only Button is bundled
 ```
 
 ### How do I override styles?
@@ -277,8 +277,8 @@ pnpm install
 ### Components don't have styles
 
 Check:
-1. Imported global styles? `import '@your-org/ui/styles'`
-2. Imported theme? `import '@your-org/themes/family'`
+1. Imported global styles? `import '@reluna-ui/ui/styles'`
+2. Imported theme? `import '@reluna-ui/themes/family'`
 3. Tailwind configured? Check `tailwind.config.js`
 
 ### Dark mode not working
@@ -289,8 +289,8 @@ Check:
 
 ### Icons not showing
 
-1. Did you install? `npm install @your-org/icons`
-2. Did you import? `import { Heart } from '@your-org/icons'`
+1. Did you install? `npm install @reluna-ui/icons`
+2. Did you import? `import { Heart } from '@reluna-ui/icons'`
 3. Check console for errors
 
 ### Showcase app won't start
@@ -311,9 +311,9 @@ Check:
 ### How big are the bundles?
 
 Approximate sizes (minified):
-- `@your-org/ui`: ~50KB + components used
-- `@your-org/themes`: ~2KB per theme
-- `@your-org/icons`: ~5KB + icons used
+- `@reluna-ui/ui`: ~50KB + components used
+- `@reluna-ui/themes`: ~2KB per theme
+- `@reluna-ui/icons`: ~5KB + icons used
 
 Tree-shaking reduces actual bundle size.
 

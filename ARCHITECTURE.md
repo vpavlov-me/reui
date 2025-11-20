@@ -9,7 +9,7 @@ Visual guide to the design system architecture.
 │                     Design System                           │
 │                                                              │
 │  ┌────────────────┐  ┌────────────────┐  ┌──────────────┐ │
-│  │   @your-org/ui │  │@your-org/themes│  │@your-org/icons│ │
+│  │   @reluna-ui/ui │  │@reluna-ui/themes│  │@reluna-ui/icons│ │
 │  │                │  │                │  │              │ │
 │  │  - Components  │  │  - Family CSS  │  │  - Lucide    │ │
 │  │  - Utilities   │  │  - Advisor CSS │  │  - Wrapper   │ │
@@ -32,23 +32,23 @@ Visual guide to the design system architecture.
 ## Package Dependencies
 
 ```
-@your-org/ui
+@reluna-ui/ui
 ├── @radix-ui/react-slot
 ├── class-variance-authority
 ├── clsx
 ├── tailwind-merge
 └── lucide-react (peer)
 
-@your-org/themes
+@reluna-ui/themes
 └── (no dependencies)
 
-@your-org/icons
+@reluna-ui/icons
 └── lucide-react (peer)
 
-@your-org/showcase
-├── @your-org/ui (workspace)
-├── @your-org/themes (workspace)
-├── @your-org/icons (workspace)
+@reluna-ui/showcase
+├── @reluna-ui/ui (workspace)
+├── @reluna-ui/themes (workspace)
+├── @reluna-ui/icons (workspace)
 ├── next
 ├── react
 └── react-dom
@@ -256,9 +256,9 @@ Changesets Action
     ▼
 npm Publish
     │
-    ├── @your-org/ui → npm
-    ├── @your-org/themes → npm
-    └── @your-org/icons → npm
+    ├── @reluna-ui/ui → npm
+    ├── @reluna-ui/themes → npm
+    └── @reluna-ui/icons → npm
     │
     ▼
 GitHub Pages Deploy
@@ -270,10 +270,10 @@ GitHub Pages Deploy
 
 ```
 User Code:
-  import { Button } from '@your-org/ui';
+  import { Button } from '@reluna-ui/ui';
 
 Node.js Resolution:
-  1. Check node_modules/@your-org/ui/
+  1. Check node_modules/@reluna-ui/ui/
   2. Read package.json
   3. Use "exports" field:
      - ESM: dist/index.mjs
@@ -285,12 +285,12 @@ Node.js Resolution:
 ## CSS Cascade
 
 ```
-1. Base Styles (@your-org/ui/styles)
+1. Base Styles (@reluna-ui/ui/styles)
    ├── Tailwind base
    ├── CSS variables (neutral)
    └── Component defaults
 
-2. Theme Override (@your-org/themes/[portal])
+2. Theme Override (@reluna-ui/themes/[portal])
    ├── --primary color
    └── --primary-foreground color
 
@@ -386,9 +386,9 @@ Customization Options
 ```
 Bundle Size
     │
-    ├── @your-org/ui: ~50KB (minified)
-    ├── @your-org/themes: ~2KB (each theme)
-    └── @your-org/icons: ~5KB + icons used
+    ├── @reluna-ui/ui: ~50KB (minified)
+    ├── @reluna-ui/themes: ~2KB (each theme)
+    └── @reluna-ui/icons: ~5KB + icons used
 
 Load Time
     │
@@ -408,9 +408,9 @@ Runtime Performance
 ```
 npm Registry
     │
-    ├── @your-org/ui
-    ├── @your-org/themes
-    └── @your-org/icons
+    ├── @reluna-ui/ui
+    ├── @reluna-ui/themes
+    └── @reluna-ui/icons
 
 GitHub Pages
     │

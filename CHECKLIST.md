@@ -42,7 +42,7 @@ pnpm dev
 
 ### Update Organization Name
 
-**Replace `@your-org` with your actual organization:**
+**Replace `@reluna-ui` with your actual organization:**
 
 Files to update:
 - [ ] `packages/ui/package.json`
@@ -57,11 +57,11 @@ Files to update:
 find . -type f \( -name "*.json" -o -name "*.md" -o -name "*.tsx" -o -name "*.ts" \) \
   -not -path "*/node_modules/*" \
   -not -path "*/.git/*" \
-  -exec sed -i '' 's/@your-org/@mycompany/g' {} +
+  -exec sed -i '' 's/@reluna-ui/@mycompany/g' {} +
 ```
 
 **After replacing:**
-- [ ] Search project for `@your-org` - should find nothing
+- [ ] Search project for `@reluna-ui` - should find nothing
 - [ ] Reinstall: `rm -rf node_modules pnpm-lock.yaml && pnpm install`
 - [ ] Rebuild: `pnpm build`
 

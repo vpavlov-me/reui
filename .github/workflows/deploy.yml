@@ -48,10 +48,10 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build packages
-        run: pnpm --filter "@your-org/ui" --filter "@your-org/themes" --filter "@your-org/icons" build
+        run: pnpm --filter "@reluna-ui/ui" --filter "@reluna-ui/themes" --filter "@reluna-ui/icons" build
 
       - name: Build showcase
-        run: pnpm --filter "@your-org/showcase" build
+        run: pnpm --filter "@reluna-ui/showcase" build
         env:
           NODE_ENV: production
 

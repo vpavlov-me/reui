@@ -5,7 +5,7 @@ export default function Home() {
     <div className="container py-10">
       {/* Hero Section */}
       <section className="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
-        <h1 className="text-center text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">
+        <h1 className="text-center text-3xl font-medium leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">
           Build your component library
         </h1>
         <span className="max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl">
@@ -34,7 +34,7 @@ export default function Home() {
         <div className="relative overflow-hidden rounded-lg border bg-background p-2">
           <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
             <div className="space-y-2">
-              <h3 className="font-bold">Multi-Portal Theming</h3>
+              <h3 className="font-medium">Multi-Portal Theming</h3>
               <p className="text-sm text-muted-foreground">
                 Switch between Family, Advisor, and Admin themes with CSS
                 variables.
@@ -45,7 +45,7 @@ export default function Home() {
         <div className="relative overflow-hidden rounded-lg border bg-background p-2">
           <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
             <div className="space-y-2">
-              <h3 className="font-bold">Accessible Components</h3>
+              <h3 className="font-medium">Accessible Components</h3>
               <p className="text-sm text-muted-foreground">
                 Built on Radix UI primitives for full accessibility support.
               </p>
@@ -55,7 +55,7 @@ export default function Home() {
         <div className="relative overflow-hidden rounded-lg border bg-background p-2">
           <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
             <div className="space-y-2">
-              <h3 className="font-bold">TypeScript First</h3>
+              <h3 className="font-medium">TypeScript First</h3>
               <p className="text-sm text-muted-foreground">
                 Full TypeScript support with proper type definitions.
               </p>
@@ -66,7 +66,7 @@ export default function Home() {
 
       {/* Color Preview */}
       <section className="mx-auto max-w-[980px] py-8 md:py-12">
-        <h2 className="mb-4 text-center text-2xl font-bold">Theme Preview</h2>
+        <h2 className="mb-4 text-center text-2xl font-medium">Theme Preview</h2>
         <p className="mb-8 text-center text-muted-foreground">
           Use the portal switcher in the header to see how the primary color
           changes across different portals.

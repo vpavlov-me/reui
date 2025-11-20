@@ -83,8 +83,39 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@your-org/ui";
+} from "@reluna-ui/ui";
 import { AlertCircle, Bold, ChevronDown, Menu, Terminal, User } from "lucide-react";
+
+// List of all component sections for sidebar navigation
+const componentList = [
+  "Accordion",
+  "Alert",
+  "Alert Dialog",
+  "Avatar",
+  "Badge",
+  "Button",
+  "Card",
+  "Checkbox",
+  "Dialog",
+  "Dropdown Menu",
+  "Input",
+  "Label",
+  "Popover",
+  "Progress",
+  "Radio Group",
+  "Scroll Area",
+  "Select",
+  "Separator",
+  "Sheet",
+  "Skeleton",
+  "Slider",
+  "Switch",
+  "Table",
+  "Tabs",
+  "Textarea",
+  "Toggle",
+  "Tooltip",
+];
 
 function ComponentSection({
   title,
@@ -93,9 +124,10 @@ function ComponentSection({
   title: string;
   children: React.ReactNode;
 }) {
+  const id = title.toLowerCase().replace(/\s+/g, "-");
   return (
-    <div className="space-y-4">
-      <h2 className="text-2xl font-bold tracking-tight">{title}</h2>
+    <div id={id} className="space-y-4 scroll-mt-20">
+      <h2 className="text-2xl font-medium tracking-tight">{title}</h2>
       <div className="rounded-lg border bg-card p-6">{children}</div>
     </div>
   );
@@ -112,16 +144,41 @@ export default function ComponentsPage() {
   return (
     <TooltipProvider>
       <div className="container py-10">
-        <div className="mx-auto max-w-[980px] space-y-8">
-          <div className="space-y-2">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
-              Components
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Explore all available components with live demos. Switch themes using
-              the portal switcher in the header.
-            </p>
-          </div>
+        <div className="flex gap-10">
+          {/* Sidebar */}
+          <aside className="hidden lg:block w-64 shrink-0">
+            <div className="sticky top-20">
+              <h4 className="font-semibold mb-4 text-sm">Components</h4>
+              <ScrollArea className="h-[calc(100vh-10rem)]">
+                <nav className="space-y-1">
+                  {componentList.map((name) => {
+                    const id = name.toLowerCase().replace(/\s+/g, "-");
+                    return (
+                      <a
+                        key={name}
+                        href={`#${id}`}
+                        className="block py-1.5 px-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors"
+                      >
+                        {name}
+                      </a>
+                    );
+                  })}
+                </nav>
+              </ScrollArea>
+            </div>
+          </aside>
+
+          {/* Main content */}
+          <div className="flex-1 min-w-0 space-y-8">
+            <div className="space-y-2">
+              <h1 className="text-3xl font-medium tracking-tight md:text-4xl">
+                Components
+              </h1>
+              <p className="text-lg text-muted-foreground">
+                Explore all available components with live demos. Switch themes using
+                the portal switcher in the header.
+              </p>
+            </div>
 
           {/* Accordion */}
           <ComponentSection title="Accordion">
@@ -619,6 +676,7 @@ export default function ComponentsPage() {
               </TooltipContent>
             </Tooltip>
           </ComponentSection>
+          </div>
         </div>
       </div>
     </TooltipProvider>

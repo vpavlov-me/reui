@@ -7,7 +7,7 @@ This guide explains how to publish packages to npm.
 1. **npm account**: Create an account at [npmjs.com](https://www.npmjs.com/)
 2. **npm token**: Generate a token at [npmjs.com/settings/tokens](https://www.npmjs.com/settings/tokens)
 3. **GitHub repository**: Push your code to GitHub
-4. **Organization**: Create an npm organization (e.g., `@your-org`)
+4. **Organization**: Create an npm organization (e.g., `@reluna-ui`)
 
 ## Setup
 
@@ -24,7 +24,7 @@ Add `NPM_TOKEN` to your GitHub repository secrets:
 
 ### 2. Update Package Names
 
-Replace `@your-org` with your actual organization name in:
+Replace `@reluna-ui` with your actual organization name in:
 
 - All `package.json` files
 - `README.md`
@@ -184,7 +184,7 @@ pnpm lint
 After publishing:
 
 - [ ] Verify packages on npmjs.com
-- [ ] Test installation: `npm install @your-org/ui`
+- [ ] Test installation: `npm install @reluna-ui/ui`
 - [ ] Check showcase deployment on GitHub Pages
 - [ ] Update documentation if needed
 - [ ] Announce release (Twitter, blog, etc.)

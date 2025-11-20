@@ -3,9 +3,15 @@
 import * as React from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { Moon, Sun } from "lucide-react";
+import { ChevronDown, Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeSwitcher } from "./theme-switcher";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@reluna-ui/ui";
 
 export function SiteHeader() {
   const { theme, setTheme } = useTheme();
@@ -20,7 +26,7 @@ export function SiteHeader() {
       <div className="container flex h-14 items-center">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold text-xl">reui</span>
+            <span className="font-medium text-xl">Reluna UI</span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             <Link
@@ -36,11 +42,31 @@ export function SiteHeader() {
               Themes
             </Link>
             <Link
-              href="/templates/dashboard"
+              href="/docs/colors"
               className="transition-colors hover:text-foreground/80 text-foreground/60"
             >
-              Templates
+              Colors
             </Link>
+            <Link
+              href="/docs/charts"
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
+            >
+              Charts
+            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 transition-colors hover:text-foreground/80 text-foreground/60">
+                Templates
+                <ChevronDown className="h-3 w-3" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start">
+                <DropdownMenuItem asChild>
+                  <Link href="/templates/dashboard">Dashboard</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/templates/profile">Profile</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-4">

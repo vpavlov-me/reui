@@ -5,7 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  transpilePackages: ['@your-org/ui', '@your-org/icons', '@your-org/themes'],
+  transpilePackages: ['@reluna-ui/ui', '@reluna-ui/icons', '@reluna-ui/themes'],
 };
 
 export default nextConfig;

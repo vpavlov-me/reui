@@ -14,7 +14,7 @@ import {
   Input,
   Separator,
   Badge,
-} from "@your-org/ui";
+} from "@reluna-ui/ui";
 import {
   Home,
   ChevronRight,
@@ -66,9 +66,9 @@ export default function DashboardTemplate() {
     <div className="min-h-screen bg-muted/30">
       {/* Top Navigation */}
       <div className="border-b bg-background">
-        <div className="container flex h-14 items-center justify-between">
+        <div className="container max-w-[1048px] flex h-14 items-center justify-between">
           <div className="flex items-center gap-6">
-            <Link href="/templates/dashboard" className="font-bold text-xl flex items-center gap-1">
+            <Link href="/templates/dashboard" className="font-medium text-xl flex items-center gap-1">
               <span className="text-primary">(RE:</span>
               <span>Family</span>
             </Link>
@@ -104,7 +104,7 @@ export default function DashboardTemplate() {
 
       {/* Breadcrumb & Status Bar */}
       <div className="border-b bg-background">
-        <div className="container flex h-12 items-center justify-between">
+        <div className="container max-w-[1048px] flex h-12 items-center justify-between">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Home className="h-4 w-4" />
             <ChevronRight className="h-3 w-3" />
@@ -126,7 +126,7 @@ export default function DashboardTemplate() {
         </div>
       </div>
 
-      <div className="container py-6 space-y-6">
+      <div className="container max-w-[1048px] py-4 space-y-4">
         {/* Welcome Banner */}
         <Card className="bg-gradient-to-r from-primary/80 to-primary border-0 text-white overflow-hidden">
           <CardContent className="py-4">
@@ -164,7 +164,7 @@ export default function DashboardTemplate() {
                     <item.icon className="h-5 w-5" />
                   </div>
                   <div>
-                    <div className="text-2xl font-bold">{item.value}</div>
+                    <div className="text-2xl font-medium">{item.value}</div>
                     <div className="text-sm text-muted-foreground">{item.label}</div>
                     <Button variant="link" className="h-auto p-0 text-primary text-sm">
                       See More <ChevronRight className="h-3 w-3 ml-1" />
@@ -202,7 +202,7 @@ export default function DashboardTemplate() {
         </Card>
 
         {/* Meetings & Activity */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-4">
           {/* Upcoming Meetings */}
           <Card>
             <CardHeader className="pb-4">
@@ -298,7 +298,7 @@ export default function DashboardTemplate() {
         <footer className="pt-6 border-t">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="font-bold text-lg mb-4 flex items-center gap-1">
+              <div className="font-medium text-lg mb-4 flex items-center gap-1">
                 <span className="text-primary">(RE:</span>
                 <span>Family</span>
               </div>

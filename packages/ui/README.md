@@ -1,15 +1,15 @@
-# @your-org/ui
+# @reluna-ui/ui
 
 Core UI components based on Shadcn UI for multi-portal design system.
 
 ## Installation
 
 ```bash
-npm install @your-org/ui @your-org/themes
+npm install @reluna-ui/ui @reluna-ui/themes
 # or
-pnpm add @your-org/ui @your-org/themes
+pnpm add @reluna-ui/ui @reluna-ui/themes
 # or
-yarn add @your-org/ui @your-org/themes
+yarn add @reluna-ui/ui @reluna-ui/themes
 ```
 
 ## Usage
@@ -17,13 +17,13 @@ yarn add @your-org/ui @your-org/themes
 ### Import Styles
 
 ```tsx
-import '@your-org/ui/styles';
+import '@reluna-ui/ui/styles';
 ```
 
 ### Import Components
 
 ```tsx
-import { Button, Card, Input } from '@your-org/ui';
+import { Button, Card, Input } from '@reluna-ui/ui';
 
 export default function App() {
   return (
@@ -38,7 +38,7 @@ export default function App() {
 ### Utilities
 
 ```tsx
-import { cn } from '@your-org/ui';
+import { cn } from '@reluna-ui/ui';
 
 // Merge Tailwind classes
 const className = cn('base-class', 'additional-class', conditionalClass && 'conditional');
@@ -64,7 +64,7 @@ Make sure your `tailwind.config.js` includes the UI package:
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@your-org/ui/dist/**/*.{js,mjs}',
+    './node_modules/@reluna-ui/ui/dist/**/*.{js,mjs}',
   ],
   // ... rest of config
 };
@@ -75,7 +75,7 @@ module.exports = {
 All components are fully typed with TypeScript.
 
 ```tsx
-import type { ButtonProps } from '@your-org/ui';
+import type { ButtonProps } from '@reluna-ui/ui';
 
 const CustomButton: React.FC<ButtonProps> = (props) => {
   return <Button {...props} />;

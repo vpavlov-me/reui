@@ -1,5 +1,5 @@
 {
-  "name": "@your-org/icons",
+  "name": "@reluna-ui/icons",
   "version": "0.1.0",
   "description": "Icon wrapper components using Lucide Icons",
   "main": "./dist/index.js",

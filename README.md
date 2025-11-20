@@ -19,18 +19,18 @@ Multi-portal design system based on Shadcn UI for Family, Advisor, and Admin por
 
 ## 📦 Packages
 
-- `@your-org/ui` - Core UI components based on Shadcn UI
-- `@your-org/themes` - Portal-specific theme configurations
-- `@your-org/icons` - Icon components using Lucide Icons
+- `@reluna-ui/ui` - Core UI components based on Shadcn UI
+- `@reluna-ui/themes` - Portal-specific theme configurations
+- `@reluna-ui/icons` - Icon components using Lucide Icons
 
 ## 🚀 Installation
 
 ```bash
-npm install @your-org/ui @your-org/themes @your-org/icons
+npm install @reluna-ui/ui @reluna-ui/themes @reluna-ui/icons
 # or
-pnpm add @your-org/ui @your-org/themes @your-org/icons
+pnpm add @reluna-ui/ui @reluna-ui/themes @reluna-ui/icons
 # or
-yarn add @your-org/ui @your-org/themes @your-org/icons
+yarn add @reluna-ui/ui @reluna-ui/themes @reluna-ui/icons
 ```
 
 ## 📖 Usage
@@ -41,19 +41,19 @@ Choose the appropriate theme for your portal:
 
 ```tsx
 // Family Portal
-import '@your-org/themes/family';
+import '@reluna-ui/themes/family';
 
 // Advisor Portal
-import '@your-org/themes/advisor';
+import '@reluna-ui/themes/advisor';
 
 // Admin Portal
-import '@your-org/themes/admin';
+import '@reluna-ui/themes/admin';
 ```
 
 ### 2. Import base styles
 
 ```tsx
-import '@your-org/ui/styles';
+import '@reluna-ui/ui/styles';
 ```
 
 ### 3. Configure Tailwind
@@ -67,7 +67,7 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@your-org/ui/dist/**/*.{js,mjs}',
+    './node_modules/@reluna-ui/ui/dist/**/*.{js,mjs}',
   ],
   theme: {
     extend: {
@@ -123,8 +123,8 @@ module.exports = {
 ### 4. Use components
 
 ```tsx
-import { Button, Card, Input } from '@your-org/ui';
-import { Heart, Settings } from '@your-org/icons';
+import { Button, Card, Input } from '@reluna-ui/ui';
+import { Heart, Settings } from '@reluna-ui/icons';
 
 export default function MyApp() {
   return (
@@ -163,7 +163,7 @@ export default function App() {
 
 ## 🖼️ Components
 
-See live examples at: [https://your-org.github.io/design-system/](https://your-org.github.io/design-system/)
+See live examples at: [https://reluna-ui.github.io/design-system/](https://reluna-ui.github.io/design-system/)
 
 ### Available Components
 
@@ -197,8 +197,8 @@ pnpm release
 
 ```tsx
 // app/layout.tsx
-import '@your-org/ui/styles';
-import '@your-org/themes/family';
+import '@reluna-ui/ui/styles';
+import '@reluna-ui/themes/family';
 
 export default function RootLayout({ children }) {
   return (
@@ -213,8 +213,8 @@ export default function RootLayout({ children }) {
 
 ```tsx
 // main.tsx
-import '@your-org/ui/styles';
-import '@your-org/themes/advisor';
+import '@reluna-ui/ui/styles';
+import '@reluna-ui/themes/advisor';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 
@@ -225,8 +225,8 @@ createRoot(document.getElementById('root')!).render(<App />);
 
 ```tsx
 // app/root.tsx
-import styles from '@your-org/ui/styles';
-import theme from '@your-org/themes/admin';
+import styles from '@reluna-ui/ui/styles';
+import theme from '@reluna-ui/themes/admin';
 
 export const links = () => [
   { rel: 'stylesheet', href: styles },

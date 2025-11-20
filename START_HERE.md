@@ -51,26 +51,26 @@ Open http://localhost:3000 → See your design system in action!
 
 ### Packages (Ready to Publish)
 
-**@your-org/ui** - Component library
+**@reluna-ui/ui** - Component library
 ```bash
-npm install @your-org/ui
+npm install @reluna-ui/ui
 ```
 - Button (6 variants, 4 sizes)
 - Card components
 - Input fields
 - Utility functions
 
-**@your-org/themes** - Portal themes
+**@reluna-ui/themes** - Portal themes
 ```bash
-npm install @your-org/themes
+npm install @reluna-ui/themes
 ```
 - Family Portal (orange)
 - Advisor Portal (blue)
 - Admin Portal (lime)
 
-**@your-org/icons** - Icon library
+**@reluna-ui/icons** - Icon library
 ```bash
-npm install @your-org/icons
+npm install @reluna-ui/icons
 ```
 - All Lucide icons
 - Type-safe wrapper
@@ -86,10 +86,10 @@ Interactive demo at `apps/showcase/`
 ## 🎨 Usage Example
 
 ```tsx
-import '@your-org/ui/styles';
-import '@your-org/themes/family';
-import { Button, Card } from '@your-org/ui';
-import { Heart } from '@your-org/icons';
+import '@reluna-ui/ui/styles';
+import '@reluna-ui/themes/family';
+import { Button, Card } from '@reluna-ui/ui';
+import { Heart } from '@reluna-ui/icons';
 
 export default function App() {
   return (

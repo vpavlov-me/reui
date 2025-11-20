@@ -6,20 +6,20 @@ Complete overview of the npm-ready design system monorepo.
 
 ### Three Publishable Packages
 
-1. **@your-org/ui** - Core component library
+1. **@reluna-ui/ui** - Core component library
    - Button (6 variants, 4 sizes)
    - Card (with Header, Title, Description, Content, Footer)
    - Input (with all HTML input types)
    - Utilities (cn for class merging)
    - Base Tailwind styles
 
-2. **@your-org/themes** - Portal themes
+2. **@reluna-ui/themes** - Portal themes
    - Family Portal (Orange #FB6428)
    - Advisor Portal (Blue #005CCD)
    - Admin Portal (Lime #8FCD00)
    - Dark mode support for all
 
-3. **@your-org/icons** - Icon library
+3. **@reluna-ui/icons** - Icon library
    - All Lucide icons re-exported
    - Custom IconWrapper component
    - Full TypeScript support
@@ -103,14 +103,14 @@ pnpm dev
 
 ```bash
 # Install packages
-npm install @your-org/ui @your-org/themes @your-org/icons
+npm install @reluna-ui/ui @reluna-ui/themes @reluna-ui/icons
 ```
 
 ```tsx
 // Use in your app
-import '@your-org/ui/styles';
-import '@your-org/themes/family';
-import { Button } from '@your-org/ui';
+import '@reluna-ui/ui/styles';
+import '@reluna-ui/themes/family';
+import { Button } from '@reluna-ui/ui';
 
 export default function App() {
   return <Button>Hello World</Button>;
@@ -139,7 +139,7 @@ export default function App() {
 ✓ SUMMARY.md            - This file
 ```
 
-### Package: @your-org/ui (15 files)
+### Package: @reluna-ui/ui (15 files)
 
 ```
 ✓ package.json          - Package config
@@ -161,7 +161,7 @@ export default function App() {
 ✓ src/components/input/index.ts
 ```
 
-### Package: @your-org/themes (6 files)
+### Package: @reluna-ui/themes (6 files)
 
 ```
 ✓ package.json          - Package config
@@ -172,7 +172,7 @@ export default function App() {
 ✓ src/admin.css         - Admin portal theme
 ```
 
-### Package: @your-org/icons (5 files)
+### Package: @reluna-ui/icons (5 files)
 
 ```
 ✓ package.json          - Package config
@@ -229,7 +229,7 @@ export default function App() {
 ### Easy to Customize
 
 1. **Package Names**
-   - Replace `@your-org` with your organization
+   - Replace `@reluna-ui` with your organization
    - Update in all package.json files
 
 2. **Colors**
@@ -286,7 +286,7 @@ export default function App() {
    - Or remove font references for system fonts
 
 2. **Update Organization Name**
-   - Replace `@your-org` throughout
+   - Replace `@reluna-ui` throughout
    - Update in package.json files
    - Update in documentation
 
@@ -320,7 +320,7 @@ pnpm release
 
 1. **Test Installation**
    ```bash
-   npm install @your-org/ui
+   npm install @reluna-ui/ui
    ```
 
 2. **Check Showcase**

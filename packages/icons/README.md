@@ -1,15 +1,15 @@
-# @your-org/icons
+# @reluna-ui/icons
 
 Icon components using Lucide Icons for the design system.
 
 ## Installation
 
 ```bash
-npm install @your-org/icons
+npm install @reluna-ui/icons
 # or
-pnpm add @your-org/icons
+pnpm add @reluna-ui/icons
 # or
-yarn add @your-org/icons
+yarn add @reluna-ui/icons
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ yarn add @your-org/icons
 All Lucide icons are re-exported:
 
 ```tsx
-import { Heart, Settings, Menu, X } from '@your-org/icons';
+import { Heart, Settings, Menu, X } from '@reluna-ui/icons';
 
 export default function App() {
   return (
@@ -36,7 +36,7 @@ export default function App() {
 Use the `IconWrapper` component for custom icon rendering:
 
 ```tsx
-import { IconWrapper, Heart } from '@your-org/icons';
+import { IconWrapper, Heart } from '@reluna-ui/icons';
 
 export default function CustomIcon() {
   return <IconWrapper icon={Heart} className="h-8 w-8 text-primary" />;
@@ -46,8 +46,8 @@ export default function CustomIcon() {
 ### With Buttons
 
 ```tsx
-import { Button } from '@your-org/ui';
-import { Download, Share2 } from '@your-org/icons';
+import { Button } from '@reluna-ui/ui';
+import { Download, Share2 } from '@reluna-ui/icons';
 
 export default function ButtonWithIcon() {
   return (
@@ -110,7 +110,7 @@ Common size patterns:
 Full TypeScript support included:
 
 ```tsx
-import type { LucideProps } from '@your-org/icons';
+import type { LucideProps } from '@reluna-ui/icons';
 
 const CustomIcon: React.FC<LucideProps> = (props) => {
   return <Heart {...props} />;

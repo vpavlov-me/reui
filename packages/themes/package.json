@@ -1,5 +1,5 @@
 {
-  "name": "@your-org/themes",
+  "name": "@reluna-ui/themes",
   "version": "0.1.0",
   "description": "Portal themes for the design system",
   "main": "./dist/index.js",

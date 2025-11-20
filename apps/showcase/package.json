@@ -1,5 +1,5 @@
 {
-  "name": "@your-org/showcase",
+  "name": "@reluna-ui/showcase",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@your-org/icons": "workspace:*",
-    "@your-org/themes": "workspace:*",
-    "@your-org/ui": "workspace:*",
+    "@reluna-ui/icons": "workspace:*",
+    "@reluna-ui/themes": "workspace:*",
+    "@reluna-ui/ui": "workspace:*",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.441.0",

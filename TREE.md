@@ -141,9 +141,9 @@ design-system/
 
 ```
 📦 Packages (3)
-   ├── @your-org/ui      (15 files)
-   ├── @your-org/themes  (6 files)
-   └── @your-org/icons   (5 files)
+   ├── @reluna-ui/ui      (15 files)
+   ├── @reluna-ui/themes  (6 files)
+   └── @reluna-ui/icons   (5 files)
 
 🎬 Apps (1)
    └── showcase          (10 files)
@@ -229,16 +229,16 @@ apps/showcase/out/
 User Code                           Package File
 ────────────────────────────────────────────────────────
 import { Button }                   packages/ui/dist/index.mjs
-  from '@your-org/ui';              └─ src/components/button/button.tsx
+  from '@reluna-ui/ui';              └─ src/components/button/button.tsx
 
-import '@your-org/ui/styles';       packages/ui/dist/styles/globals.css
+import '@reluna-ui/ui/styles';       packages/ui/dist/styles/globals.css
                                     └─ src/styles/globals.css
 
-import '@your-org/themes/family';   packages/themes/dist/family.css
+import '@reluna-ui/themes/family';   packages/themes/dist/family.css
                                     └─ src/family.css
 
 import { Heart }                    packages/icons/dist/index.mjs
-  from '@your-org/icons';           └─ re-export from lucide-react
+  from '@reluna-ui/icons';           └─ re-export from lucide-react
 ```
 
 ## Dependency Graph
@@ -282,7 +282,7 @@ icons
       └─ git commit
          └─ GitHub Actions
             └─ npm publish
-               └─ @your-org/ui@1.0.0
+               └─ @reluna-ui/ui@1.0.0
 ```
 
 ## Git Structure
@@ -309,20 +309,20 @@ Tracked Files:
 ## npm Package Structure
 
 ```
-@your-org/ui
+@reluna-ui/ui
 ├── dist/             Compiled code
 ├── fonts/            Font files
 ├── package.json      Package metadata
 ├── README.md         Package docs
 └── LICENSE           License file
 
-@your-org/themes
+@reluna-ui/themes
 ├── dist/             CSS files
 ├── package.json      Package metadata
 ├── README.md         Package docs
 └── LICENSE           License file
 
-@your-org/icons
+@reluna-ui/icons
 ├── dist/             Compiled code
 ├── package.json      Package metadata
 ├── README.md         Package docs
@@ -350,9 +350,9 @@ Root Workspace (design-system)
 │
 └── App Workspace (apps/showcase)
     └── Dependencies
-        ├── @your-org/ui (workspace)
-        ├── @your-org/themes (workspace)
-        ├── @your-org/icons (workspace)
+        ├── @reluna-ui/ui (workspace)
+        ├── @reluna-ui/themes (workspace)
+        ├── @reluna-ui/icons (workspace)
         ├── next
         ├── react
         └── react-dom

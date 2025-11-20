@@ -25,13 +25,13 @@ Open [http://localhost:3000](http://localhost:3000)
 ## 4. Use in Your App
 
 ```bash
-npm install @your-org/ui @your-org/themes @your-org/icons
+npm install @reluna-ui/ui @reluna-ui/themes @reluna-ui/icons
 ```
 
 ```tsx
-import '@your-org/ui/styles';
-import '@your-org/themes/family';
-import { Button } from '@your-org/ui';
+import '@reluna-ui/ui/styles';
+import '@reluna-ui/themes/family';
+import { Button } from '@reluna-ui/ui';
 
 export default function App() {
   return <Button>Hello World</Button>;

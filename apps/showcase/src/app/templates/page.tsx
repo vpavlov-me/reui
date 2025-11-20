@@ -7,7 +7,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@your-org/ui";
+} from "@reluna-ui/ui";
 import { LayoutDashboard, User, ArrowRight } from "lucide-react";
 
 const templates = [
@@ -29,7 +29,7 @@ export default function TemplatesPage() {
   return (
     <div className="container py-10">
       <div className="space-y-2 mb-8">
-        <h1 className="text-3xl font-bold">Page Templates</h1>
+        <h1 className="text-3xl font-medium">Page Templates</h1>
         <p className="text-muted-foreground">
           Example pages built with reui components for a Family Governance Portal
         </p>

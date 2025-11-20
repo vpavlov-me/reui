@@ -1,7 +1,7 @@
 ---
-"@your-org/ui": minor
-"@your-org/themes": minor
-"@your-org/icons": minor
+"@reluna-ui/ui": minor
+"@reluna-ui/themes": minor
+"@reluna-ui/icons": minor
 ---
 
 Initial release of the design system with core components, themes, and icons.

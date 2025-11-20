@@ -51,7 +51,7 @@ This starts:
 
 ### Update Organization Name
 
-Replace `@your-org` with your organization name:
+Replace `@reluna-ui` with your organization name:
 
 1. Search and replace in all `package.json` files
 2. Update imports in example code
@@ -60,7 +60,7 @@ Replace `@your-org` with your organization name:
 Example with bash:
 
 ```bash
-find . -type f -name "package.json" -exec sed -i '' 's/@your-org/@mycompany/g' {} +
+find . -type f -name "package.json" -exec sed -i '' 's/@reluna-ui/@mycompany/g' {} +
 ```
 
 ### Update Portal Colors
@@ -107,7 +107,7 @@ cd packages/ui
 pnpm link --global
 
 # In your app directory
-pnpm link --global @your-org/ui
+pnpm link --global @reluna-ui/ui
 ```
 
 #### Using Relative Path
@@ -117,7 +117,7 @@ In your app's `package.json`:
 ```json
 {
   "dependencies": {
-    "@your-org/ui": "file:../design-system/packages/ui"
+    "@reluna-ui/ui": "file:../design-system/packages/ui"
   }
 }
 ```
@@ -126,7 +126,7 @@ In your app's `package.json`:
 
 1. Build packages: `pnpm build`
 2. Pack packages: `cd packages/ui && npm pack`
-3. Install in test project: `npm install /path/to/your-org-ui-0.1.0.tgz`
+3. Install in test project: `npm install /path/to/reluna-ui-ui-0.1.0.tgz`
 
 ## Project Structure
 
@@ -182,7 +182,7 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 For production:
 
 ```env
-NEXT_PUBLIC_SITE_URL=https://your-org.github.io/design-system
+NEXT_PUBLIC_SITE_URL=https://reluna-ui.github.io/design-system
 ```
 
 ## Troubleshooting
@@ -230,7 +230,7 @@ pnpm install
 
 Need help? Check:
 
-1. [GitHub Issues](https://github.com/your-org/design-system/issues)
+1. [GitHub Issues](https://github.com/reluna-ui/design-system/issues)
 2. [Shadcn UI Docs](https://ui.shadcn.com)
 3. [Changesets Docs](https://github.com/changesets/changesets)
 4. [Turborepo Docs](https://turbo.build/repo)
