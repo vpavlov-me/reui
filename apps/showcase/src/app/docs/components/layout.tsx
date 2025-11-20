@@ -129,7 +129,7 @@ export default function ComponentsLayout({
   return (
     <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)_200px] lg:gap-10">
       {/* Left Sidebar - Components List */}
-      <aside className="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block">
+      <aside className="hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:top-14 md:block">
         <ScrollArea className="h-full py-6 pr-6 lg:py-8">
           <div className="space-y-4">
             <div>
@@ -173,10 +173,10 @@ export default function ComponentsLayout({
 
       {/* Right Sidebar - Table of Contents */}
       {!isOverviewPage && (
-        <aside className="hidden lg:block">
-          <nav className="sticky top-16 -mt-6 pt-6 text-sm">
+        <aside className="hidden text-sm lg:block">
+          <div className="sticky top-14 -mt-10 pt-4 lg:pt-8">
             <TableOfContents />
-          </nav>
+          </div>
         </aside>
       )}
     </div>
