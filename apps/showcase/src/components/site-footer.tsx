@@ -7,7 +7,7 @@ export function SiteFooter() {
     <footer className="border-t bg-background/90 backdrop-blur">
       <div className="container flex flex-col gap-3 py-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
         <p>
-          Создано с любовью командой{" "}
+          Built with love by{" "}
           <Link
             href="https://reluna.family/"
             className="text-foreground underline underline-offset-4"
