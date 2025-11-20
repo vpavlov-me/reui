@@ -84,7 +84,7 @@ export function SiteHeader() {
           </div>
           <ThemeSwitcher />
           <a
-            href="https://github.com/anthropics/reluna-ui"
+            href="https://github.com/vpavlov-me/reui"
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
