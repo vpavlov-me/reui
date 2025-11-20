@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@reluna-ui/ui";
-import { LayoutDashboard, User, ArrowRight } from "lucide-react";
+import { LayoutDashboard, User, ArrowRight, ScrollText } from "lucide-react";
 
 const templates = [
   {
@@ -22,6 +22,12 @@ const templates = [
     description: "User profile page with tabs, contact info, personal details, and edit profile sheet modal",
     href: "/templates/profile",
     icon: User,
+  },
+  {
+    title: "Constitution",
+    description: "Family constitution workspace with sections, quick actions, and governance guidance",
+    href: "/templates/constitution",
+    icon: ScrollText,
   },
 ];
 

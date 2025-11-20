@@ -65,6 +65,9 @@ export function SiteHeader() {
                 <DropdownMenuItem asChild>
                   <Link href="/templates/profile">Profile</Link>
                 </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/templates/constitution">Constitution</Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </nav>
