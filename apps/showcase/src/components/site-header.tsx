@@ -69,6 +69,9 @@ export function SiteHeader() {
                 <DropdownMenuItem asChild>
                   <Link href="/templates/constitution">Constitution</Link>
                 </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/templates/auth">Authentication</Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </nav>
