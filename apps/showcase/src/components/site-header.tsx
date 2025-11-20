@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { ChevronDown, Moon, Sun } from "lucide-react";
+import { ChevronDown, Moon, Sun, Github, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeSwitcher } from "./theme-switcher";
 import {
@@ -11,6 +11,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  Input,
 } from "@reluna-ui/ui";
 
 export function SiteHeader() {
@@ -72,8 +73,29 @@ export function SiteHeader() {
             </DropdownMenu>
           </nav>
         </div>
-        <div className="flex flex-1 items-center justify-end space-x-4">
+        <div className="flex flex-1 items-center justify-end space-x-2">
+          <div className="relative hidden md:block">
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <Input
+              type="search"
+              placeholder="Search components..."
+              className="h-9 w-64 pl-9 text-sm"
+            />
+          </div>
           <ThemeSwitcher />
+          <a
+            href="https://github.com/anthropics/reluna-ui"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors",
+              "hover:bg-accent hover:text-accent-foreground",
+              "h-9 w-9"
+            )}
+          >
+            <Github className="h-4 w-4" />
+            <span className="sr-only">GitHub</span>
+          </a>
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className={cn(
