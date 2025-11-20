@@ -55,7 +55,18 @@ export default function ProfileTemplate() {
   const [isEditOpen, setIsEditOpen] = React.useState(false);
 
   return (
-    <div className="min-h-screen bg-muted/30">
+    <div className="bg-muted/40 py-8 sm:py-12">
+      <div className="container space-y-6">
+        <div className="space-y-1">
+          <p className="text-sm text-muted-foreground">Template</p>
+          <h1 className="text-3xl font-medium">Family Profile</h1>
+          <p className="text-sm text-muted-foreground max-w-2xl">
+            Showcase a detailed family member record with timeline, tabs, and editable sheets
+            inside an isolated frame.
+          </p>
+        </div>
+        <div className="overflow-hidden rounded-[32px] border bg-background shadow-2xl ring-1 ring-black/5">
+          <div className="min-h-[720px] bg-muted/30">
       {/* Top Navigation */}
       <div className="border-b bg-background">
         <div className="container max-w-[1048px] flex h-14 items-center justify-between">
@@ -125,7 +136,7 @@ export default function ProfileTemplate() {
                 {/* About Me */}
                 <Card>
                   <CardHeader className="pb-3">
-                    <CardTitle className="text-base font-semibold">About Me</CardTitle>
+                    <CardTitle className="text-base">About Me</CardTitle>
                     <Separator />
                   </CardHeader>
                   <CardContent>
@@ -138,7 +149,7 @@ export default function ProfileTemplate() {
                 {/* Contact Information */}
                 <Card>
                   <CardHeader className="pb-3">
-                    <CardTitle className="text-base font-semibold">Contact Information</CardTitle>
+                    <CardTitle className="text-base">Contact Information</CardTitle>
                     <Separator />
                   </CardHeader>
                   <CardContent>
@@ -179,7 +190,7 @@ export default function ProfileTemplate() {
                 {/* Personal Details */}
                 <Card>
                   <CardHeader className="pb-3">
-                    <CardTitle className="text-base font-semibold">Personal Details</CardTitle>
+                    <CardTitle className="text-base">Personal Details</CardTitle>
                     <Separator />
                   </CardHeader>
                   <CardContent>
@@ -227,7 +238,7 @@ export default function ProfileTemplate() {
                 {/* Additional Information */}
                 <Card>
                   <CardHeader className="pb-3">
-                    <CardTitle className="text-base font-semibold">Additional Information</CardTitle>
+                    <CardTitle className="text-base">Additional Information</CardTitle>
                     <Separator />
                   </CardHeader>
                   <CardContent>
@@ -290,7 +301,7 @@ export default function ProfileTemplate() {
                     <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop&crop=face" alt="Logan Roy" />
                     <AvatarFallback>LR</AvatarFallback>
                   </Avatar>
-                  <h3 className="text-lg font-semibold">Logan Roy</h3>
+                  <h3 className="text-lg font-medium">Logan Roy</h3>
                   <p className="text-sm text-muted-foreground">Family Member · Roys</p>
                   <p className="text-sm text-muted-foreground">Member since July 2025</p>
 
@@ -469,7 +480,7 @@ export default function ProfileTemplate() {
           <CardContent className="py-6">
             <div className="grid md:grid-cols-2 gap-6 items-center">
               <div className="space-y-3">
-                <h3 className="text-lg font-semibold">Stay Updated</h3>
+                <h3 className="text-lg font-medium">Stay Updated</h3>
                 <p className="text-sm text-muted-foreground">
                   Get insights and update on family governance best practices delivered every two weeks
                 </p>
@@ -505,7 +516,7 @@ export default function ProfileTemplate() {
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Platform</h4>
+              <h4 className="font-medium mb-3">Platform</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>Family Constitution</li>
                 <li>Family Council</li>
@@ -514,7 +525,7 @@ export default function ProfileTemplate() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Education</h4>
+              <h4 className="font-medium mb-3">Education</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>Learning Paths</li>
                 <li>Mentorship</li>
@@ -522,7 +533,7 @@ export default function ProfileTemplate() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Legal</h4>
+              <h4 className="font-medium mb-3">Legal</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>Privacy Policy</li>
                 <li>Terms of Service</li>
@@ -541,6 +552,9 @@ export default function ProfileTemplate() {
             </div>
           </div>
         </footer>
+      </div>
+          </div>
+        </div>
       </div>
     </div>
   );

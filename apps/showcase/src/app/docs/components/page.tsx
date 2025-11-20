@@ -148,7 +148,7 @@ export default function ComponentsPage() {
           {/* Sidebar */}
           <aside className="hidden lg:block w-64 shrink-0">
             <div className="sticky top-20">
-              <h4 className="font-semibold mb-4 text-sm">Components</h4>
+              <h4 className="font-medium mb-4 text-sm">Components</h4>
               <ScrollArea className="h-[calc(100vh-10rem)]">
                 <nav className="space-y-1">
                   {componentList.map((name) => {

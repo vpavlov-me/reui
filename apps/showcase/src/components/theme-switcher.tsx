@@ -2,6 +2,13 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@reluna-ui/ui";
 
 type PortalTheme = "family" | "advisor" | "admin";
 
@@ -20,42 +27,20 @@ export function ThemeSwitcher({ className }: ThemeSwitcherProps) {
 
   return (
     <div className={cn("flex items-center gap-2", className)}>
-      <span className="text-sm font-medium text-muted-foreground">Portal:</span>
-      <div className="flex rounded-md border bg-muted p-1">
-        <button
-          onClick={() => setPortalTheme("family")}
-          className={cn(
-            "rounded px-3 py-1.5 text-sm font-medium transition-colors",
-            portalTheme === "family"
-              ? "bg-background text-foreground shadow-sm"
-              : "text-muted-foreground hover:text-foreground"
-          )}
-        >
-          Family
-        </button>
-        <button
-          onClick={() => setPortalTheme("advisor")}
-          className={cn(
-            "rounded px-3 py-1.5 text-sm font-medium transition-colors",
-            portalTheme === "advisor"
-              ? "bg-background text-foreground shadow-sm"
-              : "text-muted-foreground hover:text-foreground"
-          )}
-        >
-          Advisor
-        </button>
-        <button
-          onClick={() => setPortalTheme("admin")}
-          className={cn(
-            "rounded px-3 py-1.5 text-sm font-medium transition-colors",
-            portalTheme === "admin"
-              ? "bg-background text-foreground shadow-sm"
-              : "text-muted-foreground hover:text-foreground"
-          )}
-        >
-          Admin
-        </button>
-      </div>
+      <span className="text-sm text-muted-foreground">Portal:</span>
+      <Select
+        value={portalTheme}
+        onValueChange={(value) => setPortalTheme(value as PortalTheme)}
+      >
+        <SelectTrigger className="w-[160px]">
+          <SelectValue placeholder="Select portal" />
+        </SelectTrigger>
+        <SelectContent align="end">
+          <SelectItem value="family">Family</SelectItem>
+          <SelectItem value="advisor">Advisor</SelectItem>
+          <SelectItem value="admin">Admin</SelectItem>
+        </SelectContent>
+      </Select>
     </div>
   );
 }

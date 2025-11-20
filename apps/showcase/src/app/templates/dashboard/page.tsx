@@ -63,7 +63,18 @@ const recentActivity = [
 
 export default function DashboardTemplate() {
   return (
-    <div className="min-h-screen bg-muted/30">
+    <div className="bg-muted/40 py-8 sm:py-12">
+      <div className="container space-y-6">
+        <div className="space-y-1">
+          <p className="text-sm text-muted-foreground">Template</p>
+          <h1 className="text-3xl font-medium">Family Dashboard</h1>
+          <p className="text-sm text-muted-foreground max-w-2xl">
+            Monitor meetings, activities, and governance workstreams inside a focused portal
+            canvas without leaving the showcase.
+          </p>
+        </div>
+        <div className="overflow-hidden rounded-[32px] border bg-background shadow-2xl ring-1 ring-black/5">
+          <div className="min-h-[720px] bg-muted/30">
       {/* Top Navigation */}
       <div className="border-b bg-background">
         <div className="container max-w-[1048px] flex h-14 items-center justify-between">
@@ -151,7 +162,7 @@ export default function DashboardTemplate() {
         {/* Family Overview */}
         <Card>
           <CardHeader className="pb-4">
-            <CardTitle className="text-base font-semibold">Family Overview</CardTitle>
+            <CardTitle className="text-base">Family Overview</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -179,7 +190,7 @@ export default function DashboardTemplate() {
         {/* Quick Actions */}
         <Card>
           <CardHeader className="pb-4">
-            <CardTitle className="text-base font-semibold">Quick Actions</CardTitle>
+            <CardTitle className="text-base">Quick Actions</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -207,7 +218,7 @@ export default function DashboardTemplate() {
           <Card>
             <CardHeader className="pb-4">
               <div className="flex items-center justify-between">
-                <CardTitle className="text-base font-semibold">Upcoming Meetings</CardTitle>
+                <CardTitle className="text-base">Upcoming Meetings</CardTitle>
                 <Button variant="link" className="h-auto p-0 text-primary text-sm">
                   View All <ChevronRight className="h-3 w-3 ml-1" />
                 </Button>
@@ -235,7 +246,7 @@ export default function DashboardTemplate() {
           <Card>
             <CardHeader className="pb-4">
               <div className="flex items-center justify-between">
-                <CardTitle className="text-base font-semibold">Recent Activity</CardTitle>
+                <CardTitle className="text-base">Recent Activity</CardTitle>
                 <Button variant="link" className="h-auto p-0 text-primary text-sm">
                   View All <ChevronRight className="h-3 w-3 ml-1" />
                 </Button>
@@ -271,7 +282,7 @@ export default function DashboardTemplate() {
           <CardContent className="py-6">
             <div className="grid md:grid-cols-2 gap-6 items-center">
               <div className="space-y-3">
-                <h3 className="text-lg font-semibold">Stay Updated</h3>
+                <h3 className="text-lg font-medium">Stay Updated</h3>
                 <p className="text-sm text-muted-foreground">
                   Get insights and update on family governance best practices delivered every two weeks
                 </p>
@@ -307,7 +318,7 @@ export default function DashboardTemplate() {
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Platform</h4>
+              <h4 className="font-medium mb-3">Platform</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>Family Constitution</li>
                 <li>Family Council</li>
@@ -316,7 +327,7 @@ export default function DashboardTemplate() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Education</h4>
+              <h4 className="font-medium mb-3">Education</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>Learning Paths</li>
                 <li>Mentorship</li>
@@ -324,7 +335,7 @@ export default function DashboardTemplate() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Legal</h4>
+              <h4 className="font-medium mb-3">Legal</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>Privacy Policy</li>
                 <li>Terms of Service</li>
@@ -343,6 +354,9 @@ export default function DashboardTemplate() {
             </div>
           </div>
         </footer>
+      </div>
+          </div>
+        </div>
       </div>
     </div>
   );
