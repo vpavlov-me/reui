@@ -31,7 +31,17 @@ import {
 } from "@reluna-ui/ui";
 import { CalendarDays, Check, CreditCard, Plus, Settings, User } from "lucide-react";
 
+type PortalTheme = "family" | "advisor" | "admin";
+
 export default function ThemesPage() {
+  const [portalTheme, setPortalTheme] = React.useState<PortalTheme>("family");
+
+  React.useEffect(() => {
+    const root = document.documentElement;
+    root.classList.remove("theme-family", "theme-advisor", "theme-admin");
+    root.classList.add(`theme-${portalTheme}`);
+  }, [portalTheme]);
+
   return (
     <div className="container py-10">
       <div className="mx-auto max-w-[1200px] space-y-8">
@@ -42,8 +52,19 @@ export default function ThemesPage() {
           </h1>
           <p className="mx-auto max-w-[600px] text-lg text-muted-foreground">
             Hand-picked themes that you can copy and paste into your apps.
-            Switch between portals using the header switcher to see them in action.
+            Switch between portals using the tabs below or the header switcher to see them in action.
           </p>
+          <Tabs
+            value={portalTheme}
+            onValueChange={(value) => setPortalTheme(value as PortalTheme)}
+            className="mx-auto w-fit"
+          >
+            <TabsList>
+              <TabsTrigger value="family">Family</TabsTrigger>
+              <TabsTrigger value="advisor">Advisor</TabsTrigger>
+              <TabsTrigger value="admin">Admin</TabsTrigger>
+            </TabsList>
+          </Tabs>
         </div>
 
         {/* Theme Preview Grid */}
