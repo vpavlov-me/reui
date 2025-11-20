@@ -15,7 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@reluna-ui/ui";
 
-export default function BreadcrumbPage() {
+export default function BreadcrumbDemoPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
