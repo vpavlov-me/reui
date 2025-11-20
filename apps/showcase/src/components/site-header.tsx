@@ -35,6 +35,12 @@ export function SiteHeader() {
             >
               Themes
             </Link>
+            <Link
+              href="/templates/dashboard"
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
+            >
+              Templates
+            </Link>
           </nav>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-4">
