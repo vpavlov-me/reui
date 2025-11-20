@@ -173,12 +173,10 @@ export default function ComponentsLayout({
 
       {/* Right Sidebar - Table of Contents */}
       {!isOverviewPage && (
-        <aside className="hidden text-sm lg:block">
-          <div className="sticky top-16 pt-6 h-[calc(100vh-4rem)]">
-            <ScrollArea className="h-full">
-              <TableOfContents />
-            </ScrollArea>
-          </div>
+        <aside className="hidden lg:block">
+          <nav className="sticky top-16 -mt-6 pt-6 text-sm">
+            <TableOfContents />
+          </nav>
         </aside>
       )}
     </div>
