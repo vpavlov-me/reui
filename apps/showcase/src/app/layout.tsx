@@ -1,10 +1,29 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/site-header";
 
-const inter = Inter({ subsets: ["latin"] });
+const ppObjectSans = localFont({
+  src: [
+    {
+      path: "../fonts/PPObjectSans-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/PPObjectSans-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/PPObjectSans-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-pp-object-sans",
+});
 
 export const metadata: Metadata = {
   title: "reui - Design System",
@@ -18,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={ppObjectSans.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
