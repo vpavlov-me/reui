@@ -26,6 +26,17 @@ interface Release {
 
 const releases: Release[] = [
   {
+    version: "0.10.0",
+    date: "2024-11-21",
+    changes: [
+      { type: "feature", description: "Added TypeDoc for API documentation generation", component: "Documentation" },
+      { type: "feature", description: "Added size-limit for bundle size monitoring", component: "Performance" },
+      { type: "feature", description: "Added GitHub Actions workflow for bundle size analysis on PRs", component: "CI/CD" },
+      { type: "improvement", description: "Bundle size limits: 150kB total, 50kB core components, 30kB themes" },
+      { type: "improvement", description: "Production readiness score increased to 90/100" },
+    ],
+  },
+  {
     version: "0.9.0",
     date: "2024-11-21",
     changes: [

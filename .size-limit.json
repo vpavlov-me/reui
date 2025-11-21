@@ -1,0 +1,19 @@
+[
+  {
+    "name": "@reluna-ui/ui (ESM)",
+    "path": "packages/ui/dist/index.js",
+    "limit": "150 kB",
+    "import": "*"
+  },
+  {
+    "name": "@reluna-ui/ui (Core Components)",
+    "path": "packages/ui/dist/index.js",
+    "limit": "50 kB",
+    "import": "{ Button, Input, Card }"
+  },
+  {
+    "name": "@reluna-ui/themes",
+    "path": "packages/themes/dist/index.css",
+    "limit": "30 kB"
+  }
+]
