@@ -26,6 +26,18 @@ interface Release {
 
 const releases: Release[] = [
   {
+    version: "0.7.0",
+    date: "2024-11-21",
+    changes: [
+      { type: "feature", description: "Added tests for Alert, Card, Switch components", component: "Testing" },
+      { type: "feature", description: "Added tests for enterprise FileUpload and Stepper components", component: "Testing" },
+      { type: "feature", description: "Added accessibility tests with jest-axe for 8 components", component: "Testing" },
+      { type: "feature", description: "Configured Dependabot for npm and GitHub Actions security updates", component: "CI/CD" },
+      { type: "improvement", description: "Expanded test coverage to 68 tests across 10 test files" },
+      { type: "improvement", description: "All core and enterprise components now have unit tests" },
+    ],
+  },
+  {
     version: "0.6.0",
     date: "2024-11-21",
     changes: [
