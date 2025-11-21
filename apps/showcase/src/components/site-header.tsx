@@ -35,6 +35,12 @@ export function SiteHeader() {
             >
               Docs
             </Link>
+            <Link
+              href="/blocks"
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
+            >
+              Blocks
+            </Link>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 transition-colors hover:text-foreground/80 text-foreground/60">
                 Templates
