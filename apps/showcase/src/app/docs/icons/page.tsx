@@ -588,8 +588,7 @@ export default function IconsPage() {
 
   return (
     <TooltipProvider delayDuration={300}>
-      <div className="container py-10">
-        <div className="mx-auto max-w-[1200px] space-y-8">
+      <div className="space-y-8">
           {/* Header */}
           <div className="space-y-4">
             <h1 className="text-3xl font-bold tracking-tight">Icons</h1>
@@ -697,7 +696,6 @@ export default function IconsPage() {
               </div>
             </CardContent>
           </Card>
-        </div>
       </div>
     </TooltipProvider>
   );

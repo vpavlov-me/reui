@@ -30,40 +30,10 @@ export function SiteHeader() {
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             <Link
-              href="/docs/components"
+              href="/docs"
               className="transition-colors hover:text-foreground/80 text-foreground/60"
             >
-              Components
-            </Link>
-            <Link
-              href="/docs/themes"
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-            >
-              Themes
-            </Link>
-            <Link
-              href="/docs/colors"
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-            >
-              Colors
-            </Link>
-            <Link
-              href="/docs/icons"
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-            >
-              Icons
-            </Link>
-            <Link
-              href="/docs/charts"
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-            >
-              Charts
-            </Link>
-            <Link
-              href="/docs/claude-agent"
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-            >
-              Agent
+              Docs
             </Link>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 transition-colors hover:text-foreground/80 text-foreground/60">
@@ -85,6 +55,12 @@ export function SiteHeader() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+            <Link
+              href="/changelog"
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
+            >
+              Changelog
+            </Link>
           </nav>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2">
