@@ -327,3 +327,23 @@ export { ToggleGroup, ToggleGroupItem } from './toggle-group';
 
 // Tooltip
 export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from './tooltip';
+
+// File Upload
+export { FileUpload, formatFileSize } from './file-upload';
+export type { FileUploadProps, FileUploadFile } from './file-upload';
+
+// Data Table
+export { DataTable } from './data-table';
+export type { DataTableColumn, DataTableProps } from './data-table';
+
+// Stepper
+export { Stepper, StepperContent, StepperActions } from './stepper';
+export type { StepperProps, StepperStep, StepperContentProps, StepperActionsProps } from './stepper';
+
+// Multi-Select
+export { MultiSelect } from './multi-select';
+export type { MultiSelectProps, MultiSelectOption } from './multi-select';
+
+// Date Range Picker
+export { DateRangePicker } from './date-range-picker';
+export type { DateRangePickerProps, DateRange } from './date-range-picker';

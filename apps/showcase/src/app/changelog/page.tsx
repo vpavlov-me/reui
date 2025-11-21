@@ -26,6 +26,18 @@ interface Release {
 
 const releases: Release[] = [
   {
+    version: "0.5.0",
+    date: "2024-11-21",
+    changes: [
+      { type: "feature", description: "Added FileUpload component with drag-and-drop support", component: "FileUpload" },
+      { type: "feature", description: "Added DataTable component with sorting, filtering, and pagination", component: "DataTable" },
+      { type: "feature", description: "Added Stepper/Wizard component for multi-step workflows", component: "Stepper" },
+      { type: "feature", description: "Added MultiSelect component with search and badges", component: "MultiSelect" },
+      { type: "feature", description: "Added DateRangePicker component", component: "DateRangePicker" },
+      { type: "improvement", description: "Total components increased to 53 enterprise-ready components" },
+    ],
+  },
+  {
     version: "0.4.0",
     date: "2024-11-21",
     changes: [
