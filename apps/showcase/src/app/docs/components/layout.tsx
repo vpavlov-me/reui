@@ -173,8 +173,8 @@ export default function ComponentsLayout({
 
       {/* Right Sidebar - Table of Contents */}
       {!isOverviewPage && (
-        <aside className="hidden text-sm lg:block">
-          <div className="sticky top-14 -mt-10 pt-4 lg:pt-8">
+        <aside className="hidden text-sm lg:block lg:self-start lg:sticky lg:top-14">
+          <div className="py-6 lg:py-8">
             <TableOfContents />
           </div>
         </aside>
