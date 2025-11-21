@@ -26,6 +26,17 @@ interface Release {
 
 const releases: Release[] = [
   {
+    version: "0.6.0",
+    date: "2024-11-21",
+    changes: [
+      { type: "feature", description: "Added Vitest testing framework with React Testing Library", component: "Testing" },
+      { type: "feature", description: "Added unit tests for Button, Input, Checkbox, Badge components", component: "Testing" },
+      { type: "feature", description: "Added GitHub Actions CI workflow with lint, typecheck, and test jobs", component: "CI/CD" },
+      { type: "feature", description: "Added test coverage reporting", component: "Testing" },
+      { type: "improvement", description: "Infrastructure ready for production with automated testing" },
+    ],
+  },
+  {
     version: "0.5.0",
     date: "2024-11-21",
     changes: [
