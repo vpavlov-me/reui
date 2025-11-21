@@ -48,6 +48,12 @@ export function SiteHeader() {
               Colors
             </Link>
             <Link
+              href="/docs/icons"
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
+            >
+              Icons
+            </Link>
+            <Link
               href="/docs/charts"
               className="transition-colors hover:text-foreground/80 text-foreground/60"
             >
