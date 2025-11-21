@@ -1,9 +1,9 @@
 {
-  "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
-  "changelog": "@changesets/cli/changelog",
+  "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
+  "changelog": ["@changesets/changelog-github", { "repo": "vpavlov-me/reui" }],
   "commit": false,
   "fixed": [],
-  "linked": [],
+  "linked": [["@reluna-ui/ui", "@reluna-ui/themes", "@reluna-ui/icons"]],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",

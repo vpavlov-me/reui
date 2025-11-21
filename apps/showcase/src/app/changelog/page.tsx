@@ -26,6 +26,17 @@ interface Release {
 
 const releases: Release[] = [
   {
+    version: "0.8.0",
+    date: "2024-11-21",
+    changes: [
+      { type: "feature", description: "Added tests for DataTable, MultiSelect, DateRangePicker components", component: "Testing" },
+      { type: "feature", description: "Configured Changesets for semantic versioning with GitHub changelog", component: "CI/CD" },
+      { type: "feature", description: "Added jsdom mocks for scrollIntoView, PointerEvent, pointer capture", component: "Testing" },
+      { type: "improvement", description: "Expanded test coverage to 104 tests across 13 test files" },
+      { type: "improvement", description: "All enterprise components now have comprehensive test coverage" },
+    ],
+  },
+  {
     version: "0.7.0",
     date: "2024-11-21",
     changes: [
