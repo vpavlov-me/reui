@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { ChevronDown, Moon, Sun, Github, Search } from "lucide-react";
+import { ChevronDown, Moon, Sun, Github } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeSwitcher } from "./theme-switcher";
 import {
@@ -11,7 +11,6 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  Input,
 } from "@reluna-ui/ui";
 
 export function SiteHeader() {
@@ -83,14 +82,6 @@ export function SiteHeader() {
           </nav>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <div className="relative hidden md:block">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Search components..."
-              className="h-9 w-64 pl-9 text-sm"
-            />
-          </div>
           <ThemeSwitcher />
           <a
             href="https://github.com/vpavlov-me/reui"
