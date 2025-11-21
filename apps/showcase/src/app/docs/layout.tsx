@@ -147,6 +147,16 @@ const docsNavigation: NavSection[] = [
     ],
   },
   {
+    title: "Enterprise",
+    items: [
+      { title: "Data Table", href: "/docs/components/data-table" },
+      { title: "Date Range Picker", href: "/docs/components/date-range-picker" },
+      { title: "File Upload", href: "/docs/components/file-upload" },
+      { title: "Multi Select", href: "/docs/components/multi-select" },
+      { title: "Stepper", href: "/docs/components/stepper" },
+    ],
+  },
+  {
     title: "Data Display",
     items: [
       { title: "Charts", href: "/docs/charts" },

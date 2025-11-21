@@ -26,6 +26,17 @@ interface Release {
 
 const releases: Release[] = [
   {
+    version: "0.9.0",
+    date: "2024-11-21",
+    changes: [
+      { type: "feature", description: "Added documentation pages for all 5 enterprise components", component: "Documentation" },
+      { type: "feature", description: "Added FileUpload, DataTable, Stepper, MultiSelect, DateRangePicker docs", component: "Documentation" },
+      { type: "feature", description: "Added Enterprise section to sidebar navigation", component: "Documentation" },
+      { type: "improvement", description: "All enterprise components now have Usage Guidelines, CodePreview, and API Reference" },
+      { type: "improvement", description: "Total documented components increased to 58" },
+    ],
+  },
+  {
     version: "0.8.0",
     date: "2024-11-21",
     changes: [
