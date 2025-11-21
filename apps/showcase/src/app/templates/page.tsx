@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import {
+  Badge,
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@reluna-ui/ui";
-import { LayoutDashboard, User, ArrowRight, ScrollText } from "lucide-react";
+import { LayoutDashboard, User, ArrowRight, ScrollText, ShieldCheck } from "lucide-react";
 
 const templates = [
   {
@@ -16,18 +17,28 @@ const templates = [
     description: "Family governance dashboard with overview cards, meetings, activities, and quick actions",
     href: "/templates/dashboard",
     icon: LayoutDashboard,
+    components: ["Card", "Avatar", "Tabs"],
   },
   {
     title: "Profile",
     description: "User profile page with tabs, contact info, personal details, and edit profile sheet modal",
     href: "/templates/profile",
     icon: User,
+    components: ["Tabs", "Sheet", "Textarea"],
   },
   {
     title: "Constitution",
     description: "Family constitution workspace with sections, quick actions, and governance guidance",
     href: "/templates/constitution",
     icon: ScrollText,
+    components: ["Progress", "Dropdown", "Badge"],
+  },
+  {
+    title: "Authentication",
+    description: "Multi-step onboarding flow with social auth, carousel, and progress tracker",
+    href: "/templates/auth",
+    icon: ShieldCheck,
+    components: ["Stepper", "Input", "Separator"],
   },
 ];
 
@@ -55,6 +66,15 @@ export default function TemplatesPage() {
                 <CardTitle className="mt-4">{template.title}</CardTitle>
                 <CardDescription>{template.description}</CardDescription>
               </CardHeader>
+              <CardContent className="pt-0">
+                <div className="flex flex-wrap gap-2">
+                  {template.components.map((component) => (
+                    <Badge key={component} variant="secondary" className="text-xs">
+                      {component}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
             </Card>
           </Link>
         ))}
