@@ -54,6 +54,12 @@ export function SiteHeader() {
             >
               Charts
             </Link>
+            <Link
+              href="/docs/claude-agent"
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
+            >
+              Agent
+            </Link>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 transition-colors hover:text-foreground/80 text-foreground/60">
                 Templates
