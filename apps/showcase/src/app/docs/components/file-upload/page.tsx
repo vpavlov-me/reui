@@ -1,11 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { FileUpload } from "@reluna-ui/ui";
+import { FileUpload, type FileUploadFile } from "@reluna-ui/ui";
 import { CodePreview, UsageGuidelines } from "@/components/code-preview";
 
 export default function FileUploadPage() {
-  const [files, setFiles] = React.useState<File[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_files, setFiles] = React.useState<FileUploadFile[]>([]);
 
   return (
     <div className="space-y-10">
@@ -159,7 +160,7 @@ export default function FileUploadPage() {
             <tbody>
               <tr className="border-b">
                 <td className="p-3 font-mono text-xs">onFilesChange</td>
-                <td className="p-3 font-mono text-xs">(files: File[]) =&gt; void</td>
+                <td className="p-3 font-mono text-xs">(files: FileUploadFile[]) =&gt; void</td>
                 <td className="p-3 font-mono text-xs">-</td>
                 <td className="p-3">Callback when files are selected</td>
               </tr>

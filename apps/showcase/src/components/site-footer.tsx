@@ -2,6 +2,10 @@
 
 import Link from "next/link";
 
+import uiPackageJson from "../../../../packages/ui/package.json";
+
+const uiVersion = uiPackageJson.version;
+
 export function SiteFooter() {
   return (
     <footer className="border-t bg-background/90 backdrop-blur">
@@ -30,6 +34,18 @@ export function SiteFooter() {
             className="text-foreground underline underline-offset-4"
           >
             shadcn/ui
+          </Link>
+        </p>
+        <p className="flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+          <span>Version</span>
+          <span className="rounded-full bg-muted px-2 py-0.5 font-mono text-foreground text-sm normal-case">
+            v{uiVersion}
+          </span>
+          <Link
+            href="/changelog"
+            className="text-foreground underline underline-offset-4 normal-case"
+          >
+            View changelog
           </Link>
         </p>
       </div>
