@@ -84,27 +84,27 @@ export default function DashboardTemplate() {
               <span>Family</span>
             </Link>
             <nav className="hidden md:flex items-center gap-1">
-              <Button variant="ghost" size="sm">Dashboard</Button>
-              <Button variant="ghost" size="sm">
-                Governance <ChevronRight className="ml-1 h-3 w-3" />
-              </Button>
-              <Button variant="ghost" size="sm">
-                Development <ChevronRight className="ml-1 h-3 w-3" />
-              </Button>
-              <Button variant="ghost" size="sm">
-                Family Affairs <ChevronRight className="ml-1 h-3 w-3" />
-              </Button>
-              <Button variant="ghost" size="sm">
-                Tools <ChevronRight className="ml-1 h-3 w-3" />
-              </Button>
+              {["Dashboard", "Governance", "Development", "Family Affairs", "Tools"].map((item, index) => (
+                <button
+                  key={item}
+                  className={`flex items-center gap-1 rounded-md px-3 py-2 text-sm transition ${
+                    index === 0
+                      ? "text-foreground font-medium"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  }`}
+                >
+                  {item}
+                  {index > 0 && <span className="text-xs">▾</span>}
+                </button>
+              ))}
             </nav>
           </div>
-          <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon">
+          <div className="flex items-center gap-3">
+            <Button variant="ghost" size="icon" className="text-muted-foreground">
               <Bell className="h-4 w-4" />
             </Button>
             <Link href="/templates/profile">
-              <Avatar className="h-8 w-8">
+              <Avatar className="h-8 w-8 border">
                 <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" alt="User" />
                 <AvatarFallback>LJ</AvatarFallback>
               </Avatar>
@@ -306,8 +306,8 @@ export default function DashboardTemplate() {
         </Card>
 
         {/* Footer */}
-        <footer className="pt-6 border-t">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <footer className="pt-6 border-t space-y-6">
+          <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="font-medium text-lg mb-4 flex items-center gap-1">
                 <span className="text-primary">(RE:</span>
@@ -344,12 +344,15 @@ export default function DashboardTemplate() {
               </ul>
             </div>
           </div>
-          <Separator className="mb-4" />
-          <div className="flex items-center justify-between text-sm text-muted-foreground">
-            <span>© 2025 Reluna Family. All rights reserved v0.1.3 Beta</span>
+          <Separator />
+          <div className="flex items-center justify-between text-xs text-muted-foreground">
             <div className="flex items-center gap-2">
+              <span>© 2025 Reluna Family. All rights reserved</span>
+              <span>v0.1.3</span>
+              <span>Beta</span>
+            </div>
+            <div className="flex items-center gap-4">
               <span>Sitemap</span>
-              <span>·</span>
               <span>☼</span>
             </div>
           </div>

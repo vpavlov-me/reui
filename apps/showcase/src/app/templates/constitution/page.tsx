@@ -105,35 +105,31 @@ export default function ConstitutionTemplate() {
                     <span>Family</span>
                   </Link>
                   <nav className="hidden md:flex items-center gap-1">
-                    <Link href="/templates/dashboard">
-                      <Button variant="ghost" size="sm">
-                        Dashboard
-                      </Button>
-                    </Link>
-                    <Button variant="ghost" size="sm">
-                      Governance
-                    </Button>
-                    <Button variant="ghost" size="sm">
-                      Development
-                    </Button>
-                    <Button variant="ghost" size="sm">
-                      Family Affairs
-                    </Button>
-                    <Button variant="ghost" size="sm">
-                      Tools
-                    </Button>
+                    {["Dashboard", "Governance", "Development", "Family Affairs", "Tools"].map((item, index) => (
+                      <button
+                        key={item}
+                        className={`flex items-center gap-1 rounded-md px-3 py-2 text-sm transition ${
+                          index === 0
+                            ? "text-foreground font-medium"
+                            : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                        }`}
+                      >
+                        {item}
+                        {index > 0 && <span className="text-xs">▾</span>}
+                      </button>
+                    ))}
                   </nav>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Button variant="ghost" size="icon">
+                <div className="flex items-center gap-3">
+                  <Button variant="ghost" size="icon" className="text-muted-foreground">
                     <Bell className="h-4 w-4" />
                   </Button>
-                  <Avatar className="h-8 w-8">
+                  <Avatar className="h-8 w-8 border">
                     <AvatarImage
                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
                       alt="User"
                     />
-                    <AvatarFallback>LR</AvatarFallback>
+                    <AvatarFallback>LJ</AvatarFallback>
                   </Avatar>
                 </div>
               </div>
@@ -141,16 +137,21 @@ export default function ConstitutionTemplate() {
 
             {/* Breadcrumb */}
             <div className="border-b bg-background">
-              <div className="container max-w-[1048px] flex h-12 items-center justify-between">
+              <div className="container max-w-[1048px] flex h-12 items-center">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Home className="h-4 w-4" />
+                  <span>Home</span>
+                  <span>›</span>
                   <span>Page Name</span>
                   <span>›</span>
-                  <span>Family Constitution</span>
                 </div>
-                <Button variant="ghost" size="sm">
-                  Manage Access
-                </Button>
+              </div>
+            </div>
+
+            {/* Page Title */}
+            <div className="border-b bg-background">
+              <div className="container max-w-[1048px] py-4">
+                <h2 className="text-2xl font-semibold">Family Constitution</h2>
               </div>
             </div>
 
@@ -362,10 +363,32 @@ export default function ConstitutionTemplate() {
                 </div>
               </div>
 
-              <Separator className="my-6" />
+              {/* Newsletter Section */}
+              <div className="grid gap-6 rounded-xl bg-muted/40 p-6 lg:grid-cols-[2fr_1fr]">
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold">Stay Updated</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Get insights and update on family governance best practices delivered every two weeks
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <Input placeholder="Your Email Address" className="h-10 flex-1 min-w-[200px]" />
+                    <Button className="h-10 gap-2">
+                      Subscribe <Mail className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center">
+                  <div className="relative">
+                    <div className="flex h-20 w-28 items-center justify-center rounded-lg bg-muted">
+                      <Mail className="h-8 w-8 text-muted-foreground" />
+                    </div>
+                    <Badge className="absolute -right-2 -top-2 bg-primary">1</Badge>
+                  </div>
+                </div>
+              </div>
 
               {/* Footer */}
-              <footer className="space-y-6">
+              <footer className="mt-6 space-y-6 border-t pt-6">
                 <div className="grid md:grid-cols-4 gap-8">
                   <div>
                     <div className="font-medium text-lg mb-4 flex items-center gap-1">
@@ -404,12 +427,15 @@ export default function ConstitutionTemplate() {
                     </ul>
                   </div>
                 </div>
-                <Separator className="mb-4" />
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-muted-foreground gap-2">
-                  <span>© 2025 Reluna Family. All rights reserved v0.1.3 Beta</span>
+                <Separator />
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs text-muted-foreground gap-2">
                   <div className="flex items-center gap-2">
+                    <span>© 2025 Reluna Family. All rights reserved</span>
+                    <span>v0.1.3</span>
+                    <span>Beta</span>
+                  </div>
+                  <div className="flex items-center gap-4">
                     <span>Sitemap</span>
-                    <span>·</span>
                     <span>☼</span>
                   </div>
                 </div>
