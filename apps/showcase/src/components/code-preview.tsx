@@ -9,9 +9,10 @@ interface CodePreviewProps {
   children: React.ReactNode;
   code: string;
   className?: string;
+  highlightedCode?: string;
 }
 
-export function CodePreview({ children, code, className }: CodePreviewProps) {
+export function CodePreview({ children, code, className, highlightedCode }: CodePreviewProps) {
   const [copied, setCopied] = React.useState(false);
 
   const handleCopy = async () => {
@@ -58,9 +59,16 @@ export function CodePreview({ children, code, className }: CodePreviewProps) {
           </div>
         </TabsContent>
         <TabsContent value="code" className="m-0">
-          <pre className="overflow-x-auto p-4 text-sm bg-muted/50">
-            <code>{code}</code>
-          </pre>
+          {highlightedCode ? (
+            <div
+              className="overflow-x-auto text-sm [&_pre]:p-4 [&_pre]:m-0 [&_pre]:bg-muted/50 [&_code]:bg-transparent"
+              dangerouslySetInnerHTML={{ __html: highlightedCode }}
+            />
+          ) : (
+            <pre className="overflow-x-auto p-4 text-sm bg-muted/50">
+              <code>{code}</code>
+            </pre>
+          )}
         </TabsContent>
       </Tabs>
     </div>

@@ -45,9 +45,22 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          {/* Skip Links for Accessibility */}
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-4 focus:left-4 focus:bg-background focus:text-foreground focus:p-4 focus:rounded-md focus:border focus:shadow-lg"
+          >
+            Skip to main content
+          </a>
+          <a
+            href="#navigation"
+            className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-4 focus:left-48 focus:bg-background focus:text-foreground focus:p-4 focus:rounded-md focus:border focus:shadow-lg"
+          >
+            Skip to navigation
+          </a>
           <div className="relative flex min-h-screen flex-col">
             <SiteHeader />
-            <main className="flex-1">{children}</main>
+            <main id="main-content" className="flex-1">{children}</main>
             <SiteFooter />
           </div>
         </ThemeProvider>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { ScrollArea } from "@reluna-ui/ui";
+import { DocsBreadcrumb } from "@/components/docs-nav";
 
 interface TocItem {
   id: string;
@@ -91,6 +92,7 @@ const docsNavigation: NavSection[] = [
     items: [
       { title: "Introduction", href: "/docs" },
       { title: "Installation", href: "/docs/installation" },
+      { title: "Component Status", href: "/docs/status" },
     ],
   },
   {
@@ -119,6 +121,9 @@ const docsNavigation: NavSection[] = [
       { title: "Card", href: "/docs/components/card" },
       { title: "Checkbox", href: "/docs/components/checkbox" },
       { title: "Collapsible", href: "/docs/components/collapsible" },
+      { title: "Combobox", href: "/docs/components/combobox" },
+      { title: "Command", href: "/docs/components/command" },
+      { title: "Context Menu", href: "/docs/components/context-menu" },
       { title: "Dialog", href: "/docs/components/dialog" },
       { title: "Drawer", href: "/docs/components/drawer" },
       { title: "Dropdown Menu", href: "/docs/components/dropdown-menu" },
@@ -217,6 +222,7 @@ export default function DocsLayout({
       </aside>
       <main className="relative py-6 lg:gap-10 lg:py-8">
         <div className="mx-auto w-full min-w-0">
+          <DocsBreadcrumb />
           {children}
         </div>
       </main>

@@ -1,11 +1,13 @@
-"use client";
-
-import * as React from "react";
 import { Button } from "@reluna-ui/ui";
 import { Check, Settings, User, Mail, ArrowRight, Loader2 } from "lucide-react";
-import { CodePreview, UsageGuidelines } from "@/components/code-preview";
+import { HighlightedCodePreview } from "@/components/highlighted-code-preview";
+import { UsageGuidelines } from "@/components/code-preview";
+import { PropsTable } from "@/components/props-table";
+import { highlightCode } from "@/lib/highlight";
 
-export default function ButtonPage() {
+export default async function ButtonPage() {
+  const installCode = await highlightCode(`import { Button } from "@reluna-ui/ui";`);
+
   return (
     <div className="space-y-10">
       <div className="space-y-4">
@@ -20,9 +22,10 @@ export default function ButtonPage() {
         <h2 id="installation" className="text-2xl font-semibold tracking-tight scroll-mt-20">
           Installation
         </h2>
-        <pre className="rounded-lg bg-muted p-4 text-sm overflow-x-auto">
-          <code>{`import { Button } from "@reluna-ui/ui";`}</code>
-        </pre>
+        <div
+          className="rounded-lg overflow-x-auto text-sm [&_pre]:p-4 [&_pre]:m-0 [&_pre]:bg-muted/50 [&_code]:bg-transparent"
+          dangerouslySetInnerHTML={{ __html: installCode }}
+        />
       </section>
 
       {/* Usage Guidelines */}
@@ -58,7 +61,7 @@ export default function ButtonPage() {
         <p className="text-muted-foreground">
           Button comes with multiple visual variants to indicate different types of actions.
         </p>
-        <CodePreview
+        <HighlightedCodePreview
           code={`<Button>Default</Button>
 <Button variant="secondary">Secondary</Button>
 <Button variant="destructive">Destructive</Button>
@@ -72,7 +75,7 @@ export default function ButtonPage() {
           <Button variant="outline">Outline</Button>
           <Button variant="ghost">Ghost</Button>
           <Button variant="link">Link</Button>
-        </CodePreview>
+        </HighlightedCodePreview>
       </section>
 
       {/* Sizes */}
@@ -83,7 +86,7 @@ export default function ButtonPage() {
         <p className="text-muted-foreground">
           Buttons are available in different sizes for various use cases.
         </p>
-        <CodePreview
+        <HighlightedCodePreview
           code={`<Button size="sm">Small</Button>
 <Button size="default">Default</Button>
 <Button size="lg">Large</Button>`}
@@ -91,7 +94,7 @@ export default function ButtonPage() {
           <Button size="sm">Small</Button>
           <Button size="default">Default</Button>
           <Button size="lg">Large</Button>
-        </CodePreview>
+        </HighlightedCodePreview>
       </section>
 
       {/* With Icon */}
@@ -102,7 +105,7 @@ export default function ButtonPage() {
         <p className="text-muted-foreground">
           Combine buttons with icons to provide visual context for the action.
         </p>
-        <CodePreview
+        <HighlightedCodePreview
           code={`import { Mail, Check, ArrowRight } from "lucide-react";
 
 <Button>
@@ -130,7 +133,7 @@ export default function ButtonPage() {
             Continue
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
-        </CodePreview>
+        </HighlightedCodePreview>
       </section>
 
       {/* Icon Only */}
@@ -141,7 +144,7 @@ export default function ButtonPage() {
         <p className="text-muted-foreground">
           Use icon-only buttons for compact interfaces or toolbar actions. Always include sr-only text for accessibility.
         </p>
-        <CodePreview
+        <HighlightedCodePreview
           code={`import { Settings, User, Mail } from "lucide-react";
 
 <Button size="icon">
@@ -166,7 +169,7 @@ export default function ButtonPage() {
           <Button size="icon" variant="secondary">
             <Mail className="h-4 w-4" />
           </Button>
-        </CodePreview>
+        </HighlightedCodePreview>
       </section>
 
       {/* Loading State */}
@@ -177,7 +180,7 @@ export default function ButtonPage() {
         <p className="text-muted-foreground">
           Show loading state to indicate that an action is in progress. Disable the button to prevent multiple submissions.
         </p>
-        <CodePreview
+        <HighlightedCodePreview
           code={`import { Loader2 } from "lucide-react";
 
 <Button disabled>
@@ -189,7 +192,7 @@ export default function ButtonPage() {
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
             Please wait
           </Button>
-        </CodePreview>
+        </HighlightedCodePreview>
       </section>
 
       {/* Disabled */}
@@ -200,7 +203,7 @@ export default function ButtonPage() {
         <p className="text-muted-foreground">
           Disabled buttons prevent user interaction and indicate unavailable actions.
         </p>
-        <CodePreview
+        <HighlightedCodePreview
           code={`<Button disabled>Default</Button>
 <Button variant="secondary" disabled>Secondary</Button>
 <Button variant="destructive" disabled>Destructive</Button>
@@ -210,7 +213,47 @@ export default function ButtonPage() {
           <Button variant="secondary" disabled>Secondary</Button>
           <Button variant="destructive" disabled>Destructive</Button>
           <Button variant="outline" disabled>Outline</Button>
-        </CodePreview>
+        </HighlightedCodePreview>
+      </section>
+
+      {/* TypeScript Usage */}
+      <section className="space-y-4">
+        <h2 id="typescript" className="text-2xl font-semibold tracking-tight scroll-mt-20">
+          TypeScript
+        </h2>
+        <p className="text-muted-foreground">
+          Button is fully typed with TypeScript. Here are common usage patterns with proper typing.
+        </p>
+        <HighlightedCodePreview
+          code={`import { Button, ButtonProps } from "@reluna-ui/ui";
+import { MouseEvent } from "react";
+
+// Event handler with proper typing
+function handleClick(event: MouseEvent<HTMLButtonElement>) {
+  console.log("Clicked:", event.currentTarget.textContent);
+}
+
+// Custom button component extending ButtonProps
+interface SubmitButtonProps extends ButtonProps {
+  isLoading?: boolean;
+}
+
+function SubmitButton({ isLoading, children, ...props }: SubmitButtonProps) {
+  return (
+    <Button disabled={isLoading} {...props}>
+      {isLoading ? "Loading..." : children}
+    </Button>
+  );
+}
+
+// Usage
+<Button onClick={handleClick}>Click me</Button>
+<SubmitButton isLoading={false}>Submit</SubmitButton>`}
+        >
+          <Button onClick={(e) => console.log("Clicked", e.currentTarget.textContent)}>
+            Click me
+          </Button>
+        </HighlightedCodePreview>
       </section>
 
       {/* API Reference */}
@@ -218,39 +261,34 @@ export default function ButtonPage() {
         <h2 id="api" className="text-2xl font-semibold tracking-tight scroll-mt-20">
           API Reference
         </h2>
-        <div className="rounded-lg border">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b bg-muted/50">
-                <th className="p-3 text-left font-medium">Prop</th>
-                <th className="p-3 text-left font-medium">Type</th>
-                <th className="p-3 text-left font-medium">Default</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b">
-                <td className="p-3 font-mono text-xs">variant</td>
-                <td className="p-3 font-mono text-xs">default | secondary | destructive | outline | ghost | link</td>
-                <td className="p-3 font-mono text-xs">default</td>
-              </tr>
-              <tr className="border-b">
-                <td className="p-3 font-mono text-xs">size</td>
-                <td className="p-3 font-mono text-xs">default | sm | lg | icon</td>
-                <td className="p-3 font-mono text-xs">default</td>
-              </tr>
-              <tr className="border-b">
-                <td className="p-3 font-mono text-xs">asChild</td>
-                <td className="p-3 font-mono text-xs">boolean</td>
-                <td className="p-3 font-mono text-xs">false</td>
-              </tr>
-              <tr>
-                <td className="p-3 font-mono text-xs">disabled</td>
-                <td className="p-3 font-mono text-xs">boolean</td>
-                <td className="p-3 font-mono text-xs">false</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <PropsTable
+          props={[
+            {
+              name: "variant",
+              type: '"default" | "secondary" | "destructive" | "outline" | "ghost" | "link"',
+              default: '"default"',
+              description: "The visual style variant of the button"
+            },
+            {
+              name: "size",
+              type: '"default" | "sm" | "lg" | "icon"',
+              default: '"default"',
+              description: "The size of the button"
+            },
+            {
+              name: "asChild",
+              type: "boolean",
+              default: "false",
+              description: "Render as child element using Radix Slot"
+            },
+            {
+              name: "disabled",
+              type: "boolean",
+              default: "false",
+              description: "Whether the button is disabled"
+            },
+          ]}
+        />
       </section>
     </div>
   );
