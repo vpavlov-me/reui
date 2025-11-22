@@ -103,7 +103,7 @@ function StatusBadge({ status }: { status: ComponentStatus }) {
 }
 
 export default function ComponentStatusPage() {
-  const categories = [...new Set(components.map(c => c.category))];
+  const categories = Array.from(new Set(components.map(c => c.category)));
   const totalComponents = components.length;
   const stableComponents = components.filter(c => c.status === "stable").length;
   const betaComponents = components.filter(c => c.status === "beta").length;

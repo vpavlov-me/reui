@@ -1,13 +1,11 @@
+"use client";
+
 import { Button } from "@reluna-ui/ui";
 import { Check, Settings, User, Mail, ArrowRight, Loader2 } from "lucide-react";
-import { HighlightedCodePreview } from "@/components/highlighted-code-preview";
-import { UsageGuidelines } from "@/components/code-preview";
+import { CodePreview, UsageGuidelines } from "@/components/code-preview";
 import { PropsTable } from "@/components/props-table";
-import { highlightCode } from "@/lib/highlight";
 
-export default async function ButtonPage() {
-  const installCode = await highlightCode(`import { Button } from "@reluna-ui/ui";`);
-
+export default function ButtonPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
@@ -22,10 +20,9 @@ export default async function ButtonPage() {
         <h2 id="installation" className="text-2xl font-semibold tracking-tight scroll-mt-20">
           Installation
         </h2>
-        <div
-          className="rounded-lg overflow-x-auto text-sm [&_pre]:p-4 [&_pre]:m-0 [&_pre]:bg-muted/50 [&_code]:bg-transparent"
-          dangerouslySetInnerHTML={{ __html: installCode }}
-        />
+        <pre className="rounded-lg bg-muted p-4 text-sm overflow-x-auto">
+          <code>{`import { Button } from "@reluna-ui/ui";`}</code>
+        </pre>
       </section>
 
       {/* Usage Guidelines */}
@@ -61,7 +58,7 @@ export default async function ButtonPage() {
         <p className="text-muted-foreground">
           Button comes with multiple visual variants to indicate different types of actions.
         </p>
-        <HighlightedCodePreview
+        <CodePreview
           code={`<Button>Default</Button>
 <Button variant="secondary">Secondary</Button>
 <Button variant="destructive">Destructive</Button>
@@ -75,7 +72,7 @@ export default async function ButtonPage() {
           <Button variant="outline">Outline</Button>
           <Button variant="ghost">Ghost</Button>
           <Button variant="link">Link</Button>
-        </HighlightedCodePreview>
+        </CodePreview>
       </section>
 
       {/* Sizes */}
@@ -86,7 +83,7 @@ export default async function ButtonPage() {
         <p className="text-muted-foreground">
           Buttons are available in different sizes for various use cases.
         </p>
-        <HighlightedCodePreview
+        <CodePreview
           code={`<Button size="sm">Small</Button>
 <Button size="default">Default</Button>
 <Button size="lg">Large</Button>`}
@@ -94,7 +91,7 @@ export default async function ButtonPage() {
           <Button size="sm">Small</Button>
           <Button size="default">Default</Button>
           <Button size="lg">Large</Button>
-        </HighlightedCodePreview>
+        </CodePreview>
       </section>
 
       {/* With Icon */}
@@ -105,7 +102,7 @@ export default async function ButtonPage() {
         <p className="text-muted-foreground">
           Combine buttons with icons to provide visual context for the action.
         </p>
-        <HighlightedCodePreview
+        <CodePreview
           code={`import { Mail, Check, ArrowRight } from "lucide-react";
 
 <Button>
@@ -133,7 +130,7 @@ export default async function ButtonPage() {
             Continue
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
-        </HighlightedCodePreview>
+        </CodePreview>
       </section>
 
       {/* Icon Only */}
@@ -144,7 +141,7 @@ export default async function ButtonPage() {
         <p className="text-muted-foreground">
           Use icon-only buttons for compact interfaces or toolbar actions. Always include sr-only text for accessibility.
         </p>
-        <HighlightedCodePreview
+        <CodePreview
           code={`import { Settings, User, Mail } from "lucide-react";
 
 <Button size="icon">
@@ -169,7 +166,7 @@ export default async function ButtonPage() {
           <Button size="icon" variant="secondary">
             <Mail className="h-4 w-4" />
           </Button>
-        </HighlightedCodePreview>
+        </CodePreview>
       </section>
 
       {/* Loading State */}
@@ -180,7 +177,7 @@ export default async function ButtonPage() {
         <p className="text-muted-foreground">
           Show loading state to indicate that an action is in progress. Disable the button to prevent multiple submissions.
         </p>
-        <HighlightedCodePreview
+        <CodePreview
           code={`import { Loader2 } from "lucide-react";
 
 <Button disabled>
@@ -192,7 +189,7 @@ export default async function ButtonPage() {
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
             Please wait
           </Button>
-        </HighlightedCodePreview>
+        </CodePreview>
       </section>
 
       {/* Disabled */}
@@ -203,7 +200,7 @@ export default async function ButtonPage() {
         <p className="text-muted-foreground">
           Disabled buttons prevent user interaction and indicate unavailable actions.
         </p>
-        <HighlightedCodePreview
+        <CodePreview
           code={`<Button disabled>Default</Button>
 <Button variant="secondary" disabled>Secondary</Button>
 <Button variant="destructive" disabled>Destructive</Button>
@@ -213,7 +210,7 @@ export default async function ButtonPage() {
           <Button variant="secondary" disabled>Secondary</Button>
           <Button variant="destructive" disabled>Destructive</Button>
           <Button variant="outline" disabled>Outline</Button>
-        </HighlightedCodePreview>
+        </CodePreview>
       </section>
 
       {/* TypeScript Usage */}
@@ -224,7 +221,7 @@ export default async function ButtonPage() {
         <p className="text-muted-foreground">
           Button is fully typed with TypeScript. Here are common usage patterns with proper typing.
         </p>
-        <HighlightedCodePreview
+        <CodePreview
           code={`import { Button, ButtonProps } from "@reluna-ui/ui";
 import { MouseEvent } from "react";
 
@@ -253,7 +250,7 @@ function SubmitButton({ isLoading, children, ...props }: SubmitButtonProps) {
           <Button onClick={(e) => console.log("Clicked", e.currentTarget.textContent)}>
             Click me
           </Button>
-        </HighlightedCodePreview>
+        </CodePreview>
       </section>
 
       {/* API Reference */}

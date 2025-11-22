@@ -1,7 +1,4 @@
-"use client";
-
 import * as React from "react";
-import { Badge } from "@reluna-ui/ui";
 
 interface PropDefinition {
   name: string;
@@ -35,9 +32,9 @@ export function PropsTable({ props }: PropsTableProps) {
                   {prop.name}
                 </code>
                 {prop.required && (
-                  <Badge variant="destructive" className="ml-2 text-[10px] px-1.5 py-0">
+                  <span className="ml-2 text-[10px] px-1.5 py-0.5 rounded bg-destructive text-destructive-foreground">
                     Required
-                  </Badge>
+                  </span>
                 )}
               </td>
               <td className="p-3">
