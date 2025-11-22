@@ -12,13 +12,12 @@ import {
   AvatarFallback,
   Button,
   Input,
-  Separator,
   Badge,
+  Separator,
 } from "@reluna-ui/ui";
 import {
   Home,
   ChevronRight,
-  Bell,
   RefreshCw,
   Keyboard,
   Users,
@@ -28,9 +27,34 @@ import {
   FileText,
   Vote,
   Mail,
+  Bell,
 } from "lucide-react";
+import { AppHeader } from "@/components/blocks/app-header";
+import { AppFooter } from "@/components/blocks/app-footer";
 
 // Mock data
+const dashboardLogo = (
+  <Link href="/templates/dashboard" className="font-medium text-xl flex items-center gap-1">
+    <span className="text-primary">(RE:</span>
+    <span>Family</span>
+  </Link>
+);
+
+const dashboardNavItems = [
+  { label: "Dashboard", href: "/templates/dashboard" },
+  { label: "Governance", href: "#" },
+  { label: "Development", href: "#" },
+  { label: "Family Affairs", href: "#" },
+  { label: "Tools", href: "#" },
+];
+
+const dashboardUser = {
+  name: "Logan Johns",
+  email: "logan@example.com",
+  avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face",
+  initials: "LJ",
+};
+
 const familyOverview = [
   { label: "Family Members", value: 6, icon: Users },
   { label: "Upcoming Meetings", value: 2, icon: CalendarDays },
@@ -75,43 +99,12 @@ export default function DashboardTemplate() {
         </div>
         <div className="overflow-hidden rounded-[32px] border bg-background shadow-2xl ring-1 ring-black/5">
           <div className="min-h-[720px] bg-muted/30">
-      {/* Top Navigation */}
-      <div className="border-b bg-background">
-        <div className="container max-w-[1048px] flex h-14 items-center justify-between">
-          <div className="flex items-center gap-6">
-            <Link href="/templates/dashboard" className="font-medium text-xl flex items-center gap-1">
-              <span className="text-primary">(RE:</span>
-              <span>Family</span>
-            </Link>
-            <nav className="hidden md:flex items-center gap-1">
-              {["Dashboard", "Governance", "Development", "Family Affairs", "Tools"].map((item, index) => (
-                <button
-                  key={item}
-                  className={`flex items-center gap-1 rounded-md px-3 py-2 text-sm transition ${
-                    index === 0
-                      ? "text-foreground font-medium"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                  }`}
-                >
-                  {item}
-                  {index > 0 && <span className="text-xs">▾</span>}
-                </button>
-              ))}
-            </nav>
-          </div>
-          <div className="flex items-center gap-3">
-            <Button variant="ghost" size="icon" className="text-muted-foreground">
-              <Bell className="h-4 w-4" />
-            </Button>
-            <Link href="/templates/profile">
-              <Avatar className="h-8 w-8 border">
-                <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" alt="User" />
-                <AvatarFallback>LJ</AvatarFallback>
-              </Avatar>
-            </Link>
-          </div>
-        </div>
-      </div>
+      {/* Header with AppHeader component */}
+      <AppHeader
+        logo={dashboardLogo}
+        navItems={dashboardNavItems}
+        user={dashboardUser}
+      />
 
       {/* Breadcrumb & Status Bar */}
       <div className="border-b bg-background">
@@ -305,58 +298,41 @@ export default function DashboardTemplate() {
           </CardContent>
         </Card>
 
-        {/* Footer */}
-        <footer className="pt-6 border-t space-y-6">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="font-medium text-lg mb-4 flex items-center gap-1">
-                <span className="text-primary">(RE:</span>
-                <span>Family</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Reluna Family platform for managing family wealth, governance, and knowledge transfer across generations.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-3">Platform</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Family Constitution</li>
-                <li>Family Council</li>
-                <li>Decision Making</li>
-                <li>Conflict Resolution</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-3">Education</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Learning Paths</li>
-                <li>Mentorship</li>
-                <li>Resources</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-3">Legal</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Privacy Policy</li>
-                <li>Terms of Service</li>
-                <li>Data Processing</li>
-                <li>Cookies</li>
-              </ul>
-            </div>
-          </div>
-          <Separator />
-          <div className="flex items-center justify-between text-xs text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <span>© 2025 Reluna Family. All rights reserved</span>
-              <span>v0.1.3</span>
-              <span>Beta</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <span>Sitemap</span>
-              <span>☼</span>
-            </div>
-          </div>
-        </footer>
+        {/* Footer with AppFooter component */}
+        <AppFooter
+          logo={dashboardLogo}
+          description="Reluna Family platform for managing family wealth, governance, and knowledge transfer across generations."
+          columns={[
+            {
+              title: "Platform",
+              links: [
+                { label: "Family Constitution", href: "#" },
+                { label: "Family Council", href: "#" },
+                { label: "Decision Making", href: "#" },
+                { label: "Conflict Resolution", href: "#" },
+              ],
+            },
+            {
+              title: "Education",
+              links: [
+                { label: "Learning Paths", href: "#" },
+                { label: "Mentorship", href: "#" },
+                { label: "Resources", href: "#" },
+              ],
+            },
+            {
+              title: "Legal",
+              links: [
+                { label: "Privacy Policy", href: "#" },
+                { label: "Terms of Service", href: "#" },
+                { label: "Data Processing", href: "#" },
+                { label: "Cookies", href: "#" },
+              ],
+            },
+          ]}
+          copyright="© 2025 Reluna Family. All rights reserved"
+          version="v0.1.3"
+        />
       </div>
           </div>
         </div>

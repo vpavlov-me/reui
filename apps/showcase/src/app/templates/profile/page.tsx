@@ -50,6 +50,30 @@ import {
   Trash2,
   X,
 } from "lucide-react";
+import { AppHeader } from "@/components/blocks/app-header";
+import { AppFooter } from "@/components/blocks/app-footer";
+
+const profileLogo = (
+  <Link href="/templates/dashboard" className="font-medium text-xl flex items-center gap-1">
+    <span className="text-primary">(RE:</span>
+    <span>Family</span>
+  </Link>
+);
+
+const profileNavItems = [
+  { label: "Dashboard", href: "/templates/dashboard" },
+  { label: "Governance", href: "#" },
+  { label: "Development", href: "#" },
+  { label: "Family Affairs", href: "#" },
+  { label: "Tools", href: "#" },
+];
+
+const profileUser = {
+  name: "Logan Roy",
+  email: "logan@example.com",
+  avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face",
+  initials: "LR",
+};
 
 export default function ProfileTemplate() {
   const [isEditOpen, setIsEditOpen] = React.useState(false);
@@ -67,43 +91,12 @@ export default function ProfileTemplate() {
         </div>
         <div className="overflow-hidden rounded-[32px] border bg-background shadow-2xl ring-1 ring-black/5">
           <div className="min-h-[720px] bg-muted/30">
-      {/* Top Navigation */}
-      <div className="border-b bg-background">
-        <div className="container max-w-[1048px] flex h-14 items-center justify-between">
-          <div className="flex items-center gap-6">
-            <Link href="/templates/dashboard" className="font-medium text-xl flex items-center gap-1">
-              <span className="text-primary">(RE:</span>
-              <span>Family</span>
-            </Link>
-            <nav className="hidden md:flex items-center gap-1">
-              <Link href="/templates/dashboard">
-                <Button variant="ghost" size="sm">Dashboard</Button>
-              </Link>
-              <Button variant="ghost" size="sm">
-                Governance <ChevronRight className="ml-1 h-3 w-3" />
-              </Button>
-              <Button variant="ghost" size="sm">
-                Development <ChevronRight className="ml-1 h-3 w-3" />
-              </Button>
-              <Button variant="ghost" size="sm">
-                Family Affairs <ChevronRight className="ml-1 h-3 w-3" />
-              </Button>
-              <Button variant="ghost" size="sm">
-                Tools <ChevronRight className="ml-1 h-3 w-3" />
-              </Button>
-            </nav>
-          </div>
-          <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon">
-              <Bell className="h-4 w-4" />
-            </Button>
-            <Avatar className="h-8 w-8">
-              <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" alt="User" />
-              <AvatarFallback>LR</AvatarFallback>
-            </Avatar>
-          </div>
-        </div>
-      </div>
+      {/* Header with AppHeader component */}
+      <AppHeader
+        logo={profileLogo}
+        navItems={profileNavItems}
+        user={profileUser}
+      />
 
       {/* Breadcrumb */}
       <div className="border-b bg-background">
@@ -503,55 +496,41 @@ export default function ProfileTemplate() {
           </CardContent>
         </Card>
 
-        {/* Footer */}
-        <footer className="pt-4 mt-4 border-t">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="font-medium text-lg mb-4 flex items-center gap-1">
-                <span className="text-primary">(RE:</span>
-                <span>Family</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Reluna Family platform for managing family wealth, governance, and knowledge transfer across generations.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-3">Platform</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Family Constitution</li>
-                <li>Family Council</li>
-                <li>Decision Making</li>
-                <li>Conflict Resolution</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-3">Education</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Learning Paths</li>
-                <li>Mentorship</li>
-                <li>Resources</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-3">Legal</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Privacy Policy</li>
-                <li>Terms of Service</li>
-                <li>Data Processing</li>
-                <li>Cookies</li>
-              </ul>
-            </div>
-          </div>
-          <Separator className="mb-4" />
-          <div className="flex items-center justify-between text-sm text-muted-foreground">
-            <span>© 2025 Reluna Family. All rights reserved v0.1.3 Beta</span>
-            <div className="flex items-center gap-2">
-              <span>Sitemap</span>
-              <span>·</span>
-              <span>☼</span>
-            </div>
-          </div>
-        </footer>
+        {/* Footer with AppFooter component */}
+        <AppFooter
+          logo={profileLogo}
+          description="Reluna Family platform for managing family wealth, governance, and knowledge transfer across generations."
+          columns={[
+            {
+              title: "Platform",
+              links: [
+                { label: "Family Constitution", href: "#" },
+                { label: "Family Council", href: "#" },
+                { label: "Decision Making", href: "#" },
+                { label: "Conflict Resolution", href: "#" },
+              ],
+            },
+            {
+              title: "Education",
+              links: [
+                { label: "Learning Paths", href: "#" },
+                { label: "Mentorship", href: "#" },
+                { label: "Resources", href: "#" },
+              ],
+            },
+            {
+              title: "Legal",
+              links: [
+                { label: "Privacy Policy", href: "#" },
+                { label: "Terms of Service", href: "#" },
+                { label: "Data Processing", href: "#" },
+                { label: "Cookies", href: "#" },
+              ],
+            },
+          ]}
+          copyright="© 2025 Reluna Family. All rights reserved"
+          version="v0.1.3"
+        />
       </div>
           </div>
         </div>
