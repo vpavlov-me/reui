@@ -17,6 +17,10 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
   Input,
   Separator,
 } from "@reluna-ui/ui";
@@ -134,22 +138,59 @@ function HeaderPreview() {
               <House className="mr-2 h-4 w-4" />
               Dashboard
             </Button>
-            <Button variant="ghost" size="sm" className="h-8 px-4 rounded-[10px]">
-              Governance
-              <ChevronDown className="ml-1 h-4 w-4" />
-            </Button>
-            <Button variant="ghost" size="sm" className="h-8 px-4 rounded-[10px]">
-              Development
-              <ChevronDown className="ml-1 h-4 w-4" />
-            </Button>
-            <Button variant="ghost" size="sm" className="h-8 px-4 rounded-[10px]">
-              Family Affairs
-              <ChevronDown className="ml-1 h-4 w-4" />
-            </Button>
-            <Button variant="ghost" size="sm" className="h-8 px-4 rounded-[10px]">
-              Tools
-              <ChevronDown className="ml-1 h-4 w-4" />
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="h-8 px-4 rounded-[10px]">
+                  Governance
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start">
+                <DropdownMenuItem>Family Constitution</DropdownMenuItem>
+                <DropdownMenuItem>Family Council</DropdownMenuItem>
+                <DropdownMenuItem>Decision Making</DropdownMenuItem>
+                <DropdownMenuItem>Conflict Resolution</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="h-8 px-4 rounded-[10px]">
+                  Development
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start">
+                <DropdownMenuItem>Learning Paths</DropdownMenuItem>
+                <DropdownMenuItem>Mentorship</DropdownMenuItem>
+                <DropdownMenuItem>Resources</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="h-8 px-4 rounded-[10px]">
+                  Family Affairs
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start">
+                <DropdownMenuItem>Family Members</DropdownMenuItem>
+                <DropdownMenuItem>Meetings</DropdownMenuItem>
+                <DropdownMenuItem>Events</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="h-8 px-4 rounded-[10px]">
+                  Tools
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start">
+                <DropdownMenuItem>Documents</DropdownMenuItem>
+                <DropdownMenuItem>Reports</DropdownMenuItem>
+                <DropdownMenuItem>Settings</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
 
           {/* Mobile menu button */}
@@ -166,15 +207,25 @@ function HeaderPreview() {
               <Bell className="h-5 w-5" />
               <span className="sr-only">Notifications</span>
             </Button>
-            <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full p-0">
-              <Avatar className="h-8 w-8">
-                <AvatarImage
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face"
-                  alt="User avatar"
-                />
-                <AvatarFallback>LJ</AvatarFallback>
-              </Avatar>
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full p-0">
+                  <Avatar className="h-8 w-8">
+                    <AvatarImage
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face"
+                      alt="User avatar"
+                    />
+                    <AvatarFallback>LJ</AvatarFallback>
+                  </Avatar>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem>Profile</DropdownMenuItem>
+                <DropdownMenuItem>Settings</DropdownMenuItem>
+                <DropdownMenuItem>Help</DropdownMenuItem>
+                <DropdownMenuItem>Sign out</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
       </div>

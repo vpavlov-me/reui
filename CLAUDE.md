@@ -101,6 +101,26 @@ All components are exported from `@reluna-ui/ui`:
 - `input` - Input borders
 - `ring` - Focus rings
 
+### Border Radius
+
+All interactive components use `rounded-[10px]`:
+- Button
+- Card
+- Input
+- Select
+- Sheet
+- Badge (uses `rounded-full` for pill style)
+
+### Cards Without Borders
+
+Cards don't use borders - contrast is achieved through background colors:
+- Gray background (`bg-muted/30`) + white card (`bg-card`)
+- White background (`bg-background`) + gray card (`bg-muted/50`)
+
+### Input Default State
+
+Inputs have gray background by default (`bg-muted/50`) with border.
+
 ### Spacing and Layout
 
 ```tsx
@@ -110,6 +130,73 @@ All components are exported from `@reluna-ui/ui`:
 <div className="gap-6" />          // Grid/flex gaps
 <div className="p-6" />            // Card padding
 <div className="py-8 md:py-12" />  // Section padding
+```
+
+## Responsive Design
+
+### Breakpoints
+
+- `sm`: 640px - Mobile landscape
+- `md`: 768px - Tablet
+- `lg`: 1024px - Desktop
+- `xl`: 1280px - Large desktop
+
+### Component-Specific Responsive Rules
+
+**Sheet (Side Panel)**
+- Mobile: Full width (`w-full`)
+- Desktop: Fixed width 700px (`sm:w-[700px]`)
+
+**Navigation**
+- Mobile: Hidden, use hamburger menu
+- Desktop: Horizontal navigation with dropdowns
+
+**Grid Layouts**
+- Mobile: Single column
+- Tablet: 2 columns
+- Desktop: 3 columns for main content grids
+
+```tsx
+// Standard responsive grid
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" />
+
+// Main content with sidebar
+<div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+  <div className="lg:col-span-2">{/* Main content */}</div>
+  <div>{/* Sidebar */}</div>
+</div>
+```
+
+### Container Max Widths
+
+- Content pages: `max-w-screen-xl` (1280px)
+- Internal app pages: `max-w-[1048px]`
+
+### Typography Scaling
+
+```tsx
+// Page titles
+<h1 className="text-2xl md:text-3xl font-medium" />
+
+// Section titles
+<h2 className="text-lg md:text-xl font-medium" />
+
+// Card titles
+<h3 className="text-base font-medium" />
+```
+
+### Mobile-First Approach
+
+Always start with mobile styles and add responsive modifiers:
+
+```tsx
+// Correct - mobile first
+<div className="flex flex-col sm:flex-row" />
+<div className="p-4 md:p-6" />
+<div className="hidden md:flex" />
+
+// Incorrect - desktop first
+<div className="flex-row sm:flex-col" />
 ```
 
 ## Component Patterns
