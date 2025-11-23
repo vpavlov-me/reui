@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { codeToHtml } from "shiki";
 import { cn } from "@/lib/utils";
 import { Button, Tabs, TabsContent, TabsList, TabsTrigger } from "@reluna-ui/ui";
 import { Check, Copy } from "lucide-react";
@@ -9,11 +10,23 @@ interface CodePreviewProps {
   children: React.ReactNode;
   code: string;
   className?: string;
-  highlightedCode?: string;
+  language?: string;
 }
 
-export function CodePreview({ children, code, className, highlightedCode }: CodePreviewProps) {
+export function CodePreview({ children, code, className, language = "tsx" }: CodePreviewProps) {
   const [copied, setCopied] = React.useState(false);
+  const [highlightedHtml, setHighlightedHtml] = React.useState<string>("");
+
+  React.useEffect(() => {
+    async function highlight() {
+      const html = await codeToHtml(code.trim(), {
+        lang: language,
+        theme: "github-dark",
+      });
+      setHighlightedHtml(html);
+    }
+    highlight();
+  }, [code, language]);
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(code);
@@ -59,14 +72,14 @@ export function CodePreview({ children, code, className, highlightedCode }: Code
           </div>
         </TabsContent>
         <TabsContent value="code" className="m-0">
-          {highlightedCode ? (
+          {highlightedHtml ? (
             <div
-              className="overflow-x-auto text-sm [&_pre]:p-4 [&_pre]:m-0 [&_pre]:bg-muted/50 [&_code]:bg-transparent"
-              dangerouslySetInnerHTML={{ __html: highlightedCode }}
+              className="overflow-x-auto text-sm [&_pre]:p-4 [&_pre]:m-0 [&_pre]:overflow-x-auto [&_code]:bg-transparent"
+              dangerouslySetInnerHTML={{ __html: highlightedHtml }}
             />
           ) : (
-            <pre className="overflow-x-auto p-4 text-sm bg-muted/50">
-              <code>{code}</code>
+            <pre className="overflow-x-auto p-4 text-sm bg-zinc-950 text-zinc-50">
+              <code>{code.trim()}</code>
             </pre>
           )}
         </TabsContent>

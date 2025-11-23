@@ -82,7 +82,7 @@ export function AppFooter({
   className,
 }: AppFooterProps) {
   return (
-    <footer className={cn("border-t bg-background", className)}>
+    <footer className={cn("border-t", className)}>
       <div className="container max-w-[1048px]">
         {newsletter && (
           <section className="py-8">

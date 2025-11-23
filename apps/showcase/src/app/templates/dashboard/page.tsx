@@ -31,6 +31,7 @@ import {
 } from "lucide-react";
 import { AppHeader } from "@/components/blocks/app-header";
 import { AppFooter } from "@/components/blocks/app-footer";
+import { HeroBanner } from "@/components/blocks/hero-banner";
 
 // Mock data
 const dashboardLogo = (
@@ -132,25 +133,18 @@ export default function DashboardTemplate() {
 
       <div className="container max-w-[1048px] py-4 space-y-4">
         {/* Welcome Banner */}
-        <Card className="bg-gradient-to-r from-primary/80 to-primary border-0 text-white overflow-hidden">
-          <CardContent className="py-4">
-            <div className="flex items-center gap-3">
-              <span className="text-lg">Welcome Back,</span>
-              <Avatar className="h-6 w-6 border-2 border-white/50">
-                <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=24&h=24&fit=crop&crop=face" alt="User" />
-                <AvatarFallback className="text-xs">LJ</AvatarFallback>
-              </Avatar>
-              <span className="font-semibold">Logan Johns</span>
-              <span>You Have</span>
-              <CalendarDays className="h-4 w-4" />
-              <span className="font-semibold">3 Meetings</span>
-              <CheckCircle2 className="h-4 w-4" />
-              <span className="font-semibold">2 Tasks</span>
-              <span>and</span>
-              <span className="font-semibold">✦ 3 Pending Decisions</span>
-            </div>
-          </CardContent>
-        </Card>
+        <HeroBanner
+          user={{
+            name: "Logan Roy",
+            avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=24&h=24&fit=crop&crop=face",
+            initials: "LR",
+          }}
+          stats={[
+            { icon: CalendarDays, value: 3, label: "Meetings" },
+            { icon: CheckCircle2, value: 2, label: "Tasks" },
+            { value: "3", label: "Pending Decisions" },
+          ]}
+        />
 
         {/* Family Overview */}
         <Card>
@@ -269,34 +263,6 @@ export default function DashboardTemplate() {
             </CardContent>
           </Card>
         </div>
-
-        {/* Stay Updated */}
-        <Card>
-          <CardContent className="py-6">
-            <div className="grid md:grid-cols-2 gap-6 items-center">
-              <div className="space-y-3">
-                <h3 className="text-lg font-medium">Stay Updated</h3>
-                <p className="text-sm text-muted-foreground">
-                  Get insights and update on family governance best practices delivered every two weeks
-                </p>
-                <div className="flex gap-2">
-                  <Input placeholder="Your Email Address" className="max-w-xs" />
-                  <Button>
-                    Subscribe <Mail className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-              <div className="flex justify-center md:justify-end">
-                <div className="relative">
-                  <div className="w-32 h-24 bg-muted rounded-lg flex items-center justify-center">
-                    <Mail className="h-8 w-8 text-muted-foreground" />
-                  </div>
-                  <Badge className="absolute -top-2 -right-2 bg-primary">1</Badge>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
 
         {/* Footer with AppFooter component */}
         <AppFooter

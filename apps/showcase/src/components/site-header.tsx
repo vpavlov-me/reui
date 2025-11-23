@@ -3,18 +3,13 @@
 import * as React from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { ChevronDown, Moon, Sun, Github, Menu, X } from "lucide-react";
+import { Moon, Sun, Github, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeSwitcher } from "./theme-switcher";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
   Sheet,
   SheetContent,
   SheetTrigger,
-  ScrollArea,
 } from "@reluna-ui/ui";
 import { CommandPalette } from "./command-palette";
 
@@ -48,28 +43,9 @@ export function SiteHeader() {
               <Link href="/" className="flex items-center space-x-2 mb-4">
                 <span className="font-medium text-xl">Reluna UI</span>
               </Link>
-              <div className="flex flex-col gap-3">
-                <div className="font-medium text-sm text-muted-foreground">Documentation</div>
-                <div className="flex flex-col gap-2 pl-2">
-                  <Link href="/docs" className="text-sm hover:text-primary">Overview</Link>
-                  <Link href="/docs/installation" className="text-sm hover:text-primary">Installation</Link>
-                  <Link href="/docs/components" className="text-sm hover:text-primary">Components</Link>
-                  <Link href="/docs/themes" className="text-sm hover:text-primary">Themes</Link>
-                  <Link href="/docs/colors" className="text-sm hover:text-primary">Colors</Link>
-                  <Link href="/docs/icons" className="text-sm hover:text-primary">Icons</Link>
-                  <Link href="/docs/tokens" className="text-sm hover:text-primary">Design Tokens</Link>
-                </div>
-              </div>
+              <Link href="/docs" className="text-sm font-medium hover:text-primary">Docs</Link>
               <Link href="/blocks" className="text-sm font-medium hover:text-primary">Blocks</Link>
-              <div className="flex flex-col gap-3">
-                <div className="font-medium text-sm text-muted-foreground">Templates</div>
-                <div className="flex flex-col gap-2 pl-2">
-                  <Link href="/templates/dashboard" className="text-sm hover:text-primary">Dashboard</Link>
-                  <Link href="/templates/profile" className="text-sm hover:text-primary">Profile</Link>
-                  <Link href="/templates/constitution" className="text-sm hover:text-primary">Constitution</Link>
-                  <Link href="/templates/auth" className="text-sm hover:text-primary">Authentication</Link>
-                </div>
-              </div>
+              <Link href="/templates" className="text-sm font-medium hover:text-primary">Templates</Link>
               <Link href="/changelog" className="text-sm font-medium hover:text-primary">Changelog</Link>
             </nav>
           </SheetContent>
@@ -85,61 +61,24 @@ export function SiteHeader() {
             <span className="font-medium text-xl">Reluna UI</span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 transition-colors hover:text-foreground/80 text-foreground/60">
-                Docs
-                <ChevronDown className="h-3 w-3" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start">
-                <DropdownMenuItem asChild>
-                  <Link href="/docs">Overview</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/docs/installation">Installation</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/docs/components">Components</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/docs/themes">Themes</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/docs/colors">Colors</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/docs/icons">Icons</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/docs/tokens">Design Tokens</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Link
+              href="/docs"
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
+            >
+              Docs
+            </Link>
             <Link
               href="/blocks"
               className="transition-colors hover:text-foreground/80 text-foreground/60"
             >
               Blocks
             </Link>
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 transition-colors hover:text-foreground/80 text-foreground/60">
-                Templates
-                <ChevronDown className="h-3 w-3" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start">
-                <DropdownMenuItem asChild>
-                  <Link href="/templates/dashboard">Dashboard</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/templates/profile">Profile</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/templates/constitution">Constitution</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/templates/auth">Authentication</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Link
+              href="/templates"
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
+            >
+              Templates
+            </Link>
             <Link
               href="/changelog"
               className="transition-colors hover:text-foreground/80 text-foreground/60"

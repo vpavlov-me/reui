@@ -34,6 +34,14 @@ const docsSections = [
     ],
   },
   {
+    title: 'Foundation',
+    items: [
+      { label: 'Responsive', href: '/docs/responsive' },
+      { label: 'Typography', href: '/docs/typography' },
+      { label: 'Spacing', href: '/docs/spacing' },
+    ],
+  },
+  {
     title: 'Design',
     items: [
       { label: 'Themes', href: '/docs/themes' },
@@ -88,6 +96,9 @@ const segmentLabels: Record<string, string> = {
   colors: 'Colors',
   icons: 'Icons',
   tokens: 'Design Tokens',
+  responsive: 'Responsive',
+  typography: 'Typography',
+  spacing: 'Spacing',
   charts: 'Charts',
   status: 'Component Status',
   // Component names
@@ -136,7 +147,6 @@ const segmentLabels: Record<string, string> = {
   toggle: 'Toggle',
   'toggle-group': 'Toggle Group',
   tooltip: 'Tooltip',
-  typography: 'Typography',
 };
 
 interface BreadcrumbSegment {

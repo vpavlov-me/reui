@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { DynamicFavicon } from "@/components/dynamic-favicon";
 
 const ppObjectSans = localFont({
   src: [
@@ -45,6 +46,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <DynamicFavicon />
           {/* Skip Links for Accessibility */}
           <a
             href="#main-content"

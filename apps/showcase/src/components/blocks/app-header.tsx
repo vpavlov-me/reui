@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   Avatar,
   AvatarFallback,
@@ -93,6 +94,7 @@ export function AppHeader({
   onSignOut,
   className,
 }: AppHeaderProps) {
+  const router = useRouter();
   return (
     <header className={cn("sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60", className)}>
       <div className="container max-w-[1048px] flex h-14 items-center justify-between">
@@ -114,8 +116,8 @@ export function AppHeader({
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="start">
                     {item.items.map((subItem) => (
-                      <DropdownMenuItem key={subItem.label} asChild>
-                        <Link href={subItem.href}>{subItem.label}</Link>
+                      <DropdownMenuItem key={subItem.label} onClick={() => router.push(subItem.href)}>
+                        {subItem.label}
                       </DropdownMenuItem>
                     ))}
                   </DropdownMenuContent>
@@ -157,8 +159,8 @@ export function AppHeader({
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem asChild>
-                <Link href="/templates/profile">Profile</Link>
+              <DropdownMenuItem onClick={() => router.push("/templates/profile")}>
+                Profile
               </DropdownMenuItem>
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuItem>Help</DropdownMenuItem>

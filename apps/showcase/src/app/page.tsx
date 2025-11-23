@@ -65,19 +65,17 @@ export default function Home() {
           40+ beautifully designed, fully accessible components with TypeScript support. 
           Built on Shadcn UI and Radix UI for Family, Advisor, and Admin portals.
         </span>
-        <div className="flex w-full items-center justify-center space-x-4 py-4 md:pb-10">
-          <Link
-            href="/docs/components"
-            className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-          >
-            Browse all Components
-          </Link>
-          <Link
-            href="/docs/installation"
-            className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-          >
-            Installation Guide
-          </Link>
+        <div className="flex w-full items-center justify-center gap-4 py-4 md:pb-10">
+          <Button asChild>
+            <Link href="/docs/components">
+              Browse all Components
+            </Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/docs/installation">
+              Installation Guide
+            </Link>
+          </Button>
         </div>
       </section>
 
