@@ -9,7 +9,7 @@ export default function AlertPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Alert</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Alert</h1>
         <p className="text-lg text-muted-foreground">
           Displays a callout for user attention. Alerts communicate important information, feedback, or guidance to users.
         </p>

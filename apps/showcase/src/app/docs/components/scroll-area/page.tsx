@@ -10,7 +10,7 @@ export default function ScrollAreaPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Scroll Area</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Scroll Area</h1>
         <p className="text-lg text-muted-foreground">
           Augments native scroll functionality for custom, cross-browser styling.
         </p>

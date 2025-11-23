@@ -8,7 +8,7 @@ export default function RadioGroupPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Radio Group</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Radio Group</h1>
         <p className="text-lg text-muted-foreground">
           A set of checkable buttons where only one can be checked at a time. Radio groups are ideal for mutually exclusive options.
         </p>

@@ -17,7 +17,7 @@ export default function HoverCardPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Hover Card</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Hover Card</h1>
         <p className="text-lg text-muted-foreground">
           For sighted users to preview content available behind a link.
         </p>

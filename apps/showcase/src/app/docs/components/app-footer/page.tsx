@@ -20,7 +20,7 @@ export default function AppFooterPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">AppFooter</h1>
+        <h1 className="text-3xl font-medium tracking-tight">AppFooter</h1>
         <p className="text-lg text-muted-foreground">
           A comprehensive application footer component with newsletter subscription, link columns, copyright information, and theme toggle. Part of the template/organism tier in atomic design.
         </p>

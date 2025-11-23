@@ -17,7 +17,7 @@ export default function SelectPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Select</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Select</h1>
         <p className="text-lg text-muted-foreground">
           Displays a dropdown list of options for the user to pick from. Selects provide a compact way to choose from predefined options.
         </p>

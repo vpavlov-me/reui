@@ -99,7 +99,7 @@ export function UsageGuidelines({ dos, donts }: UsageGuidelinesProps) {
       </div>
       <div className="space-y-3">
         <h4 className="font-medium text-sm flex items-center gap-2 text-red-600 dark:text-red-400">
-          <span className="font-bold">✕</span>
+          <span className="font-medium">✕</span>
           Don&apos;t
         </h4>
         <ul className="space-y-2">

@@ -7,7 +7,7 @@ export default function TypographyPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Typography</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Typography</h1>
         <p className="text-lg text-muted-foreground">
           Styles for headings, paragraphs, lists, and other text elements. Typography creates visual hierarchy and improves readability across your application.
         </p>
@@ -318,8 +318,8 @@ export function MyComponent() {
           code={`<table className="w-full">
   <thead>
     <tr className="m-0 border-t p-0 even:bg-muted">
-      <th className="border px-4 py-2 text-left font-bold">Header 1</th>
-      <th className="border px-4 py-2 text-left font-bold">Header 2</th>
+      <th className="border px-4 py-2 text-left font-medium">Header 1</th>
+      <th className="border px-4 py-2 text-left font-medium">Header 2</th>
     </tr>
   </thead>
   <tbody>
@@ -334,10 +334,10 @@ export function MyComponent() {
             <table className="w-full">
               <thead>
                 <tr className="m-0 border-t p-0 even:bg-muted">
-                  <th className="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right">
+                  <th className="border px-4 py-2 text-left font-medium [&[align=center]]:text-center [&[align=right]]:text-right">
                     King's Treasury
                   </th>
-                  <th className="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right">
+                  <th className="border px-4 py-2 text-left font-medium [&[align=center]]:text-center [&[align=right]]:text-right">
                     People's Happiness
                   </th>
                 </tr>

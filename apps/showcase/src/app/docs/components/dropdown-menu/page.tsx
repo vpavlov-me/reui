@@ -30,7 +30,7 @@ export default function DropdownMenuPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Dropdown Menu</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Dropdown Menu</h1>
         <p className="text-lg text-muted-foreground">
           Displays a menu to the user — such as a set of actions or functions — triggered by a button.
         </p>

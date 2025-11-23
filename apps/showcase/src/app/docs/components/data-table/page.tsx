@@ -31,7 +31,7 @@ export default function DataTablePage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Data Table</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Data Table</h1>
         <p className="text-lg text-muted-foreground">
           A powerful data table component with sorting, filtering, pagination, and search functionality.
         </p>

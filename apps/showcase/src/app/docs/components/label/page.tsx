@@ -8,7 +8,7 @@ export default function LabelPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Label</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Label</h1>
         <p className="text-lg text-muted-foreground">
           Renders an accessible label associated with form controls. Labels improve usability by clearly identifying form fields and making them clickable.
         </p>

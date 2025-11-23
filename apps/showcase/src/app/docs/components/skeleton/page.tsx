@@ -8,7 +8,7 @@ export default function SkeletonPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Skeleton</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Skeleton</h1>
         <p className="text-lg text-muted-foreground">
           Use to show a placeholder while content is loading.
         </p>

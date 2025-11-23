@@ -30,7 +30,7 @@ export default function AppHeaderPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">AppHeader</h1>
+        <h1 className="text-3xl font-medium tracking-tight">AppHeader</h1>
         <p className="text-lg text-muted-foreground">
           A configurable application header component that combines logo, navigation, notifications, and user menu. Part of the template/organism tier in atomic design.
         </p>

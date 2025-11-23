@@ -16,7 +16,7 @@ export default function PaginationPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Pagination</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Pagination</h1>
         <p className="text-lg text-muted-foreground">
           Pagination with page navigation, next and previous links.
         </p>

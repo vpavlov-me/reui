@@ -8,7 +8,7 @@ export default function AspectRatioPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Aspect Ratio</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Aspect Ratio</h1>
         <p className="text-lg text-muted-foreground">
           Displays content within a desired ratio.
         </p>

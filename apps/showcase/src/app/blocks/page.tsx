@@ -62,7 +62,7 @@ export default function BlocksPage() {
         <Badge variant="secondary" className="w-fit">
           Blocks / Organisms
         </Badge>
-        <h1 className="text-4xl font-bold tracking-tight">Layout Blocks</h1>
+        <h1 className="text-4xl font-medium tracking-tight">Layout Blocks</h1>
         <p className="text-lg text-muted-foreground max-w-2xl">
           Ready-to-use template and organism-level components that compose multiple atoms and molecules. These blocks provide complete layout solutions for building consistent page structures across your application.
         </p>

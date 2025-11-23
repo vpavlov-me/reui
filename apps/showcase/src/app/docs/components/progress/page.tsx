@@ -15,7 +15,7 @@ export default function ProgressPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Progress</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Progress</h1>
         <p className="text-lg text-muted-foreground">
           Displays an indicator showing the completion progress of a task. Progress bars provide visual feedback for loading states and task completion.
         </p>

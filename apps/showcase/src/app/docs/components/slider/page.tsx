@@ -8,7 +8,7 @@ export default function SliderPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Slider</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Slider</h1>
         <p className="text-lg text-muted-foreground">
           An input where the user selects a value from within a given range.
         </p>

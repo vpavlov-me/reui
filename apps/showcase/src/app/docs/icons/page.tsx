@@ -591,7 +591,7 @@ export default function IconsPage() {
       <div className="space-y-8">
           {/* Header */}
           <div className="space-y-4">
-            <h1 className="text-3xl font-bold tracking-tight">Icons</h1>
+            <h1 className="text-3xl font-medium tracking-tight">Icons</h1>
             <p className="text-lg text-muted-foreground">
               Beautiful & consistent icons powered by Lucide. Click any icon to copy the JSX code.
             </p>

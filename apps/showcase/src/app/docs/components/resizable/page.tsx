@@ -12,7 +12,7 @@ export default function ResizablePage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Resizable</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Resizable</h1>
         <p className="text-lg text-muted-foreground">
           Accessible resizable panel groups and layouts with keyboard support.
         </p>

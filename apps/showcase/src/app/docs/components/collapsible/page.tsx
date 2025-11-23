@@ -17,7 +17,7 @@ export default function CollapsiblePage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Collapsible</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Collapsible</h1>
         <p className="text-lg text-muted-foreground">
           An interactive component which expands/collapses a panel.
         </p>

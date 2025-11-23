@@ -24,7 +24,7 @@ export default function ClaudeAgentPage() {
               <Bot className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold tracking-tight">Claude Code Agent</h1>
+              <h1 className="text-3xl font-medium tracking-tight">Claude Code Agent</h1>
               <p className="text-sm text-muted-foreground">Design Advocate</p>
             </div>
           </div>

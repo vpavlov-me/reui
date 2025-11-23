@@ -26,6 +26,19 @@ interface Release {
 
 const releases: Release[] = [
   {
+    version: "1.1.0",
+    date: "2024-11-23",
+    changes: [
+      { type: "feature", description: "Added Card variants (default gray, elevated white with shadow)", component: "Card" },
+      { type: "feature", description: "Added Command Palette with keyboard navigation (Cmd+K)", component: "CommandPalette" },
+      { type: "improvement", description: "Updated Tabs component with rounded-[10px] styling", component: "Tabs" },
+      { type: "improvement", description: "Changed --card CSS variable to gray for better contrast", component: "Tokens" },
+      { type: "improvement", description: "Updated Label component to use regular font weight", component: "Label" },
+      { type: "improvement", description: "Replaced all font-bold with font-medium across showcase", component: "Typography" },
+      { type: "improvement", description: "Expanded components list to 54 items in /docs/components", component: "Documentation" },
+    ],
+  },
+  {
     version: "1.0.0",
     date: "2024-11-21",
     changes: [

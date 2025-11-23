@@ -9,7 +9,7 @@ export default function TogglePage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Toggle</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Toggle</h1>
         <p className="text-lg text-muted-foreground">
           A two-state button that can be either on or off. Toggles are ideal for toolbar actions or binary options that need visual feedback.
         </p>

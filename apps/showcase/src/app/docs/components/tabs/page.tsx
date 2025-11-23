@@ -21,7 +21,7 @@ export default function TabsPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Tabs</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Tabs</h1>
         <p className="text-lg text-muted-foreground">
           A set of layered sections of content that are displayed one at a time. Tabs help organize content into related groups while conserving screen space.
         </p>

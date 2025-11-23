@@ -24,7 +24,7 @@ export default function CardPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Card</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Card</h1>
         <p className="text-lg text-muted-foreground">
           A container component that groups related content and actions. Cards create clear visual boundaries and organize information into digestible chunks.
         </p>

@@ -13,7 +13,7 @@ export default function InputOTPPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Input OTP</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Input OTP</h1>
         <p className="text-lg text-muted-foreground">
           Accessible one-time password component with copy paste functionality.
         </p>

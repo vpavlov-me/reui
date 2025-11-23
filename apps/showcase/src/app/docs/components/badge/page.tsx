@@ -8,7 +8,7 @@ export default function BadgePage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Badge</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Badge</h1>
         <p className="text-lg text-muted-foreground">
           Displays a badge or label. Badges are used to highlight status, categories, or other metadata in a compact format.
         </p>

@@ -8,7 +8,7 @@ export default function CheckboxPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Checkbox</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Checkbox</h1>
         <p className="text-lg text-muted-foreground">
           A control that allows the user to toggle between checked and not checked states. Checkboxes are ideal for multiple selections or binary choices.
         </p>

@@ -8,7 +8,7 @@ export default function TextareaPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Textarea</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Textarea</h1>
         <p className="text-lg text-muted-foreground">
           Displays a multi-line text input field. Textareas are ideal for longer-form content like comments, descriptions, or messages.
         </p>

@@ -31,7 +31,7 @@ export default function TablePage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Table</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Table</h1>
         <p className="text-lg text-muted-foreground">
           A responsive table component for displaying tabular data. Tables organize information in rows and columns for easy scanning and comparison.
         </p>

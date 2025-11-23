@@ -113,7 +113,7 @@ export default function ComponentStatusPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Component Status</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Component Status</h1>
         <p className="text-lg text-muted-foreground">
           Overview of all components in the Reluna UI library with their current status, version, and documentation availability.
         </p>
@@ -126,23 +126,23 @@ export default function ComponentStatusPage() {
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           <div className="rounded-lg border p-4">
-            <div className="text-2xl font-bold">{totalComponents}</div>
+            <div className="text-2xl font-medium">{totalComponents}</div>
             <div className="text-sm text-muted-foreground">Total Components</div>
           </div>
           <div className="rounded-lg border p-4">
-            <div className="text-2xl font-bold text-green-600">{stableComponents}</div>
+            <div className="text-2xl font-medium text-green-600">{stableComponents}</div>
             <div className="text-sm text-muted-foreground">Stable</div>
           </div>
           <div className="rounded-lg border p-4">
-            <div className="text-2xl font-bold text-yellow-600">{betaComponents}</div>
+            <div className="text-2xl font-medium text-yellow-600">{betaComponents}</div>
             <div className="text-sm text-muted-foreground">Beta</div>
           </div>
           <div className="rounded-lg border p-4">
-            <div className="text-2xl font-bold text-blue-600">{documentedComponents}</div>
+            <div className="text-2xl font-medium text-blue-600">{documentedComponents}</div>
             <div className="text-sm text-muted-foreground">Documented</div>
           </div>
           <div className="rounded-lg border p-4">
-            <div className="text-2xl font-bold text-purple-600">{testedComponents}</div>
+            <div className="text-2xl font-medium text-purple-600">{testedComponents}</div>
             <div className="text-sm text-muted-foreground">With Tests</div>
           </div>
         </div>

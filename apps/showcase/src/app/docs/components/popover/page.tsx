@@ -15,7 +15,7 @@ export default function PopoverPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Popover</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Popover</h1>
         <p className="text-lg text-muted-foreground">
           Displays rich content in a portal, triggered by a button.
         </p>

@@ -20,7 +20,7 @@ export default function SheetPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Sheet</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Sheet</h1>
         <p className="text-lg text-muted-foreground">
           Extends the Dialog component to display content that complements the main content of the screen.
         </p>

@@ -8,7 +8,7 @@ export default function AvatarPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Avatar</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Avatar</h1>
         <p className="text-lg text-muted-foreground">
           An image element with a fallback for representing the user. Avatars help personalize the interface and identify users visually.
         </p>

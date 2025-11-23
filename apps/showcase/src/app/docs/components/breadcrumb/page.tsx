@@ -20,7 +20,7 @@ export default function BreadcrumbDemoPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Breadcrumb</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Breadcrumb</h1>
         <p className="text-lg text-muted-foreground">
           Displays the path to the current resource using a hierarchy of links.
         </p>

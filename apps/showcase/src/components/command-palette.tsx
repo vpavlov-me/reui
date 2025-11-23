@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import { createPortal } from 'react-dom';
 import { useRouter } from 'next/navigation';
 import { Search, LayoutGrid, FileText, Palette, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -689,15 +690,24 @@ export function CommandPalette() {
         </kbd>
       </button>
 
-      {/* Overlay */}
-      {open && (
-        <div className="fixed inset-0 z-50 bg-black/50" onClick={() => setOpen(false)} />
-      )}
+      {/* Portal for Overlay and Command Palette */}
+      {open && typeof document !== 'undefined' && createPortal(
+        <>
+          {/* Overlay */}
+          <div
+            className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm"
+            onClick={() => setOpen(false)}
+          />
 
-      {/* Command Palette */}
-      {open && (
-        <div className="fixed left-1/2 top-1/2 z-50 w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 transform">
-          <div className="rounded-lg border border-border bg-background shadow-lg">
+          {/* Command Palette */}
+          <div
+            className="fixed inset-0 z-[101] flex items-start justify-center pt-[15vh] px-4"
+            onClick={() => setOpen(false)}
+          >
+            <div
+              className="w-full max-w-2xl rounded-lg border border-border bg-background shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
             {/* Search Input */}
             <div className="flex items-center border-b border-border px-4 py-3">
               <Search className="h-4 w-4 text-muted-foreground" />
@@ -794,6 +804,8 @@ export function CommandPalette() {
             </div>
           </div>
         </div>
+        </>,
+        document.body
       )}
     </>
   );

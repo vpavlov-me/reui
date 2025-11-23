@@ -5,23 +5,23 @@
 [![React](https://img.shields.io/badge/React-18-blue)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-blue)](https://tailwindcss.com/)
 
-Multi-portal design system based on Shadcn UI for Family, Advisor, and Admin portals.
+Production-ready design system with 40+ components built on Shadcn UI for Family, Advisor, and Admin portals.
 
 > 🚀 **[START HERE](./START_HERE.md)** - Complete getting started guide
 > 📖 **[Documentation](./INDEX.md)** - Full documentation index
 > 🎬 **[Live Demo](https://vpavlov-me.github.io/reui/)** - Interactive component showcase
 
-## 🎨 Portals
+## 🎨 Portal Themes
 
-- **Family Portal** - Orange accent (#FB6428)
-- **Advisor Portal** - Blue accent (#005CCD)
-- **Admin Portal** - Lime accent (#8FCD00)
+- **Family Portal** - Orange accent (#FB6428) - Perfect for family governance
+- **Advisor Portal** - Blue accent (#005CCD) - Professional advisor interface
+- **Admin Portal** - Lime accent (#8FCD00) - Administrative control panel
 
 ## 📦 Packages
 
-- `@reluna-ui/ui` - Core UI components based on Shadcn UI
-- `@reluna-ui/themes` - Portal-specific theme configurations
-- `@reluna-ui/icons` - Icon components using Lucide Icons
+- `@reluna-ui/ui` - 40+ production-ready UI components based on Shadcn UI
+- `@reluna-ui/themes` - Portal-specific theme configurations with dark mode
+- `@reluna-ui/icons` - Complete icon library with Lucide Icons
 
 ## 🚀 Installation
 
@@ -123,17 +123,32 @@ module.exports = {
 ### 4. Use components
 
 ```tsx
-import { Button, Card, Input } from '@reluna-ui/ui';
-import { Heart, Settings } from '@reluna-ui/icons';
+import { Button, Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, Input } from '@reluna-ui/ui';
+import { Heart, Settings, Users } from '@reluna-ui/icons';
+import { useState } from 'react';
 
 export default function MyApp() {
+  const [value, setValue] = useState('');
+  
   return (
-    <Card>
-      <Input placeholder="Enter text" />
-      <Button>
-        <Heart className="mr-2 h-4 w-4" />
-        Submit
-      </Button>
+    <Card className="w-full max-w-md">
+      <CardHeader>
+        <CardTitle>Welcome</CardTitle>
+        <CardDescription>Enter your information</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <Input 
+          placeholder="Enter text" 
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+      </CardContent>
+      <CardFooter>
+        <Button>
+          <Heart className="mr-2 h-4 w-4" />
+          Submit
+        </Button>
+      </CardFooter>
     </Card>
   );
 }
@@ -163,14 +178,34 @@ export default function App() {
 
 ## 🖼️ Components
 
-See live examples at: [https://reluna-ui.github.io/design-system/](https://reluna-ui.github.io/design-system/)
+See live examples at: [https://vpavlov-me.github.io/reui/](https://vpavlov-me.github.io/reui/)
 
-### Available Components
+### Available Components (40+)
 
-- Button
-- Card
-- Input
-- And more...
+**Atomic Components**
+- Button, Input, Label, Badge, Separator, Skeleton, Avatar, AspectRatio
+
+**Form Components**
+- Checkbox, RadioGroup, Select, Textarea, Switch, Toggle, ToggleGroup, Combobox, MultiSelect, FileUpload, InputOTP, Slider, Progress, Form
+
+**Container Components**
+- Card, Alert, AlertDialog, Popover, HoverCard, Sheet, Dialog, Tabs, Accordion, Collapsible, Resizable, ScrollArea
+
+**Navigation**
+- Breadcrumb, NavigationMenu, Pagination, Menubar, DropdownMenu, ContextMenu, Stepper
+
+**Complex Components**
+- Table, DataTable, Calendar, DateRangePicker, Carousel, Chart
+
+**Feedback**
+- Toast (Sonner), Tooltip
+
+**All components include:**
+- TypeScript support
+- Accessibility (WCAG 2.1 AA)
+- Dark mode
+- Responsive design
+- All variants and sizes
 
 ## 🛠️ Development
 
@@ -178,14 +213,26 @@ See live examples at: [https://reluna-ui.github.io/design-system/](https://relun
 # Install dependencies
 pnpm install
 
-# Start development
+# Start development server (showcase + watch mode)
 pnpm dev
 
 # Build all packages
 pnpm build
 
+# Run tests
+pnpm test
+
+# Type check
+pnpm type-check
+
+# Lint code
+pnpm lint
+
 # Create a changeset
 pnpm changeset
+
+# Version packages
+pnpm version-packages
 
 # Publish to npm
 pnpm release
@@ -253,4 +300,17 @@ MIT
 
 ## 🤝 Contributing
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for details.
+We welcome contributions! See [CONTRIBUTING.md](./CONTRIBUTING.md) for:
+- Development setup
+- Creating new components
+- Submitting pull requests
+- Code style guidelines
+- Review process
+
+## 📚 Additional Resources
+
+- [Quick Start](./QUICKSTART.md) - Get up and running in 5 minutes
+- [Setup Guide](./SETUP.md) - Detailed installation and configuration
+- [Project Structure](./PROJECT_STRUCTURE.md) - File organization
+- [Architecture](./ARCHITECTURE.md) - System design and decisions
+- [FAQ](./FAQ.md) - Frequently asked questions

@@ -11,7 +11,7 @@ export default function InputPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Input</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Input</h1>
         <p className="text-lg text-muted-foreground">
           Displays a form input field for collecting user data. Input components are the foundation of forms and can be customized for various data types.
         </p>

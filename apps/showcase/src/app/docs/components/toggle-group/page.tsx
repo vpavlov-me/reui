@@ -9,7 +9,7 @@ export default function ToggleGroupPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Toggle Group</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Toggle Group</h1>
         <p className="text-lg text-muted-foreground">
           A set of two-state buttons that can be toggled on or off.
         </p>

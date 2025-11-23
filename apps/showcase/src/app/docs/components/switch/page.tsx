@@ -8,7 +8,7 @@ export default function SwitchPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Switch</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Switch</h1>
         <p className="text-lg text-muted-foreground">
           A control that allows users to toggle between on and off states. Switches are ideal for immediate binary settings.
         </p>

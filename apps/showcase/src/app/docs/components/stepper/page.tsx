@@ -22,7 +22,7 @@ export default function StepperPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Stepper</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Stepper</h1>
         <p className="text-lg text-muted-foreground">
           A wizard/stepper component for multi-step workflows with progress indication and step navigation.
         </p>

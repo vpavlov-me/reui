@@ -16,7 +16,7 @@ export default function AppLayoutPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">AppLayout</h1>
+        <h1 className="text-3xl font-medium tracking-tight">AppLayout</h1>
         <p className="text-lg text-muted-foreground">
           A complete page layout wrapper component that orchestrates AppHeader, PageHeader, AppFooter, and optional sidebar. The top-level template component in atomic design that brings everything together.
         </p>

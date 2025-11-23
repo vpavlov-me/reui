@@ -29,7 +29,7 @@ export default function ComboboxPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Combobox</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Combobox</h1>
         <p className="text-lg text-muted-foreground">
           Autocomplete input and command palette with a list of suggestions.
         </p>

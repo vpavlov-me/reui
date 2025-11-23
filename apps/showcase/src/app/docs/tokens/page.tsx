@@ -91,7 +91,7 @@ const fontWeightTokens = [
   { name: "normal", value: "400", tailwind: "font-normal" },
   { name: "medium", value: "500", tailwind: "font-medium" },
   { name: "semibold", value: "600", tailwind: "font-semibold" },
-  { name: "bold", value: "700", tailwind: "font-bold" },
+  { name: "bold", value: "700", tailwind: "font-medium" },
   { name: "extrabold", value: "800", tailwind: "font-extrabold" },
   { name: "black", value: "900", tailwind: "font-black" },
 ];

@@ -8,7 +8,7 @@ export default function SeparatorPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Separator</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Separator</h1>
         <p className="text-lg text-muted-foreground">
           Visually or semantically separates content. Separators help organize content by creating clear visual boundaries between sections.
         </p>

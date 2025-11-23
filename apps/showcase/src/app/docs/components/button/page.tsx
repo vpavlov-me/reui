@@ -9,7 +9,7 @@ export default function ButtonPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Button</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Button</h1>
         <p className="text-lg text-muted-foreground">
           Displays a button or a component that looks like a button. Buttons allow users to take actions and make choices with a single tap.
         </p>

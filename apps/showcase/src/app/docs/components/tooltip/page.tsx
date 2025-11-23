@@ -15,7 +15,7 @@ export default function TooltipPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Tooltip</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Tooltip</h1>
         <p className="text-lg text-muted-foreground">
           A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
         </p>

@@ -19,7 +19,7 @@ export default function AlertDialogPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Alert Dialog</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Alert Dialog</h1>
         <p className="text-lg text-muted-foreground">
           A modal dialog that interrupts the user with important content and expects a response.
         </p>

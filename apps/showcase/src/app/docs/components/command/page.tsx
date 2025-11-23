@@ -34,7 +34,7 @@ export default function CommandPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Command</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Command</h1>
         <p className="text-lg text-muted-foreground">
           Fast, composable, unstyled command menu for React. Built on top of cmdk.
         </p>

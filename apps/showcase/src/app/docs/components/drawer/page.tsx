@@ -18,7 +18,7 @@ export default function DrawerPage() {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Drawer</h1>
+        <h1 className="text-3xl font-medium tracking-tight">Drawer</h1>
         <p className="text-lg text-muted-foreground">
           A drawer component for React. Extends the Dialog component with slide-in functionality.
         </p>
@@ -97,7 +97,7 @@ export default function DrawerPage() {
             -
           </Button>
           <div className="flex-1 text-center">
-            <div className="text-7xl font-bold tracking-tighter">
+            <div className="text-7xl font-medium tracking-tighter">
               350
             </div>
             <div className="text-[0.70rem] uppercase text-muted-foreground">
@@ -143,7 +143,7 @@ export default function DrawerPage() {
                       -
                     </Button>
                     <div className="flex-1 text-center">
-                      <div className="text-7xl font-bold tracking-tighter">
+                      <div className="text-7xl font-medium tracking-tighter">
                         350
                       </div>
                       <div className="text-[0.70rem] uppercase text-muted-foreground">

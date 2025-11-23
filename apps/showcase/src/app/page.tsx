@@ -56,28 +56,27 @@ export default function Home() {
       {/* Hero Section */}
       <section className="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
         <Badge variant="secondary" className="mb-4">
-          Family Governance Portal
+          Reluna UI - 40+ Components
         </Badge>
         <h1 className="text-center text-3xl font-medium leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">
-          Build your family governance platform
+          Production-ready component library
         </h1>
         <span className="max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl">
-          A collection of beautifully designed, accessible components for family
-          governance portals. Manage family members, documents, meetings, and
-          voting with ease.
+          40+ beautifully designed, fully accessible components with TypeScript support. 
+          Built on Shadcn UI and Radix UI for Family, Advisor, and Admin portals.
         </span>
         <div className="flex w-full items-center justify-center space-x-4 py-4 md:pb-10">
           <Link
             href="/docs/components"
             className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           >
-            Browse Components
+            Browse all Components
           </Link>
           <Link
-            href="/docs/themes"
+            href="/docs/installation"
             className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           >
-            View Themes
+            Installation Guide
           </Link>
         </div>
       </section>
@@ -508,16 +507,16 @@ export default function Home() {
       {/* Features Section */}
       <section className="mx-auto max-w-[980px] py-12">
         <h2 className="mb-8 text-center text-2xl font-medium">
-          Built for Family Governance
+          40+ Components Organized Atomically
         </h2>
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           <div className="relative overflow-hidden rounded-lg border bg-background p-2">
             <div className="flex h-[140px] flex-col justify-between rounded-md p-6">
               <Users className="h-8 w-8 text-primary" />
               <div className="space-y-1">
-                <h3 className="font-medium">Member Management</h3>
+                <h3 className="font-medium">Atomic Primitives</h3>
                 <p className="text-sm text-muted-foreground">
-                  Organize family roles and permissions
+                  8 basic components: Button, Input, Label, Badge, Separator, Skeleton, Avatar
                 </p>
               </div>
             </div>
@@ -526,9 +525,9 @@ export default function Home() {
             <div className="flex h-[140px] flex-col justify-between rounded-md p-6">
               <FileText className="h-8 w-8 text-primary" />
               <div className="space-y-1">
-                <h3 className="font-medium">Document Library</h3>
+                <h3 className="font-medium">Form Components</h3>
                 <p className="text-sm text-muted-foreground">
-                  Secure storage for governance documents
+                  13 form controls: Checkbox, Select, Textarea, Switch, Combobox, FileUpload
                 </p>
               </div>
             </div>
@@ -537,12 +536,38 @@ export default function Home() {
             <div className="flex h-[140px] flex-col justify-between rounded-md p-6">
               <Vote className="h-8 w-8 text-primary" />
               <div className="space-y-1">
-                <h3 className="font-medium">Voting System</h3>
+                <h3 className="font-medium">Complex Components</h3>
                 <p className="text-sm text-muted-foreground">
-                  Democratic decision-making tools
+                  Table, DataTable, Calendar, Chart, Carousel, DateRangePicker
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="rounded-lg border bg-card p-6">
+            <h3 className="font-semibold">100% TypeScript</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Full type safety with excellent IDE support and autocompletion.
+            </p>
+          </div>
+          <div className="rounded-lg border bg-card p-6">
+            <h3 className="font-semibold">WCAG 2.1 AA Compliant</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Accessible by default with keyboard navigation and ARIA support.
+            </p>
+          </div>
+          <div className="rounded-lg border bg-card p-6">
+            <h3 className="font-semibold">3 Portal Themes</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Family (Orange), Advisor (Blue), Admin (Lime) with full dark mode support.
+            </p>
+          </div>
+          <div className="rounded-lg border bg-card p-6">
+            <h3 className="font-semibold">Production Ready</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Tree-shakeable, optimized bundle, CJS and ESM builds, source maps.
+            </p>
           </div>
         </div>
       </section>
