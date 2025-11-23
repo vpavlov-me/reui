@@ -1,6 +1,6 @@
 {
   "name": "@reluna-ui/ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shared UI components based on Shadcn UI",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

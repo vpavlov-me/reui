@@ -1,6 +1,6 @@
 {
   "name": "@reluna-ui/themes",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Portal themes for the design system",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

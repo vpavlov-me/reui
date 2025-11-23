@@ -1,6 +1,6 @@
 {
   "name": "@reluna-ui/icons",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Icon wrapper components using Lucide Icons",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
