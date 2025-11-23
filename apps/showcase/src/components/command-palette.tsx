@@ -609,20 +609,8 @@ const categoryConfig = {
 export function CommandPalette() {
   const [open, setOpen] = React.useState(false);
   const [search, setSearch] = React.useState('');
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
   const router = useRouter();
-
-  // Open with Cmd+K or Ctrl+K
-  React.useEffect(() => {
-    const down = (e: KeyboardEvent) => {
-      if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || e.key === '/') {
-        e.preventDefault();
-        setOpen((open) => !open);
-      }
-    };
-
-    document.addEventListener('keydown', down);
-    return () => document.removeEventListener('keydown', down);
-  }, []);
 
   const filtered = commandItems.filter((item) => {
     if (!search) return true;
@@ -634,11 +622,58 @@ export function CommandPalette() {
     );
   });
 
+  // Reset selected index when search changes
+  React.useEffect(() => {
+    setSelectedIndex(0);
+  }, [search]);
+
   const handleSelect = (href: string) => {
     router.push(href);
     setOpen(false);
     setSearch('');
   };
+
+  // Open with Cmd+K or Ctrl+K, close with ESC, navigate with arrows
+  React.useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || e.key === '/') {
+        e.preventDefault();
+        setOpen((open) => !open);
+      }
+
+      if (!open) return;
+
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        setOpen(false);
+        setSearch('');
+      }
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        setSelectedIndex((prev) =>
+          prev < filtered.length - 1 ? prev + 1 : 0
+        );
+      }
+
+      if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        setSelectedIndex((prev) =>
+          prev > 0 ? prev - 1 : filtered.length - 1
+        );
+      }
+
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        if (filtered[selectedIndex]) {
+          handleSelect(filtered[selectedIndex].href);
+        }
+      }
+    };
+
+    document.addEventListener('keydown', down);
+    return () => document.removeEventListener('keydown', down);
+  }, [open, filtered, selectedIndex, handleSelect]);
 
   return (
     <>
@@ -686,42 +721,53 @@ export function CommandPalette() {
                 </div>
               ) : (
                 <div className="p-2">
-                  {Object.entries(
-                    filtered.reduce(
-                      (acc, item) => {
-                        if (!acc[item.category]) {
-                          acc[item.category] = [];
-                        }
-                        acc[item.category].push(item);
-                        return acc;
-                      },
-                      {} as Record<string, CommandItem[]>
-                    )
-                  ).map(([category, items]) => (
-                    <div key={category}>
-                      <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                        {categoryConfig[category as keyof typeof categoryConfig]?.label}
+                  {(() => {
+                    let globalIndex = 0;
+                    return Object.entries(
+                      filtered.reduce(
+                        (acc, item) => {
+                          if (!acc[item.category]) {
+                            acc[item.category] = [];
+                          }
+                          acc[item.category].push(item);
+                          return acc;
+                        },
+                        {} as Record<string, CommandItem[]>
+                      )
+                    ).map(([category, items]) => (
+                      <div key={category}>
+                        <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                          {categoryConfig[category as keyof typeof categoryConfig]?.label}
+                        </div>
+                        {items.map((item) => {
+                          const currentIndex = globalIndex++;
+                          const isSelected = currentIndex === selectedIndex;
+                          return (
+                            <button
+                              key={item.id}
+                              onClick={() => handleSelect(item.href)}
+                              onMouseEnter={() => setSelectedIndex(currentIndex)}
+                              className={cn(
+                                "w-full rounded px-3 py-2.5 text-left transition-colors focus:outline-none",
+                                isSelected ? "bg-muted" : "hover:bg-muted"
+                              )}
+                            >
+                              <div className="flex items-start gap-3">
+                                <div className="mt-0.5">{item.icon}</div>
+                                <div className="flex-1">
+                                  <div className="text-sm font-medium">{item.title}</div>
+                                  <div className="text-xs text-muted-foreground">{item.description}</div>
+                                </div>
+                                <div className="text-xs text-muted-foreground">
+                                  {categoryConfig[item.category]?.label}
+                                </div>
+                              </div>
+                            </button>
+                          );
+                        })}
                       </div>
-                      {items.map((item) => (
-                        <button
-                          key={item.id}
-                          onClick={() => handleSelect(item.href)}
-                          className="w-full rounded px-3 py-2.5 text-left transition-colors hover:bg-muted focus:bg-muted focus:outline-none"
-                        >
-                          <div className="flex items-start gap-3">
-                            <div className="mt-0.5">{item.icon}</div>
-                            <div className="flex-1">
-                              <div className="text-sm font-medium">{item.title}</div>
-                              <div className="text-xs text-muted-foreground">{item.description}</div>
-                            </div>
-                            <div className="text-xs text-muted-foreground">
-                              {categoryConfig[item.category]?.label}
-                            </div>
-                          </div>
-                        </button>
-                      ))}
-                    </div>
-                  ))}
+                    ));
+                  })()}
                 </div>
               )}
             </div>
