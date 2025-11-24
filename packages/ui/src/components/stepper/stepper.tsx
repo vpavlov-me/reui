@@ -18,6 +18,7 @@ export interface StepperProps {
   orientation?: "horizontal" | "vertical"
   onStepClick?: (stepIndex: number) => void
   className?: string
+  "aria-label"?: string
 }
 
 export interface StepperContentProps {
@@ -53,6 +54,7 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
       orientation = "horizontal",
       onStepClick,
       className,
+      "aria-label": ariaLabel = "Progress steps",
     },
     ref
   ) => {
@@ -60,8 +62,9 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
       <StepperContext.Provider
         value={{ steps, currentStep, orientation, onStepClick }}
       >
-        <div
+        <nav
           ref={ref}
+          aria-label={ariaLabel}
           className={cn(
             "flex",
             orientation === "horizontal"
@@ -76,7 +79,7 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
               {index < steps.length - 1 && <StepConnector index={index} />}
             </React.Fragment>
           ))}
-        </div>
+        </nav>
       </StepperContext.Provider>
     )
   }
@@ -105,6 +108,7 @@ function StepItem({ step, index }: StepItemProps) {
         isClickable && "cursor-pointer"
       )}
       onClick={() => isClickable && onStepClick(index)}
+      aria-current={isCurrent ? "step" : undefined}
     >
       {/* Step indicator */}
       <div

@@ -43,6 +43,8 @@ interface DataTableProps<T> {
   emptyMessage?: string
   onRowClick?: (row: T) => void
   getRowId?: (row: T) => string
+  "aria-label"?: string
+  "aria-describedby"?: string
 }
 
 type SortDirection = "asc" | "desc" | null
@@ -59,6 +61,8 @@ function DataTableInner<T>(
     emptyMessage = "No results found.",
     onRowClick,
     getRowId,
+    "aria-label": ariaLabel = "Data table",
+    "aria-describedby": ariaDescribedby,
   }: DataTableProps<T>,
   ref: React.ForwardedRef<HTMLDivElement>
 ) {
@@ -176,7 +180,7 @@ function DataTableInner<T>(
   }
 
   return (
-    <div ref={ref} className={cn("space-y-4", className)}>
+    <div ref={ref} className={cn("space-y-4", className)} aria-label={ariaLabel} aria-describedby={ariaDescribedby}>
       {/* Search */}
       {searchable && (
         <div className="relative max-w-sm">
@@ -186,6 +190,7 @@ function DataTableInner<T>(
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="pl-10 pr-10"
+            aria-label="Search table"
           />
           {searchQuery && (
             <button

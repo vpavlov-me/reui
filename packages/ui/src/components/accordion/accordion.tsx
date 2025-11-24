@@ -55,4 +55,9 @@ const AccordionContent = React.forwardRef<
 
 AccordionContent.displayName = AccordionPrimitive.Content.displayName
 
+export type AccordionProps = React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root>
+export type AccordionItemProps = React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
+export type AccordionTriggerProps = React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
+export type AccordionContentProps = React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
+
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }

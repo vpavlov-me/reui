@@ -24,6 +24,7 @@ export interface FileUploadProps {
   onFilesChange?: (files: FileUploadFile[]) => void
   onUpload?: (files: File[]) => Promise<void>
   children?: React.ReactNode
+  "aria-label"?: string
 }
 
 function getFileIcon(file: File) {
@@ -249,7 +250,7 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
 
         {/* File list */}
         {files.length > 0 && (
-          <div className="space-y-2">
+          <div className="space-y-2" role="list" aria-label="Uploaded files">
             {files.map((fileItem) => (
               <div
                 key={fileItem.id}
@@ -269,7 +270,10 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
                     {formatFileSize(fileItem.file.size)}
                   </p>
                   {fileItem.status === "uploading" && (
-                    <Progress value={fileItem.progress} className="h-1 mt-2" />
+                    <div aria-live="polite" aria-atomic="true">
+                      <Progress value={fileItem.progress} className="h-1 mt-2" />
+                      <span className="sr-only">Upload progress: {fileItem.progress}%</span>
+                    </div>
                   )}
                   {fileItem.status === "error" && fileItem.error && (
                     <p className="text-xs text-destructive mt-1">{fileItem.error}</p>
