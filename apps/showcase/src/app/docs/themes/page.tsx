@@ -43,14 +43,14 @@ export default function ThemesPage() {
   }, [portalTheme]);
 
   return (
-    <div className="container py-10">
-      <div className="mx-auto max-w-[1200px] space-y-8">
+    <div className="container py-6 md:py-10 px-4">
+      <div className="mx-auto max-w-[1200px] space-y-6 md:space-y-8">
         {/* Hero */}
-        <div className="space-y-4 text-center">
-          <h1 className="text-4xl font-medium tracking-tight md:text-5xl">
+        <div className="space-y-3 md:space-y-4 text-center">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-medium tracking-tight">
             Make it yours
           </h1>
-          <p className="mx-auto max-w-[600px] text-lg text-muted-foreground">
+          <p className="mx-auto max-w-[600px] text-base md:text-lg text-muted-foreground">
             Hand-picked themes that you can copy and paste into your apps.
             Switch between portals using the tabs below or the header switcher to see them in action.
           </p>
@@ -68,7 +68,7 @@ export default function ThemesPage() {
         </div>
 
         {/* Theme Preview Grid */}
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-3 md:gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {/* Stats Card */}
           <Card>
             <CardHeader className="pb-2">
@@ -110,9 +110,9 @@ export default function ThemesPage() {
         </div>
 
         {/* Main Preview Section */}
-        <div className="grid gap-4 lg:grid-cols-7">
+        <div className="grid gap-3 md:gap-4 lg:grid-cols-7">
           {/* Left Column */}
-          <div className="lg:col-span-4 space-y-4">
+          <div className="lg:col-span-4 space-y-3 md:space-y-4">
             {/* Team Members Card */}
             <Card>
               <CardHeader>
@@ -244,7 +244,7 @@ export default function ThemesPage() {
           </div>
 
           {/* Right Column */}
-          <div className="lg:col-span-3 space-y-4">
+          <div className="lg:col-span-3 space-y-3 md:space-y-4">
             {/* Account Settings */}
             <Card>
               <CardHeader>
@@ -362,12 +362,12 @@ export default function ThemesPage() {
         </div>
 
         {/* Portal Colors */}
-        <section className="space-y-4">
-          <h2 className="text-2xl font-medium">Portal Themes</h2>
+        <section className="space-y-3 md:space-y-4">
+          <h2 className="text-xl md:text-2xl font-medium">Portal Themes</h2>
           <p className="text-muted-foreground">
             Switch between portals using the theme switcher in the header.
           </p>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-3 md:gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <Card>
               <CardHeader className="pb-3">
                 <div className="flex items-center gap-3">
@@ -431,9 +431,9 @@ export default function ThemesPage() {
         </section>
 
         {/* Usage */}
-        <section className="space-y-4">
-          <h2 className="text-2xl font-medium">Usage</h2>
-          <div className="grid gap-4 md:grid-cols-2">
+        <section className="space-y-3 md:space-y-4">
+          <h2 className="text-xl md:text-2xl font-medium">Usage</h2>
+          <div className="grid gap-3 md:gap-4 lg:grid-cols-2">
             <Card>
               <CardHeader>
                 <CardTitle className="text-base">CSS Variables</CardTitle>

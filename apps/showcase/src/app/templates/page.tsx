@@ -1266,19 +1266,19 @@ function AuthContent() {
 // Main Templates Page
 export default function TemplatesPage() {
   return (
-    <div className="bg-muted/40 py-8 sm:py-12">
-      <div className="container space-y-6">
-        <div className="space-y-1">
-          <p className="text-sm text-muted-foreground">Showcase</p>
-          <h1 className="text-3xl font-medium">Templates</h1>
-          <p className="text-sm text-muted-foreground max-w-2xl">
+    <div className="bg-muted/40 py-6 sm:py-8 lg:py-12">
+      <div className="container space-y-4 md:space-y-6 px-4">
+        <div className="space-y-1 md:space-y-2">d:space-y-2">
+          <p className="text-xs md:text-sm text-muted-foreground">Showcase</p>
+          <h1 className="text-2xl md:text-3xl font-medium">Templates</h1>
+          <p className="text-xs md:text-sm text-muted-foreground max-w-2xl">
             Explore complete page templates built with Reluna UI components. These templates demonstrate
             real-world layouts for dashboards, profiles, governance tools, and authentication flows.
           </p>
         </div>
 
         <Tabs defaultValue="dashboard" className="w-full">
-          <TabsList className="grid w-full grid-cols-4 mb-6">
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 mb-4 md:mb-6">
             <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
             <TabsTrigger value="profile">Profile</TabsTrigger>
             <TabsTrigger value="constitution">Constitution</TabsTrigger>
@@ -1286,7 +1286,7 @@ export default function TemplatesPage() {
           </TabsList>
 
           <TabsContent value="dashboard">
-            <div className="overflow-hidden rounded-[32px] border bg-background shadow-2xl ring-1 ring-black/5">
+            <div className="overflow-hidden rounded-2xl md:rounded-[32px] border bg-background shadow-2xl ring-1 ring-black/5">
               <DashboardContent />
             </div>
           </TabsContent>

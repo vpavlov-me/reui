@@ -52,26 +52,26 @@ export default function Home() {
   const [emailDigest, setEmailDigest] = React.useState(false);
 
   return (
-    <div className="container py-10">
+    <div className="container py-6 md:py-10">
       {/* Hero Section */}
-      <section className="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
-        <Badge variant="secondary" className="mb-4">
+      <section className="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-6 md:py-8 lg:py-24 lg:pb-20">
+        <Badge variant="secondary" className="mb-2 md:mb-4 text-xs md:text-sm">
           Reluna UI - 40+ Components
         </Badge>
-        <h1 className="text-center text-3xl font-medium leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">
+        <h1 className="text-center text-2xl md:text-4xl lg:text-6xl font-medium leading-tight tracking-tighter lg:leading-[1.1]">
           Production-ready component library
         </h1>
-        <span className="max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl">
+        <span className="max-w-[750px] text-center text-base md:text-lg text-muted-foreground px-4">
           40+ beautifully designed, fully accessible components with TypeScript support. 
           Built on Shadcn UI and Radix UI for Family, Advisor, and Admin portals.
         </span>
-        <div className="flex w-full items-center justify-center gap-4 py-4 md:pb-10">
-          <Button asChild>
+        <div className="flex w-full flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 py-4 md:pb-10 px-4">gap-3 md:gap-4 py-4 md:pb-10 px-4">
+          <Button asChild className="w-full sm:w-auto">
             <Link href="/docs/components">
               Browse all Components
             </Link>
           </Button>
-          <Button variant="outline" asChild>
+          <Button variant="outline" asChild className="w-full sm:w-auto">
             <Link href="/docs/installation">
               Installation Guide
             </Link>
@@ -80,8 +80,8 @@ export default function Home() {
       </section>
 
       {/* Component Demo Grid */}
-      <section className="mx-auto max-w-[1200px] py-8">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <section className="mx-auto max-w-[1200px] py-6 md:py-8 px-4">
+        <div className="grid gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {/* Family Member Card */}
           <Card>
             <CardHeader>
@@ -503,67 +503,67 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="mx-auto max-w-[980px] py-12">
-        <h2 className="mb-8 text-center text-2xl font-medium">
+      <section className="mx-auto max-w-[980px] py-8 md:py-12 px-4">
+        <h2 className="mb-6 md:mb-8 text-center text-xl md:text-2xl font-medium">
           40+ Components Organized Atomically
         </h2>
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-3 md:gap-4 sm:grid-cols-2 md:grid-cols-3">
           <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-            <div className="flex h-[140px] flex-col justify-between rounded-md p-6">
-              <Users className="h-8 w-8 text-primary" />
+            <div className="flex h-[120px] md:h-[140px] flex-col justify-between rounded-md p-4 md:p-6">
+              <Users className="h-6 w-6 md:h-8 md:w-8 text-primary" />
               <div className="space-y-1">
-                <h3 className="font-medium">Atomic Primitives</h3>
-                <p className="text-sm text-muted-foreground">
+                <h3 className="text-sm md:text-base font-medium">Atomic Primitives</h3>
+                <p className="text-xs md:text-sm text-muted-foreground">
                   8 basic components: Button, Input, Label, Badge, Separator, Skeleton, Avatar
                 </p>
               </div>
             </div>
           </div>
           <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-            <div className="flex h-[140px] flex-col justify-between rounded-md p-6">
-              <FileText className="h-8 w-8 text-primary" />
+            <div className="flex h-[120px] md:h-[140px] flex-col justify-between rounded-md p-4 md:p-6">
+              <FileText className="h-6 w-6 md:h-8 md:w-8 text-primary" />
               <div className="space-y-1">
-                <h3 className="font-medium">Form Components</h3>
-                <p className="text-sm text-muted-foreground">
+                <h3 className="text-sm md:text-base font-medium">Form Components</h3>
+                <p className="text-xs md:text-sm text-muted-foreground">
                   13 form controls: Checkbox, Select, Textarea, Switch, Combobox, FileUpload
                 </p>
               </div>
             </div>
           </div>
           <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-            <div className="flex h-[140px] flex-col justify-between rounded-md p-6">
-              <Vote className="h-8 w-8 text-primary" />
+            <div className="flex h-[120px] md:h-[140px] flex-col justify-between rounded-md p-4 md:p-6">
+              <Vote className="h-6 w-6 md:h-8 md:w-8 text-primary" />
               <div className="space-y-1">
-                <h3 className="font-medium">Complex Components</h3>
-                <p className="text-sm text-muted-foreground">
+                <h3 className="text-sm md:text-base font-medium">Complex Components</h3>
+                <p className="text-xs md:text-sm text-muted-foreground">
                   Table, DataTable, Calendar, Chart, Carousel, DateRangePicker
                 </p>
               </div>
             </div>
           </div>
         </div>
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
-          <div className="rounded-lg border bg-card p-6">
-            <h3 className="font-semibold">100% TypeScript</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
+        <div className="mt-6 md:mt-8 grid gap-3 md:gap-4 sm:grid-cols-2">
+          <div className="rounded-lg border bg-card p-4 md:p-6">d:p-6">
+            <h3 className="text-sm md:text-base font-semibold">100% TypeScript</h3>
+            <p className="mt-2 text-xs md:text-sm text-muted-foreground">
               Full type safety with excellent IDE support and autocompletion.
             </p>
           </div>
-          <div className="rounded-lg border bg-card p-6">
-            <h3 className="font-semibold">WCAG 2.1 AA Compliant</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
+          <div className="rounded-lg border bg-card p-4 md:p-6">
+            <h3 className="text-sm md:text-base font-semibold">WCAG 2.1 AA Compliant</h3>
+            <p className="mt-2 text-xs md:text-sm text-muted-foreground">
               Accessible by default with keyboard navigation and ARIA support.
             </p>
           </div>
-          <div className="rounded-lg border bg-card p-6">
-            <h3 className="font-semibold">3 Portal Themes</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
+          <div className="rounded-lg border bg-card p-4 md:p-6">
+            <h3 className="text-sm md:text-base font-semibold">3 Portal Themes</h3>
+            <p className="mt-2 text-xs md:text-sm text-muted-foreground">
               Family (Orange), Advisor (Blue), Admin (Lime) with full dark mode support.
             </p>
           </div>
-          <div className="rounded-lg border bg-card p-6">
-            <h3 className="font-semibold">Production Ready</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
+          <div className="rounded-lg border bg-card p-4 md:p-6">
+            <h3 className="text-sm md:text-base font-semibold">Production Ready</h3>
+            <p className="mt-2 text-xs md:text-sm text-muted-foreground">
               Tree-shakeable, optimized bundle, CJS and ESM builds, source maps.
             </p>
           </div>

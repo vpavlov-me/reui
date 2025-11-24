@@ -55,22 +55,22 @@ const blocks: BlockItem[] = [
 
 export default function BlocksPage() {
   return (
-    <div className="bg-muted/40 py-8 sm:py-12">
-      <div className="container space-y-10">
+    <div className="bg-muted/40 py-6 sm:py-8 lg:py-12">
+      <div className="container space-y-6 md:space-y-10 px-4">
         {/* Header */}
-        <div className="space-y-4">
-        <Badge variant="secondary" className="w-fit">
+        <div className="space-y-3 md:space-y-4">
+        <Badge variant="secondary" className="w-fit text-xs md:text-sm">
           Blocks / Organisms
         </Badge>
-        <h1 className="text-4xl font-medium tracking-tight">Layout Blocks</h1>
-        <p className="text-lg text-muted-foreground max-w-2xl">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight">Layout Blocks</h1>
+        <p className="text-base md:text-lg text-muted-foreground max-w-2xl">
           Ready-to-use template and organism-level components that compose multiple atoms and molecules. These blocks provide complete layout solutions for building consistent page structures across your application.
         </p>
       </div>
 
       {/* Atomic Design Explanation */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold tracking-tight">Atomic Design Hierarchy</h2>
+      <section className="space-y-3 md:space-y-4">
+        <h2 className="text-xl md:text-2xl font-semibold tracking-tight">Atomic Design Hierarchy</h2>
         <Card>
           <CardHeader>
             <CardTitle className="text-base">Component Classification</CardTitle>
@@ -101,16 +101,16 @@ Templates (Page-Level Layouts)
       </section>
 
       {/* Blocks Grid */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold tracking-tight">Available Blocks</h2>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
+      <section className="space-y-3 md:space-y-4">
+        <h2 className="text-xl md:text-2xl font-semibold tracking-tight">Available Blocks</h2>
+        <div className="grid gap-4 md:gap-6">
           {blocks.map((block) => (
             <Link key={block.title} href={block.href}>
               <Card className="h-full transition-all hover:shadow-lg hover:border-primary/50 cursor-pointer group">
                 <CardHeader>
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-start justify-between gap-3 md:gap-4">
                     <div className="flex-1 space-y-2">
-                      <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                      <CardTitle className="text-lg md:text-xl group-hover:text-primary transition-colors">
                         {block.title}
                       </CardTitle>
                       <Badge variant="outline" className="w-fit">
@@ -148,9 +148,9 @@ Templates (Page-Level Layouts)
       </section>
 
       {/* Key Principles */}
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold tracking-tight">Design System Principles</h2>
-        <div className="grid gap-4 md:grid-cols-2">
+      <section className="space-y-3 md:space-y-4">
+        <h2 className="text-xl md:text-2xl font-semibold tracking-tight">Design System Principles</h2>
+        <div className="grid gap-3 md:gap-4 sm:grid-cols-2">
           <Card>
             <CardHeader>
               <CardTitle className="text-base">Atomic Design</CardTitle>

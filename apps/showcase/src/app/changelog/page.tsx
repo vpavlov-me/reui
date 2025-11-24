@@ -222,29 +222,29 @@ function getChangeLabel(type: ChangeType) {
 
 export default function ChangelogPage() {
   return (
-    <div className="container py-10">
-      <div className="mx-auto max-w-[800px] space-y-8">
+    <div className="container py-6 md:py-10 px-4">
+      <div className="mx-auto max-w-[800px] space-y-6 md:space-y-8">
         {/* Hero */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-              <GitCommit className="h-5 w-5 text-primary" />
+        <div className="space-y-3 md:space-y-4">
+          <div className="flex items-center gap-2 md:gap-3">
+            <div className="flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-lg bg-primary/10">
+              <GitCommit className="h-4 w-4 md:h-5 md:w-5 text-primary" />
             </div>
             <div>
-              <h1 className="text-3xl font-medium tracking-tight">Changelog</h1>
+              <h1 className="text-2xl md:text-3xl font-medium tracking-tight">Changelog</h1>
               <p className="text-sm text-muted-foreground">All notable changes to Reluna UI</p>
             </div>
           </div>
         </div>
 
         {/* Releases */}
-        <div className="space-y-6">
+        <div className="space-y-4 md:space-y-6">
           {releases.map((release, index) => (
             <Card key={release.version}>
-              <CardHeader className="pb-4">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="flex items-center gap-2">
-                    <Package className="h-4 w-4" />
+              <CardHeader className="pb-3 md:pb-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <CardTitle className="flex items-center gap-2 text-base md:text-lg">
+                    <Package className="h-3.5 w-3.5 md:h-4 md:w-4" />
                     v{release.version}
                   </CardTitle>
                   <time className="text-sm text-muted-foreground">{release.date}</time>
@@ -254,20 +254,20 @@ export default function ChangelogPage() {
                 )}
               </CardHeader>
               <CardContent>
-                <ul className="space-y-3">
+                <ul className="space-y-2 md:space-y-3">
                   {release.changes.map((change, changeIndex) => (
-                    <li key={changeIndex} className="flex items-start gap-3">
+                    <li key={changeIndex} className="flex items-start gap-2 md:gap-3">
                       <Badge
                         variant={getChangeBadgeVariant(change.type)}
-                        className="shrink-0 mt-0.5 gap-1"
+                        className="shrink-0 mt-0.5 gap-1 text-xs"
                       >
                         {getChangeIcon(change.type)}
                         {getChangeLabel(change.type)}
                       </Badge>
-                      <div className="flex-1">
-                        <span className="text-sm">{change.description}</span>
+                      <div className="flex-1 min-w-0">
+                        <span className="text-xs md:text-sm">{change.description}</span>
                         {change.component && (
-                          <Badge variant="outline" className="ml-2 text-xs">
+                          <Badge variant="outline" className="ml-1 md:ml-2 text-[10px] md:text-xs">
                             {change.component}
                           </Badge>
                         )}
