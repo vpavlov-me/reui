@@ -543,7 +543,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-6 md:mt-8 grid gap-3 md:gap-4 sm:grid-cols-2">
-          <div className="rounded-lg border bg-card p-4 md:p-6">d:p-6">
+          <div className="rounded-lg border bg-card p-4 md:p-6">
             <h3 className="text-sm md:text-base font-semibold">100% TypeScript</h3>
             <p className="mt-2 text-xs md:text-sm text-muted-foreground">
               Full type safety with excellent IDE support and autocompletion.
