@@ -115,6 +115,7 @@ const FileUpload = React.forwardRef<HTMLDivElement, FileUploadProps>(
           }
         }
       },
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       [files, maxFiles, maxSize, multiple, disabled, onFilesChange, onUpload]
     )
 

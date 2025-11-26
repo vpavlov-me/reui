@@ -1268,7 +1268,7 @@ export default function TemplatesPage() {
   return (
     <div className="bg-muted/40 py-6 sm:py-8 lg:py-12">
       <div className="container space-y-4 md:space-y-6 px-4">
-        <div className="space-y-1 md:space-y-2">d:space-y-2">
+        <div className="space-y-1 md:space-y-2">
           <p className="text-xs md:text-sm text-muted-foreground">Showcase</p>
           <h1 className="text-2xl md:text-3xl font-medium">Templates</h1>
           <p className="text-xs md:text-sm text-muted-foreground max-w-2xl">

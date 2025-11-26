@@ -24,7 +24,7 @@ export type ClassName = string | string[] | Record<string, boolean> | undefined
  */
 export type PolymorphicComponentProps<
   T extends React.ElementType,
-  Props = {}
+  Props = Record<string, never>
 > = Props &
   Omit<React.ComponentPropsWithoutRef<T>, keyof Props> & {
     as?: T
@@ -40,9 +40,9 @@ export type PolymorphicRef<T extends React.ElementType> =
  * Combined props and ref for polymorphic components
  */
 export type PolymorphicComponentPropsWithRef<
-  T extends React.ElementType,
-  Props = {}
-> = PolymorphicComponentProps<T, Props> & { ref?: PolymorphicRef<T> }
+  C extends React.ElementType,
+  Props = Record<string, never>,
+> = PolymorphicComponentProps<C, Props> & { ref?: PolymorphicRef<C> };
 
 /**
  * Common accessibility props

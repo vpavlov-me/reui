@@ -36,7 +36,6 @@ describe('MultiSelect', () => {
   })
 
   it('displays selected options as badges', async () => {
-    const user = userEvent.setup()
     render(<MultiSelect options={mockOptions} defaultValue={['react', 'vue']} />)
 
     expect(screen.getByText('React')).toBeInTheDocument()
